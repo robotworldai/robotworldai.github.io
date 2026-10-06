@@ -151,7 +151,7 @@ function waffle(data) {
 }
 
 Promise.all([
-  fetch('data.json', {cache: 'no-cache'}).then(r => {if (!r.ok) throw Error(r.status); return r.json();}),
-  fetch('usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+  fetch('/data/data.json', {cache: 'no-cache'}).then(r => {if (!r.ok) throw Error(r.status); return r.json();}),
+  fetch('/data/usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})),
 ]).then(([data, usage]) => { pareto(data, usage); waffle(data); })
   .catch(e => {gridPanel.textContent = paretoPanel.textContent = 'Failed to load results: ' + e.message;});

@@ -87,7 +87,7 @@
     ['driving', 'Driving', '车辆驾驶', '#8c6bb1'],
     ['aerial', 'Aerial', '无人机飞行', '#c99a2e'],
   ];
-  fetch('data.json').then(r => r.json()).then(data => {
+  fetch('/data/data.json').then(r => r.json()).then(data => {
     const runs = data.runs.filter(r => r.model === 'Astra');
     const total = runs.length;
     const benches = new Set(runs.map(r => r.bench)).size;

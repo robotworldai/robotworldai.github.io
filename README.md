@@ -5,7 +5,28 @@ Static source and presentation assets for the RobotWorld demo website.
 ## Preview
 
 Run `python3 -m http.server 8000` from this directory, then open
-`http://localhost:8000/`. The Chinese homepage is `index-zh.html`.
+`http://localhost:8000/`. The Chinese homepage is `/zh/`.
+Serve this repository at the site root; local URLs are root-relative.
+
+## Directory Structure
+
+```text
+index.html          English homepage
+zh/                 Chinese homepage
+blog/               English blog; Chinese blog in blog/zh/
+showreel/           Showreel pages
+data/               Results, usage summaries, and media tile indexes
+assets/
+  css/              Stylesheets
+  js/               Browser scripts
+  fonts/            Font and its license
+  images/           Posters and image sprites
+  videos/           Overview and promotional videos
+  recordings/       Task recordings and their posters
+```
+
+`404.html` redirects the previous blog and Chinese homepage URLs to their new
+locations, preserving query parameters and section anchors on GitHub Pages.
 
 ## Contents
 
@@ -25,9 +46,9 @@ the site does not depend on the original LAN server.
 
 ## Hosting Status
 
-GitHub Pages has not been enabled as part of this upload. This complete source
-bundle exceeds the 1 GB published-site limit, so deployable Pages content will
-need a separate media host or a smaller media distribution before publishing.
+GitHub Pages is enabled at https://robotworldai.github.io/ using the root of
+the `main` branch. The complete bundle is large; separate media hosting is
+recommended for long-term maintenance.
 
 Some existing paper/code and release-review placeholders remain unchanged.
 This repository is the demo website, not the benchmark implementation.
@@ -35,5 +56,5 @@ This repository is the demo website, not the benchmark implementation.
 ## Rights
 
 No blanket license is granted by this upload. The bundled Google Sans Code font
-has its license in `google-sans-code-OFL.txt`. Other source and media rights remain
+has its license in `assets/fonts/google-sans-code-OFL.txt`. Other source and media rights remain
 with their respective owners.

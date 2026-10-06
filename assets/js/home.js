@@ -151,10 +151,10 @@ function setupMore() {
 }
 const bjt = iso => iso ? new Date(iso).toLocaleString('sv-SE', {timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'}) + ' (UTC+8)' : '—';
 
-fetch('data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
+fetch('/data/data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
   ALL = data.runs;
   const astra = ALL.filter(r => r.model === 'Astra');
-  hero(ALL); stats(data, astra); coverage(data, astra); fetch('usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(u => board(data, ALL, u)); paired(ALL);
+  hero(ALL); stats(data, astra); coverage(data, astra); fetch('/data/usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(u => board(data, ALL, u)); paired(ALL);
   seg('f-model', MODELS.map(m => [m, FULL[m]]), 'model');
   seg('f-domain', [['all', 'All domains'], ...Object.entries(DOMAINS).map(([k, d]) => [k, d.name])], 'domain');
   seg('f-score', [['all', 'All'], ['1', 'Score 1'], ['0', 'Score 0'], ['none', 'Unscored']], 'score');

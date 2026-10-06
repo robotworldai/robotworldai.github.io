@@ -96,7 +96,7 @@
     });
   }
 
-  fetch('data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
+  fetch('/data/data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
     const R = data.runs;
     models(R); domains(R); overlap(R); clips(R);
     const iso = data.opusk3_generated || data.astra_generated;

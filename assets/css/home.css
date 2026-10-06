@@ -1,4 +1,4 @@
-@font-face{font-family:'Google Sans Code';src:url('google-sans-code.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Google Sans Code';src:url('/assets/fonts/google-sans-code.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root{
   --ink:#1c2226;--muted:#66707a;--paper:#f7f5ef;--paper2:#efece3;--line:#dcd7ca;
   --night:#111418;--night2:#191e24;--nline:#2b333c;--nink:#e9ecef;--nmuted:#9aa4ae;

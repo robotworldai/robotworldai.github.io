@@ -109,8 +109,8 @@ window.RWCharts = (() => {
       el('p', {class: 'rc-sub'}, t('SCORE', '得分')), bars);
     const slideBox = el('div', {class: 'rc-slide'}, left, headline);
     box.append(slideBox);
-    fetch('wall-tiles.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null)
-      .then(live => slideBox.append(wall(R, mosaic, true, live && {...live, src: 'wall-tiles.mp4'})));
+    fetch('/data/wall-tiles.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null)
+      .then(live => slideBox.append(wall(R, mosaic, true, live && {...live, src: '/assets/videos/wall-tiles.mp4'})));
   }
 
   // One sprite tile for a run; returns null when the run has no thumbnail.
@@ -272,8 +272,8 @@ window.RWCharts = (() => {
       const kind = box.dataset.rc;
       if (kind === 'slide') slide(box, R, mosaic);
       else if (kind === 'wall') box.append(wall(R, mosaic, false));
-      else if (kind === 'tasks') fetch('overview-tiles.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null)
-        .catch(() => null).then(live => tasks(box, R, mosaic, live && {...live, src: 'overview-tiles.mp4'}));
+      else if (kind === 'tasks') fetch('/data/overview-tiles.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null)
+        .catch(() => null).then(live => tasks(box, R, mosaic, live && {...live, src: '/assets/videos/overview-tiles.mp4'}));
       else if (map[kind]) map[kind](box, R);
     });
     // Zoom-out overview video: autoplay only while visible.
@@ -285,8 +285,8 @@ window.RWCharts = (() => {
   }
 
   Promise.all([
-    fetch('data.json', {cache: 'no-cache'}).then(r => r.json()),
-    fetch('mosaic.json', {cache: 'no-cache'}).then(r => r.json()),
+    fetch('/data/data.json', {cache: 'no-cache'}).then(r => r.json()),
+    fetch('/data/mosaic.json', {cache: 'no-cache'}).then(r => r.json()),
   ]).then(([data, mosaic]) => mount(data.runs, mosaic))
     .catch(e => document.querySelectorAll('[data-rc]').forEach(b => b.textContent = 'Failed to load chart: ' + e));
   return {ending, embodiment, EMBODIMENTS};
