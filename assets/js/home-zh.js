@@ -83,10 +83,10 @@ function paired(runs) {
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
   document.getElementById('paired-note').textContent = `· ${keys.length} 题。每格：得分 · 实际执行控制步 / 步数上限（条形 = 预算使用比例）。未计分的题暂无步数。点击格子播放录像。`;
   const t = document.getElementById('paired');
-  t.append(el('tr', {}, el('th', {}, '任务'), el('th', {}, '来源'), MODELS.map(m => el('th', {}, m))));
+  t.append(el('tr', {}, el('th', {}, '任务'), MODELS.map(m => el('th', {}, m))));
   for (const k of keys) {
     const a = astra[k];
-    t.append(el('tr', {}, el('td', {}, a.title), el('td', {}, el('span', {class: 'tag'}, a.bench_name)),
+    t.append(el('tr', {}, el('td', {}, a.title),
       MODELS.map(m => {
         const r = m === 'Astra' ? a : others.find(x => x.model === m && key(x) === k);
         if (!r) return el('td', {class: 'muted'}, '未测');

@@ -83,10 +83,10 @@ function paired(runs) {
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
   document.getElementById('paired-note').textContent = `· ${keys.length} tasks. Each cell: score · control steps executed / step budget (bar = share of budget used). Unscored tasks have no step count yet. Click a cell to play its recording.`;
   const t = document.getElementById('paired');
-  t.append(el('tr', {}, el('th', {}, 'Task'), el('th', {}, 'Source'), MODELS.map(m => el('th', {}, m))));
+  t.append(el('tr', {}, el('th', {}, 'Task'), MODELS.map(m => el('th', {}, m))));
   for (const k of keys) {
     const a = astra[k];
-    t.append(el('tr', {}, el('td', {}, a.title_en), el('td', {}, el('span', {class: 'tag'}, a.bench_name)),
+    t.append(el('tr', {}, el('td', {}, a.title_en),
       MODELS.map(m => {
         const r = m === 'Astra' ? a : others.find(x => x.model === m && key(x) === k);
         if (!r) return el('td', {class: 'muted'}, 'not run');
