@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
+<title>RobotWorld · Benchmarking Multimodal Agents for Robot Use</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="protocol-visuals.css">
+<link rel="stylesheet" href="charts.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<nav class="topnav"><a class="brand" href="#top">RobotWorld</a>
+  <div class="page-tabs"><a href="index-zh.html" aria-current="page">Home</a><a href="blog-zh.html">Blog</a></div><div><a href="./">EN</a><a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#leaderboard">Results</a><a href="#gallery">Tasks</a><a href="#protocol">Protocol</a></div></nav>
+
+<header id="top" class="hero dark">
+  <div class="hero-grid" id="hero-videos" aria-hidden="true"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="kicker">Project page · 2026-10</p>
+    <h1>RobotWorld</h1>
+    <p class="subtitle">Benchmarking Multimodal Agents for Robot Use<br>Across Diverse Tasks and Embodiments</p>
+    <p class="lede">同一个多模态 agent，只通过公开的观测与动作工具，控制机械臂、灵巧手、人形、四足、小车和无人机，在仿真中完成任务并由环境私有评分器打分。</p>
+    <div class="cta"><a class="btn solid" href="#gallery">浏览任务与录像</a><a class="btn" href="#leaderboard">查看结果</a><span class="btn ghost" title="TBD">Paper · TBD</span><span class="btn ghost" title="TBD">Code · TBD</span></div>
+    <div class="stats" id="hero-stats"></div>
+    <figure class="showreel" id="showreel">
+      <figcaption><span>45 秒了解 RobotWorld</span><a href="showreel/">打开独立视频页 ↗</a></figcaption>
+      <video controls playsinline preload="metadata" poster="showreel-poster.png" aria-label="RobotWorld 45 秒宣传视频"><source src="showreel/robotworld_showreel_45s_v3.mp4?v=20261005b" type="video/mp4">浏览器不支持内嵌视频。<a href="showreel/">打开视频页</a>。</video>
+      <p>内部预览，尚未批准公开发布。真实仿真录像，未只挑选得分 1 的片段。</p>
+    </figure>
+  </div>
+  <p class="hero-note">背景均为真实仿真录像，来自已完成的评测。</p>
+</header>
+
+<main>
+<section id="overview" class="light">
+  <div class="wrap">
+    <p class="num">01 / Overview</p>
+    <h2>模型怎样“用”机器人</h2>
+    <p class="intro">每道题把机器人暴露为一组工具。模型看图像与状态，决定动作，环境执行后返回回执与新观测；是否完成任务由模型看不到的评分状态判定。</p>
+    <ol class="flow">
+      <li><b>观测</b><span>相机图像、关节与任务状态，只给许可信息</span></li>
+      <li><b>决策</b><span>多模态 agent 推理，可调用辅助工具分析</span></li>
+      <li><b>动作</b><span>通过各环境动作工具下发，按控制步执行</span></li>
+      <li><b>反馈</b><span>执行回执、新观测与剩余预算</span></li>
+      <li class="private"><b>私有评分</b><span>原 checker 或 world-state-v1，不对模型公开</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="benchmark" class="light alt">
+  <div class="wrap">
+    <p class="num">02 / Benchmark</p>
+    <h2>任务覆盖</h2>
+    <p class="intro" id="coverage-intro"></p>
+    <div class="rc-fig" id="domains" data-rc="embodiments"></div>
+    <div class="benches" id="benches"></div>
+    <figure class="rc-zoom" aria-label="任务总览视频">
+      <video muted loop playsinline preload="metadata" poster="overview-zoom.png" src="overview-zoom.mp4"></video>
+      <figcaption><span>从 4 道题拉远到全部 84 题 · Astra 真实仿真录像</span><span>1.5 倍速 · 无声</span></figcaption>
+    </figure>
+    <figure class="rc-fig" aria-label="84 题一览">
+      <figcaption><b>84 题一览</b><span>每题一张缩略图，按领域分组 · 点击观看录像</span></figcaption>
+      <div data-rc="tasks"></div>
+    </figure>
+  </div>
+</section>
+
+<section id="leaderboard" class="light">
+  <div class="wrap">
+    <p class="num">03 / Results</p>
+    <h2>结果</h2>
+    <figure class="rc-fig" aria-label="按模型和领域的得分">
+      <figcaption><b>各题得分，按领域拆分</b><span>色段长度 = 该领域得分 1 的题数 · 点击色段播放其中一题</span></figcaption>
+      <div data-rc="stacked"></div>
+    </figure>
+    <div class="table-scroll"><table class="board" id="board"></table></div>
+  </div>
+</section>
+
+<section id="gallery" class="dark band">
+  <div class="wrap">
+    <p class="num">04 / 任务与录像</p>
+    <h2>任务画廊</h2>
+    <p class="intro">悬停预览录像，点击放大观看。</p>
+    <div class="filters" id="filters">
+      <div class="seg" id="f-model"></div>
+      <div class="seg" id="f-domain"></div>
+      <div class="seg" id="f-score"></div>
+    </div>
+    <p class="count" id="gallery-count"></p>
+    <div class="cards" id="cards"></div>
+    <section class="task-results" id="task-results" aria-labelledby="task-results-title">
+      <h3 id="task-results-title">逐题情况 · 模型得分对照</h3>
+      <p class="muted" id="paired-note"></p>
+      <div class="table-scroll paired-window" tabindex="0" aria-label="可滚动的逐题结果"><table class="board paired" id="paired"></table></div>
+    </section>
+  </div>
+</section>
+
+<section id="protocol" class="light">
+  <div class="wrap">
+    <p class="num">05 / Protocol</p>
+    <h2>评测口径</h2>
+    <div class="rules">
+      <article><h3>两种步数</h3><p><b>仿真控制步</b>是环境实际执行的物理控制步，受每题预算限制；<b>轨迹记录序号</b>是日志中的事件编号，二者不同。</p></article>
+      <article><h3>动作预算</h3><p>沿用原题预算；BEHAVIOR 用 min(官方, 2000)；16 项重新设计的场景使用已批准时长与 world-state-v1 判定。</p></article>
+      <article><h3>结束原因</h3><p>达到控制步上限、环境原生终止、world-state 终止分别标注。不向模型提供放弃工具；模型结束回答但环境仍在运行时，会提醒它继续。基础设施中断不计分，不算 0 分。</p></article>
+      <article><h3>非动作预算</h3><p>现行规则：连续 15 次交互没有执行控制步，或累计达到每题上限 30／60／120 次（RoboDojo 为 30），即停止并记 0 分。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。</p></article>
+      <article><h3>恢复</h3><p>API 断流与偶发图片处理拒绝，保留同一仿真与会话，退避 10/20/40 秒原地恢复，最多 3 次，不重放已完成动作。</p></article>
+      <article><h3>覆盖</h3><p>每模型 84 题，覆盖五大领域。各题展示实际结果、录像与协议；未完成记录仍为未计分。</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="cite" class="light alt">
+  <div class="wrap">
+    <p class="num">06 / Citation</p>
+    <pre class="bib">@article{robotworld2026,
+  title  = {RobotWorld: Benchmarking Multimodal Agents for Robot Use
+            Across Diverse Tasks and Embodiments},
+  author = {TBD},
+  year   = {2026}
+}</pre>
+  </div>
+</section>
+</main>
+<footer><span id="foot"></span></footer>
+<script src="player.js?v=20261006-complete"></script>
+<script src="home-zh.js?v=20261006-complete"></script>
+<script src="result-views.js?v=20261006-complete"></script>
+<script src="protocol-visuals.js"></script>
+<script src="charts.js?v=20261006-complete"></script>
+</body>
+</html>

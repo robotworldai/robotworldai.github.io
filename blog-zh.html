@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
+<title>一个 agent，84 道机器人任务 · RobotWorld Blog</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="blog.css">
+<link rel="stylesheet" href="charts.css">
+<script src="theme.js"></script>
+</head>
+<body class="blog-page">
+<nav class="topnav"><a class="brand" href="index-zh.html">RobotWorld</a><div class="page-tabs"><a href="index-zh.html">Home</a><a href="blog-zh.html" aria-current="page">Blog</a></div><div><a href="blog.html">EN</a><a href="#tldr">要点</a><a href="#results">结果</a><a href="#failures">失败模式</a><a href="#limitations">局限</a></div></nav>
+
+<main class="post">
+  <header class="post-head">
+    <p class="num">RobotWorld · 实验报告 01 · 预评测</p>
+    <h1>一个 agent，84 道机器人任务</h1>
+    <p class="dek">机械臂、灵巧手、家居机器人、足式机器人、小车和无人机。多模态模型，同一套工具，没有示范，也没有微调。</p>
+    <p class="byline">2026 年 10 月 4 日 · RobotWorld 团队 · 数据快照 <span data-updated>2026-10-04 12:52（北京时间）</span></p>
+  </header>
+
+  <figure class="post-video">
+    <video controls playsinline muted preload="metadata" poster="assets/recordings/a7de4555cd2ad3f4865b.png" src="assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
+    <figcaption>Opus 打完一整场 VolleyBots 1v1 无人机排球赛并获胜（得分 1，498 个控制步后环境原生终止）。</figcaption>
+  </figure>
+
+  <section id="tldr">
+    <h2>要点</h2>
+    <ul class="tldr">
+      <li>84 道仿真机器人任务，覆盖 8 类机器人形态、5 个任务领域。每题只记 <b>0 或 1</b> 分。</li>
+      <li>两个模型已跑完全部题目：<b>Astra 17.9%</b>，<b>Opus 14.3%</b>。Opus 的结果中有 21 题是裁定结果，全部为 0 分。</li>
+      <li>K3 和 DPSK 得分低得多：<b>K3 2.4%</b>，<b>DPSK 1.2%</b>，少数题仍在运行。</li>
+      <li>两个跑完的模型<b>解出的大多不是同一批题</b>：共同解出 8 题，Astra 另有 7 题，Opus 另有 4 题；65 题两者都没解出。</li>
+      <li><b>家居移动操作</b>（BEHAVIOR-1K）目前没有任何模型得分，两个跑完的模型都是 0/10。</li>
+    </ul>
+    <p>RobotWorld 想回答一个简单的问题：把机器人当成一组工具交给通用多模态 agent，它能不能把活干完？agent 看到相机画面和机器人状态，发出动作，收到执行回执；最后由一个它看不到的私有评分器判分。</p>
+    <p>这是一份早期快照，不是排行榜。各模型在不同批次、不同推理强度和不同非动作协议下运行。我们如实记录发生了什么，附上录像，并标出哪些数字不能直接比较。</p>
+  </section>
+
+  <section id="setup">
+    <h2>实验设置</h2>
+    <div class="table-scroll"><table class="board spec">
+      <tr><th>项目</th><th>配置</th></tr>
+      <tr><td><b>任务</b></td><td>每个模型 84 题，基于开源仿真环境构建。按机器人形态：双臂与灵巧手 24、移动操作机器人 20、固定底座机械臂 14、轮式车辆 11、双足与人形 4、轮足 4、空中 4、四足 3。按任务领域：桌面与灵巧操作 48、家居移动操作 10、足式与轮足运动 11、车辆驾驶 11、无人机飞行 4。</td></tr>
+      <tr><td><b>接口</b></td><td>机器人以工具形式提供：观测（图像、关节与任务状态）、动作（各环境专用动作，按控制步执行）和执行回执，允许使用辅助分析工具。</td></tr>
+      <tr><td><b>模型</b></td><td>Astra、Opus、Kimi K3（K3）、DeepSeek V4.1 Flash（DPSK）。</td></tr>
+      <tr><td><b>设置</b></td><td>推理强度：Astra、Opus 为 xhigh；K3 为 xhigh 或 high；DPSK 为 high。现行非动作上限为连续 15 次或每题累计 30／60／120 次；部分早期批次使用其他上限。</td></tr>
+      <tr><td><b>预算</b></td><td>沿用原题步数预算，BEHAVIOR 取 min(官方, 2000)。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
+      <tr><td><b>结束方式</b></td><td>不向模型提供放弃工具。模型结束回答时如果环境仍在运行，控制循环会提醒它继续。只有环境终止，或步数／非动作预算用完，一次尝试才结束。</td></tr>
+      <tr><td><b>评分</b></td><td>原生 benchmark checker；16 个重新设计的场景使用 world-state-v1。部分 Opus 和 K3 结果按协议规则裁定为 0 分，不是原生 checker 的读数。</td></tr>
+      <tr><td><b>尝试</b></td><td>每个模型每题一次。基础设施中断记为未计分，不算 0 分。</td></tr>
+    </table></div>
+    <p class="note"><b>控制步</b>指仿真中实际执行的一步物理控制，和日志事件的记录序号不是一回事。</p>
+  </section>
+
+  <section id="results">
+    <h2>结果</h2>
+    <p>Astra 解出 15 题，Opus 解出 12 题。K3（2 题）和 DPSK（1 题）解出的题少得多。</p>
+    <figure class="rc-fig" aria-label="结果总览">
+      <figcaption><b>RobotWorld 一图看懂</b><span>柱高 = 得分 · 右侧为全部有录像的尝试，点击方块播放</span></figcaption>
+      <div data-rc="slide"></div>
+    </figure>
+    <p>下图每个小方块是一道题。按结果排序后可以看到，解出的题很少，K3 和 DPSK 解出的题更少。</p>
+    <figure class="chart" id="chart-models" aria-label="各模型得分">
+      <figcaption><b>逐题得分</b><span>实心 = 得分 1 · 描边 = 得分 0 · 虚线 = 仍在运行</span></figcaption>
+      <div class="chart-body"></div>
+    </figure>
+    <p>按领域看，大部分得分来自操作类任务，驾驶和无人机任务也有少量得分。家居移动操作目前所有模型都是 0。</p>
+    <figure class="chart" id="chart-domains" aria-label="各领域得分">
+      <figcaption><b>各领域得分 1 的题数</b><span>解出数 / 该领域题数</span></figcaption>
+      <div class="chart-body"></div>
+    </figure>
+  </section>
+
+  <section id="overlap">
+    <h2>两个跑完的模型解出的是不同的题</h2>
+    <p>Astra 和 Opus 每道题都有结果，可以逐题对比。两者共同解出 8 题。Astra 多解出的 7 题大多是厨房和桌面任务；Opus 多解出的 4 题都是动态控制任务：用杯子接球、受推扰的四足行走、带吊挂负载的无人机悬停，以及单机无人机颠球。</p>
+    <figure class="chart" id="chart-overlap" aria-label="解出题目的重合情况">
+      <figcaption><b>谁解出了哪些题</b><span>Astra 对比 Opus</span></figcaption>
+      <div class="chart-body"></div>
+    </figure>
+  </section>
+
+  <section id="success">
+    <h2>成功的样子</h2>
+    <p>成功的尝试里既有长流程的厨房任务，也有快速的闭环控制。Astra 在 1,800 步预算内用 949 步装好了洗碗机，还跑完了发卡弯赛道。Opus 用 30 步接住了球，并让一台受推扰的四足机器人走满了 1,000 步。</p>
+    <div class="clips" data-clips="astra-53,astra-70,opus-150,opus-142"></div>
+  </section>
+
+  <section id="failures">
+    <h2>失败模式</h2>
+    <p>大多数尝试以 0 分结束，但结束方式各不相同。Astra 的失败大多是环境自然结束或步数用完；Opus 最常见的失败方式是触发非动作上限：有 24 次尝试，是因为它一直在分析、迟迟不让机器人动而被停止。DPSK 触发得更频繁，有 33 次。</p>
+    <figure class="rc-fig" aria-label="尝试如何结束">
+      <figcaption><b>每次尝试是怎么结束的</b><span>圆心 = 解出题数</span></figcaption>
+      <div data-rc="endings"></div>
+    </figure>
+    <p>步数使用情况也印证了这一点。很多尝试远没用完步数预算就结束了：Opus 有 46 次、Astra 有 26 次用了不到一半。步数预算是上限，不是目标，解出题后提前结束完全没问题；但这里大多数提前结束的尝试并没有解出。</p>
+    <figure class="rc-fig" aria-label="步数预算使用比例">
+      <figcaption><b>每次尝试用了多少步数预算</b><span>每个点是一次尝试 · 实际执行控制步 / 该题预算 · 点击播放</span></figcaption>
+      <div data-rc="steps"></div>
+    </figure>
+    <p>下面是两种反复出现的情况，附上录像。</p>
+
+    <h3 id="never-moved">一直在看，却不动手</h3>
+    <p>模型反复查看图像、运行分析，却始终没让机器人动起来。在 Bench2Dex 灵巧手任务上，Opus 有 3 次尝试在 <b>0 个控制步</b>的情况下触发了连续非动作上限。轨迹里在停止之前只有看图和 shell 分析。</p>
+    <div class="clips" data-clips="opus-128,opus-134"></div>
+
+    <h3 id="household">家居任务仍然遥不可及</h3>
+    <p>BEHAVIOR-1K 里的任务，比如搬运杂货、摆餐桌，需要移动机器人依次完成导航、开门、抓取和放置。Astra 在全部 10 题上都用满了 2,000 步预算，全部 0 分。Opus 也是 10 题全部 0 分，其中 7 题是裁定结果。</p>
+    <div class="clips" data-clips="astra-39,opus-050"></div>
+  </section>
+
+  <section id="time">
+    <h2>耗时</h2>
+    <p>每次尝试的墙钟时间中位数：<b>Astra 27 分钟</b>，<b>Opus 51 分钟</b>。这包括模型思考、API 等待和仿真运行；两个模型在不同批次、不同基础设施上运行，所以这不是速度对比。我们没有报告 API 成本，因为没有可比的成本记录。</p>
+  </section>
+
+  <section id="explore">
+    <h2>查看录像</h2>
+    <p>点击上面图表里的任意方格、题目名或条形，即可播放对应录像。首页任务库收录了每个模型、每道题的录像。</p>
+    <p class="cta-row"><a class="btn solid" href="index-zh.html#gallery">首页任务库 →</a></p>
+  </section>
+
+  <section id="limitations">
+    <h2>局限</h2>
+    <ul>
+      <li>每个模型每题只跑一次。多解出 1 题，得分就变化约 1.2 个百分点。</li>
+      <li>设置尚未统一：各模型的推理强度、批次和非动作协议都不同，因此这不是排名。</li>
+      <li>K3 和 DPSK 还有少数题在运行，总分可能还会小幅变化。</li>
+      <li>有 27 个结果（Opus 21 个、K3 6 个）是按用户授权规则裁定的，不是原生 checker 读数，全部为 0 分。</li>
+      <li>部分早期结果产生于现行结束规则之前：Astra 有 9 道 RoboDojo 题在当时还提供放弃工具时由模型主动放弃；Opus 和 K3 有部分 RoboDojo 题在加入“提醒继续”之前，因模型结束回答而提前收尾。这些结果按原记录显示。Opus 和 K3 的 RoboDojo 题正在按现行协议补跑；Astra 那 9 题目前还没有补跑。</li>
+      <li>仅在仿真中测试，没有评估真机迁移、安全性和接触力。</li>
+    </ul>
+  </section>
+</main>
+<footer>RobotWorld · 基于真实实验记录的预评测研究笔记 · <a href="index-zh.html">首页</a></footer>
+<script src="player.js"></script>
+<script src="blog.js"></script>
+<script src="charts.js"></script>
+</body>
+</html>

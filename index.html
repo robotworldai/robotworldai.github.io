@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
+<title>RobotWorld · Benchmarking Multimodal Agents for Robot Use</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="protocol-visuals.css">
+<link rel="stylesheet" href="charts.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<nav class="topnav"><a class="brand" href="#top">RobotWorld</a>
+  <div class="page-tabs"><a href="./" aria-current="page">Home</a><a href="blog.html">Blog</a></div><div><a href="index-zh.html">中文</a><a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#leaderboard">Results</a><a href="#gallery">Tasks</a><a href="#protocol">Protocol</a></div></nav>
+
+<header id="top" class="hero dark">
+  <div class="hero-grid" id="hero-videos" aria-hidden="true"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="kicker">Project page · 2026-10</p>
+    <h1>RobotWorld</h1>
+    <p class="subtitle">Benchmarking Multimodal Agents for Robot Use<br>Across Diverse Tasks and Embodiments</p>
+    <p class="lede">A single multimodal agent controls arms, dexterous hands, humanoids, quadrupeds, cars and drones in simulation, using only public observation and action tools. Hidden evaluators score each episode.</p>
+    <div class="cta"><a class="btn solid" href="#gallery">Explore tasks &amp; recordings</a><a class="btn" href="#leaderboard">See results</a><span class="btn ghost" title="TBD">Paper · TBD</span><span class="btn ghost" title="TBD">Code · TBD</span></div>
+    <div class="stats" id="hero-stats"></div>
+    <figure class="showreel" id="showreel">
+      <figcaption><span>RobotWorld in 45 seconds</span><a href="showreel/en.html">Open video page ↗</a></figcaption>
+      <video controls playsinline preload="metadata" poster="showreel-poster.png" aria-label="RobotWorld 45-second showreel"><source src="showreel/robotworld_showreel_45s_v3_en.mp4?v=20261005b" type="video/mp4">Your browser does not support embedded video. <a href="showreel/en.html">Watch the showreel</a>.</video>
+      <p>Internal preview · Not cleared for public release. Real simulation recordings; clips are not selected only for score 1.</p>
+    </figure>
+  </div>
+  <p class="hero-note">Background: real simulation recordings from evaluated episodes.</p>
+</header>
+
+<main>
+<section id="overview" class="light">
+  <div class="wrap">
+    <p class="num">01 / Overview</p>
+    <h2>How an agent uses a robot</h2>
+    <p class="intro">Each task exposes the robot as a set of tools. The agent reads images and state, chooses actions, and receives execution receipts and new observations. Success is judged from evaluator state that the agent never sees.</p>
+    <ol class="flow">
+      <li><b>Observe</b><span>Camera images, joint and task state; permitted information only</span></li>
+      <li><b>Decide</b><span>The multimodal agent reasons and may call auxiliary analysis tools</span></li>
+      <li><b>Act</b><span>Actions go through environment tools and run as control steps</span></li>
+      <li><b>Feedback</b><span>Execution receipts, new observations and remaining budget</span></li>
+      <li class="private"><b>Hidden evaluation</b><span>Native checker or world-state-v1, never exposed to the agent</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="benchmark" class="light alt">
+  <div class="wrap">
+    <p class="num">02 / Benchmark</p>
+    <h2>Task coverage</h2>
+    <p class="intro" id="coverage-intro"></p>
+    <div class="rc-fig" id="domains" data-rc="embodiments"></div>
+    <div class="benches" id="benches"></div>
+    <figure class="rc-zoom" aria-label="Task overview video">
+      <video muted loop playsinline preload="metadata" poster="overview-zoom.png" src="overview-zoom.mp4"></video>
+      <figcaption><span>From four tasks to all 84 · real Astra simulation recordings</span><span>1.5× speed · no audio</span></figcaption>
+    </figure>
+    <figure class="rc-fig" aria-label="The 84 tasks">
+      <figcaption><b>The 84 tasks at a glance</b><span>One thumbnail per task, grouped by domain · click to watch a recording</span></figcaption>
+      <div data-rc="tasks"></div>
+    </figure>
+  </div>
+</section>
+
+<section id="leaderboard" class="light">
+  <div class="wrap">
+    <p class="num">03 / Results</p>
+    <h2>Results</h2>
+    <figure class="rc-fig" aria-label="Score by model and domain">
+      <figcaption><b>Score over tasks, split by domain</b><span>Segment length = score-1 tasks in that domain · click a segment to play one of them</span></figcaption>
+      <div data-rc="stacked"></div>
+    </figure>
+    <div class="table-scroll"><table class="board" id="board"></table></div>
+  </div>
+</section>
+
+<section id="gallery" class="dark band">
+  <div class="wrap">
+    <p class="num">04 / Tasks &amp; Recordings</p>
+    <h2>Task gallery</h2>
+    <p class="intro">Hover to preview a recording; click to watch it full size.</p>
+    <div class="filters" id="filters">
+      <div class="seg" id="f-model"></div>
+      <div class="seg" id="f-domain"></div>
+      <div class="seg" id="f-score"></div>
+    </div>
+    <p class="count" id="gallery-count"></p>
+    <div class="cards" id="cards"></div>
+    <section class="task-results" id="task-results" aria-labelledby="task-results-title">
+      <h3 id="task-results-title">Per-task results · Compare models</h3>
+      <p class="muted" id="paired-note"></p>
+      <div class="table-scroll paired-window" tabindex="0" aria-label="Scrollable per-task results"><table class="board paired" id="paired"></table></div>
+    </section>
+  </div>
+</section>
+
+<section id="protocol" class="light">
+  <div class="wrap">
+    <p class="num">05 / Protocol</p>
+    <h2>Evaluation protocol</h2>
+    <div class="rules">
+      <article><h3>Two kinds of steps</h3><p><b>Control steps</b> are physical simulation steps actually executed, bounded by the task budget. <b>Trace record indices</b> number logged events. The two are different.</p></article>
+      <article><h3>Action budget</h3><p>Native budgets are kept. BEHAVIOR uses min(official, 2000). The 16 redesigned scenes use approved horizons and world-state-v1 judging.</p></article>
+      <article><h3>End reasons</h3><p>Step-budget limit, native termination and world-state termination are labeled separately. The model has no give-up tool; if it ends a reply while the episode is still running, it is asked to continue. Infrastructure interruptions are unscored, not scored as 0.</p></article>
+      <article><h3>Non-action budget</h3><p>Current runs stop with score 0 after 15 consecutive interactions without a control step, or after a per-task cumulative limit of 30, 60 or 120 (RoboDojo: 30). Some earlier runs used other limits or none; each attempt records its own protocol.</p></article>
+      <article><h3>Recovery</h3><p>On API stream drops or sporadic image-processing rejections, the same simulation and session are kept and resumed after 10/20/40 s backoff, up to 3 times, without replaying actions.</p></article>
+      <article><h3>Coverage</h3><p>84 tasks per model across five domains. Available results, recordings and protocols are linked per task; unfinished runs remain unscored.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="cite" class="light alt">
+  <div class="wrap">
+    <p class="num">06 / Citation</p>
+    <pre class="bib">@article{robotworld2026,
+  title  = {RobotWorld: Benchmarking Multimodal Agents for Robot Use
+            Across Diverse Tasks and Embodiments},
+  author = {TBD},
+  year   = {2026}
+}</pre>
+  </div>
+</section>
+</main>
+<footer><span id="foot"></span></footer>
+<script src="player.js?v=20261006-complete"></script>
+<script src="home.js?v=20261006-complete"></script>
+<script src="result-views.js?v=20261006-complete"></script>
+<script src="protocol-visuals.js"></script>
+<script src="charts.js?v=20261006-complete"></script>
+</body>
+</html>
