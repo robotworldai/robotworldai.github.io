@@ -38,7 +38,11 @@ locations, preserving query parameters and section anchors on GitHub Pages.
 The snapshot adopts the RoboDojo Shell-on cohort. Nine runs have no recording
 because they stopped without executing an action; another four recordings could
 not be read because their MP4 containers were not finalized. Those task results
-remain in the data. Gemini cost is unavailable pending a verified price.
+remain in the data. Gemini 3.8 Flash token inference cost uses the October 7,
+2026 OpenRouter/Google standard list prices: $0.75 per million fresh input tokens,
+$0.075 per million cached input tokens, and $3.75 per million output tokens
+(including thinking). Upstream billing usage is used, not context-window counts.
+Separately billed cache storage and grounding are excluded from this estimate.
 
 Raw experiment logs, credentials, private runtime directories, and internal
 trajectory-review pages are not included. Media paths are local to this repository;
