@@ -7,7 +7,7 @@
 <title>One agent, 84 robot tasks · RobotWorld Blog</title>
 <link rel="stylesheet" href="/assets/css/home.css">
 <link rel="stylesheet" href="/assets/css/theme.css">
-<link rel="stylesheet" href="/assets/css/blog.css">
+<link rel="stylesheet" href="/assets/css/blog.css?v=20261007-findings">
 <link rel="stylesheet" href="/assets/css/charts.css">
 <script src="/assets/js/theme.js"></script>
 </head>
@@ -48,6 +48,16 @@
       <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
     </table></div>
     <p class="note">A <b>control step</b> is one physical simulation step actually executed. It is different from the index of a logged event.</p>
+  </section>
+
+  <section id="findings" aria-labelledby="findings-title">
+    <h2 id="findings-title">Key findings</h2>
+    <p>What the trajectories reveal beyond success rates.</p>
+    <ol class="finding-list">
+      <li><span class="finding-number" aria-hidden="true">01</span><div><h3>Agents build their own perception and control workflows.</h3><p>The trajectories include colour segmentation, camera calibration, spatial estimation and dynamics calculations. Agents turn visual reasoning and code into executable robot commands.</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">02</span><div><h3>Executing an action is not the same as completing a task.</h3><p>Failures arise when agents misread the current state, fail to change strategy after feedback, or declare completion before the goal is satisfied. Reliable robot use requires checking what each action actually achieved.</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">03</span><div><h3>Models take different routes from observation to action.</h3><p>In the stacking case, Astra grasps the first block through successive visual estimates before fitting camera geometry; Opus first writes segmentation code and fits camera parameters. In drone juggling, both compute dynamics, but Opus sustains the contact cycle more effectively. The difference lies in how estimation, computation and feedback are combined.</p></div></li>
+    </ol>
   </section>
 
   <section id="results">

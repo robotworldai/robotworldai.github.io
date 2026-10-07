@@ -73,3 +73,13 @@ blockquote cite{display:block;margin-top:6px;font:normal 12px var(--mono);color:
 }
 
 .clip-media img{width:100%;height:100%;object-fit:contain}.mname,.dhead span{overflow-wrap:anywhere}
+
+/* Compact research findings, before the quantitative results. */
+.post .finding-list{list-style:none;padding:0;margin:20px 0 0;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.post .finding-list li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:16px;margin:0;padding:22px 24px}
+.post .finding-list li+li{border-top:1px solid var(--line)}
+.finding-number{font:600 18px/1.5 var(--mono);color:var(--teal)}
+.post .finding-list h3{margin:0 0 8px;font:600 18px/1.45 var(--sans)}
+.post .finding-list p{margin:0;font-size:15px;line-height:1.7}
+#findings{scroll-margin-top:110px}
+@media(max-width:640px){.post .finding-list li{padding:18px 16px;grid-template-columns:26px minmax(0,1fr);gap:10px}.post .finding-list h3{font-size:17px}}
