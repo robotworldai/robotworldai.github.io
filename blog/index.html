@@ -89,13 +89,36 @@
   </section>
 
   <section id="success">
-    <h2>Success modes</h2>
-    <p>Successful runs include long-horizon kitchen work and fast closed-loop control. GPT-6 Astra loaded a dishwasher in 949 of 1,800 allowed steps and drove a hairpin course. Opus 5.5 caught a ball in a cup in 30 steps and kept a quadruped walking under pushes for its full 1,000-step episode.</p>
-    <div class="clips" data-clips="astra-53,astra-70,opus-150,opus-142"></div>
+    <h2>From capability to robot action</h2>
+    <p>The paper traces how observations, computation and feedback become executable control. These cases illustrate mechanisms within individual episodes; the recordings show the motion, while the accompanying analysis draws on the interaction logs.</p>
+    <h3>Changing the command after feedback</h3>
+    <p>Kimi K3 shortened successive drawer pushes as end-effector displacement decreased, then withdrew to check closure; the environment registered success during withdrawal. In charger insertion, Astra responded to a rejected wrist-camera rotation by lowering and repositioning the idle arm before retrying. The rotation then executed, and the episode later completed the insertion. Feedback was useful because it changed the next action.</p>
+    <div class="clips" data-clips="k3-007,astra-30"></div>
+    <h3>Turning visual estimates into grasping</h3>
+    <p>In stacking, Astra lifted the first blue block before running external image processing or fitting camera geometry. Opus 5.5 instead wrote colour-segmentation code before moving, then sampled arm motions to fit camera parameters. Both reached first placement and retraction at similar physical steps (270 versus 268). Astra subsequently completed the stack; Opus reached its auxiliary-call budget without completion. This comparison shows different routes to initial progress, not two successful episodes.</p>
+    <div class="clips" data-clips="astra-62,opus-082"></div>
+    <h3>Sustaining control after the first contact</h3>
+    <p>Both Astra and Opus 5.5 performed offline dynamics calculations for drone juggling. Opus coordinated levelling, pre-contact acceleration, post-contact thrust reduction and repositioning beneath the ball, reaching 15 valid hits over 800 steps. Astra recorded three hits before termination at step 188. Both used a median of three executed steps per action: building a model and choosing short segments did not by themselves ensure sustained control.</p>
+    <div class="clips" data-clips="astra-82,opus-158"></div>
   </section>
 
   <section id="failures">
-    <h2>Failure modes</h2>
+    <h2>Where the control loop breaks down</h2>
+    <p>A failed score tells us that the goal was not reached. The interaction logs help explain what stopped progress: losing the required object state, remaining in preparation, or treating an unfinished task as complete.</p>
+    <h3>Arm motion without recovery of the object state</h3>
+    <p>Kimi K3 knocked the bottle onto its side during approach. Repeated left-arm attempts failed to secure it; at step 240, it switched to the right arm. Further approach motions used the remaining budget, and pouring remained unfinished at step 400. Reaching new arm poses did not restore the grasp needed for the task.</p>
+    <div class="clips" data-clips="k3-025"></div>
+    <h3>Preparation never advances to the next subgoal</h3>
+    <p>In vegetable chopping, all 69 positive-step calls by Kimi K3 concerned surveying, navigation or clearance around furniture. The final command still attempted kitchen entry. No cutting command appeared before the 2,000-step limit: the bottleneck was reaching the workspace, so this episode does not test the unattempted cutting skill.</p>
+    <div class="clips" data-clips="k3-055"></div>
+    <h3>Execution continues after corrective search stops</h3>
+    <p>Kimi K3 declared block sweeping complete at step 861, then issued 69 commands changing only the empty arm’s height over the final 139 steps. DeepSeek judged further motion unnecessary in stove navigation and spent the final 105 steps issuing zero base-velocity commands. Both tasks remained unsuccessful. Continued tool use did not mean continued correction of the unfinished goal.</p>
+    <div class="clips" data-clips="k3-023,dpsk-004"></div>
+  </section>
+
+  <section id="interaction">
+    <h2>Interaction and budgets</h2>
+    <p>The following charts describe how attempts ended and how much of their control-step budgets they used. These are execution statistics; the stopping condition alone does not explain the underlying failure mechanism.</p>
     <p data-summary="failures"></p>
     <figure class="rc-fig" aria-label="How attempts ended">
       <figcaption><b>How each attempt ended</b><span>Centre = number of tasks solved</span></figcaption>
@@ -106,15 +129,7 @@
       <figcaption><b>How much of the step budget each attempt used</b><span>One dot per attempt · executed control steps / task budget · click a dot to play</span></figcaption>
       <div data-rc="steps"></div>
     </figure>
-    <p>Below are two recurring patterns, each with recordings.</p>
-
-    <h3 id="never-moved">Looking without moving</h3>
-    <p>An agent can keep observing and analysing without executing a control action. Media availability and the stopping reason are shown for each selected attempt.</p>
-    <div class="clips" data-clips="opus-128,opus-134"></div>
-
-    <h3 id="household">Mobile manipulation remains challenging</h3>
-    <p>Mobile-manipulation tasks can combine navigation, opening, grasping and placement. Some tasks are solved, but both GPT-6 Astra and Opus 5.5 fail to complete the grocery-carrying task shown below.</p>
-    <div class="clips" data-clips="astra-39,opus-050"></div>
+    <p class="note">Low step usage can reflect early success, environment termination or exhaustion of the non-action budget. Read it together with the outcome and stopping reason.</p>
   </section>
 
   <section id="time">
