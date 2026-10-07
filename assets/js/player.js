@@ -4,6 +4,8 @@ window.RWPlayer = (() => {
   const zh = document.documentElement.lang.startsWith('zh');
   const t = (en, cn) => zh ? cn : en;
   let dialog = null;
+  // These four inspected recordings contain only the reset frame.
+  const isInitialFrame = r => r.model === 'Gemini' && r.domain === 'aerial' && r.steps === 0;
   function build() {
     dialog = document.createElement('dialog');
     dialog.className = 'rw-player';
@@ -17,7 +19,16 @@ window.RWPlayer = (() => {
   function open(r) {
     if (!dialog) build();
     const media = dialog.querySelector('.rw-media');
-    if (r.video) {
+    if (isInitialFrame(r)) {
+      const img = document.createElement('img');
+      img.src = r.poster;
+      img.alt = t('Initial scene; no control action executed', '初始场景，未执行控制动作');
+      img.style.cssText = 'display:block;width:100%;max-height:70vh;object-fit:contain';
+      const note = document.createElement('p');
+      note.className = 'rw-empty';
+      note.textContent = t('Initial frame only. No control action was executed before the consecutive non-action limit was reached.', '仅初始画面：未执行控制动作，因达到连续非动作次数上限而结束。');
+      media.replaceChildren(img, note);
+    } else if (r.video) {
       const v = document.createElement('video');
       Object.assign(v, {src: r.video, poster: r.poster || '', controls: true, autoplay: true, muted: true, playsInline: true, loop: true});
       media.replaceChildren(v);
@@ -39,5 +50,5 @@ window.RWPlayer = (() => {
     node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(r); } });
     return node;
   }
-  return {open, bind};
+  return {open, bind, isInitialFrame};
 })();

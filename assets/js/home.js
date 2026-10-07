@@ -120,9 +120,9 @@ function card(r, i) {
     el('div', {class: 'meta'},
       el('div', {class: 'src'}, `${r.bench_name} · #${r.id}`),
       el('h4', {}, r.title_en),
-      el('div', {class: 'row'}, el('span', {}, r.model), el('span', {}, r.video ? 'Play recording ▶' : 'No recording'))));
+      el('div', {class: 'row'}, el('span', {}, r.model), el('span', {}, RWPlayer.isInitialFrame(r) ? 'Initial frame · No action' : r.video ? 'Play recording ▶' : 'No recording'))));
   RWPlayer.bind(a, r);
-  if (r.video) {
+  if (r.video && !RWPlayer.isInitialFrame(r)) {
     let v = null;
     a.addEventListener('mouseenter', () => {
       v = el('video', {src: r.video, muted: true, loop: true, playsinline: true, autoplay: true});
