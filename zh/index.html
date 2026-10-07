@@ -5,7 +5,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
 <title>RobotWorld · Benchmarking Multimodal Agents for Robot Use</title>
-<link rel="stylesheet" href="/assets/css/home.css?v=20261007-pareto">
+<link rel="stylesheet" href="/assets/css/home.css?v=20261007-home-findings">
 <link rel="stylesheet" href="/assets/css/theme.css">
 <link rel="stylesheet" href="/assets/css/protocol-visuals.css">
 <link rel="stylesheet" href="/assets/css/charts.css">
@@ -78,9 +78,22 @@
   </div>
 </section>
 
+<section id="key-findings" class="light alt" aria-labelledby="key-findings-title">
+  <div class="wrap">
+    <p class="num">04 / Key findings</p>
+    <h2 id="key-findings-title">核心发现</h2>
+    <p class="intro">分数之外，我们发现了什么？</p>
+    <div class="home-findings">
+      <article class="home-finding"><span class="home-finding-number">01</span><h3>自主构建感知与控制工作流</h3><p>模型将视觉推理与分割、相机标定、动力学计算结合，转化为机器人动作。</p><a href="/blog/zh/#visual-estimation">查看感知与控制案例 <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">02</span><h3>动作执行与任务完成之间的缺口</h3><p>机器人仍在运动，任务却可能不再推进。案例揭示了物体状态丢失、子目标停滞和完成度误判。</p><a href="/blog/zh/#failures">查看闭环失败机制 <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">03</span><h3>不同模型的控制策略</h3><p>叠方块与无人机颠球案例展示了 Astra 和 Opus 如何以不同方式组织直接估计、辅助计算与反馈。</p><a href="/blog/zh/#sustained-control">对比模型控制策略 <span aria-hidden="true">→</span></a></article>
+    </div>
+  </div>
+</section>
+
 <section id="gallery" class="dark band">
   <div class="wrap">
-    <p class="num">04 / 任务与录像</p>
+    <p class="num">05 / 任务与录像</p>
     <h2>任务画廊</h2>
     <p class="intro">悬停预览录像，点击放大观看。</p>
     <div class="filters" id="filters">
@@ -100,7 +113,7 @@
 
 <section id="protocol" class="light">
   <div class="wrap">
-    <p class="num">05 / Protocol</p>
+    <p class="num">06 / Protocol</p>
     <h2>评测口径</h2>
     <div class="rules">
       <article><h3>两种步数</h3><p><b>仿真控制步</b>是环境实际执行的物理控制步，受每题预算限制；<b>轨迹记录序号</b>是日志中的事件编号，二者不同。</p></article>
@@ -115,7 +128,7 @@
 
 <section id="cite" class="light alt">
   <div class="wrap">
-    <p class="num">06 / Citation</p>
+    <p class="num">07 / Citation</p>
     <pre class="bib">@article{robotworld2026,
   title  = {RobotWorld: Benchmarking Multimodal Agents for Robot Use
             Across Diverse Tasks and Embodiments},

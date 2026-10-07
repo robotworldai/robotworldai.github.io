@@ -94,10 +94,10 @@
     <h3>Changing the command after feedback</h3>
     <p>Kimi K3 shortened successive drawer pushes as end-effector displacement decreased, then withdrew to check closure; the environment registered success during withdrawal. In charger insertion, Astra responded to a rejected wrist-camera rotation by lowering and repositioning the idle arm before retrying. The rotation then executed, and the episode later completed the insertion. Feedback was useful because it changed the next action.</p>
     <div class="clips" data-clips="k3-007,astra-30"></div>
-    <h3>Turning visual estimates into grasping</h3>
+    <h3 id="visual-estimation">Turning visual estimates into grasping</h3>
     <p>In stacking, Astra lifted the first blue block before running external image processing or fitting camera geometry. Opus 5.5 instead wrote colour-segmentation code before moving, then sampled arm motions to fit camera parameters. Both reached first placement and retraction at similar physical steps (270 versus 268). Astra subsequently completed the stack; Opus reached its auxiliary-call budget without completion. This comparison shows different routes to initial progress, not two successful episodes.</p>
     <div class="clips" data-clips="astra-62,opus-082"></div>
-    <h3>Sustaining control after the first contact</h3>
+    <h3 id="sustained-control">Sustaining control after the first contact</h3>
     <p>Both Astra and Opus 5.5 performed offline dynamics calculations for drone juggling. Opus coordinated levelling, pre-contact acceleration, post-contact thrust reduction and repositioning beneath the ball, reaching 15 valid hits over 800 steps. Astra recorded three hits before termination at step 188. Both used a median of three executed steps per action: building a model and choosing short segments did not by themselves ensure sustained control.</p>
     <div class="clips" data-clips="astra-82,opus-158"></div>
   </section>
