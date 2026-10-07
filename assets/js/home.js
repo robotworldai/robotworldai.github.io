@@ -118,7 +118,7 @@ function card(r, i) {
   const a = el('div', {class: 'card', style: `animation-delay:${Math.min(i, 24) * 25}ms`},
     thumb,
     el('div', {class: 'meta'},
-      el('div', {class: 'src'}, `${r.bench_name} · #${r.id}`),
+      el('div', {class: 'src'}, `#${r.id}`),
       el('h4', {}, r.title_en),
       el('div', {class: 'row'}, el('span', {}, RWPlayer.fullName(r.model)), el('span', {}, RWPlayer.mediaLabel(r)))));
   RWPlayer.bind(a, r);

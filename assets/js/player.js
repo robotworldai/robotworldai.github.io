@@ -44,7 +44,7 @@ window.RWPlayer = (() => {
     const score = r.score === 1 ? t('Score 1', '得分 1') : r.score === 0 ? t('Score 0', '得分 0') : t('Unscored', '未计分');
     dialog.querySelector('.rw-meta b').textContent = `${({Astra: 'GPT-6 Astra', Opus: 'Opus 5.5', K3: 'Kimi K3', DPSK: 'DeepSeek V4.1 Flash', Gemini: 'Gemini 3.8 Flash'})[r.model] || r.model} · ${score}`;
     dialog.querySelector('.rw-meta span').textContent = zh ? r.title : r.title_en;
-    dialog.querySelector('.rw-meta small').textContent = `${r.bench_name}` + (r.score !== null && r.steps != null ? ` · ${Math.min(r.steps, r.limit)}/${r.limit} ${t('control steps', '控制步')}` : '');
+    dialog.querySelector('.rw-meta small').textContent = r.score !== null && r.steps != null ? `${Math.min(r.steps, r.limit)}/${r.limit} ${t('control steps', '控制步')}` : '';
     dialog.showModal();
   }
   // Turn any element into a button-like trigger for one run.

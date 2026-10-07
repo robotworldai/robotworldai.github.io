@@ -42,7 +42,7 @@
       <tr><td><b>接口</b></td><td>机器人以工具形式提供：观测（图像、关节与任务状态）、动作（各环境专用动作，按控制步执行）和执行回执，允许使用辅助分析工具。</td></tr>
       <tr><td><b>模型</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>设置</b></td><td>推理强度、非动作预算因模型和批次而异，单条任务保留对应设置。</td></tr>
-      <tr><td><b>预算</b></td><td>沿用原题步数预算，BEHAVIOR 取 min(官方, 2000)。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
+      <tr><td><b>预算</b></td><td>沿用原题步数预算，10 项家居移动操作任务额外以 2000 步为上限。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
       <tr><td><b>结束方式</b></td><td>不向模型提供放弃工具。模型结束回答时如果环境仍在运行，控制循环会提醒它继续。只有环境终止，或步数／非动作预算用完，一次尝试才结束。</td></tr>
       <tr><td><b>评分</b></td><td>原生 benchmark checker；16 个重新设计的场景使用 world-state-v1。部分 Opus 5.5 和 Kimi K3 结果按协议规则裁定为 0 分，不是原生 checker 的读数。</td></tr>
       <tr><td><b>尝试</b></td><td>每个模型每题采用一条结果。基础设施异常后的重跑不重复计分。</td></tr>
@@ -120,12 +120,12 @@
 
   <section id="limitations">
     <h2>局限</h2>
-    <ul><li>每个模型每题采用一条结果；基础设施重跑不重复计分。</li><li>各模型的推理强度、批次和非动作协议存在差异，应结合实验设置解释分数。</li><li><span data-summary="adjudicated"></span></li><li>RoboDojo 使用已完成的 Shell-on 批次，所有模型均包含无人机排球 1v1。</li><li>仅在仿真中测试，没有评估真机迁移、安全性和接触力。</li></ul>
+    <ul><li>每个模型每题采用一条结果；基础设施重跑不重复计分。</li><li>各模型的推理强度、批次和非动作协议存在差异，应结合实验设置解释分数。</li><li><span data-summary="adjudicated"></span></li><li>对应任务使用已完成的 Shell-on 批次，所有模型均包含无人机排球 1v1。</li><li>仅在仿真中测试，没有评估真机迁移、安全性和接触力。</li></ul>
   </section>
 </main>
 <footer>RobotWorld · 基于真实实验记录的预评测研究笔记 · <a href="/zh/">首页</a></footer>
-<script src="/assets/js/player.js"></script>
-<script src="/assets/js/blog.js"></script>
+<script src="/assets/js/player.js?v=20261007-labels"></script>
+<script src="/assets/js/blog.js?v=20261007-labels"></script>
 <script src="/assets/js/charts.js"></script>
 </body>
 </html>

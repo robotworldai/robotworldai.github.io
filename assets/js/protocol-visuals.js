@@ -66,8 +66,8 @@
   ]);
   takeaway(nonaction, t('Whichever limit is hit first ends the attempt. Earlier runs may use other limits.', '两个上限哪个先到就停。早期结果可能用其他上限，以每次尝试的记录为准。'));
   cards[3].querySelector('p:not(.pv-take)').textContent = t(
-    'Current rule: 15 consecutive OR a per-task cumulative limit of 30 / 60 / 120 non-action interactions (RoboDojo: 30). Executed control steps reset only the consecutive counter. Some earlier runs used other limits or none; check the recorded protocol for each attempt.',
-    '现行规则：连续 15 次，或累计达到每题上限 30／60／120 次非动作交互（RoboDojo 为 30）。实际执行控制步只清零连续计数，不清零累计计数。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。');
+    'Current rule: 15 consecutive OR a per-task cumulative limit of 30 / 60 / 120 non-action interactions. Executed control steps reset only the consecutive counter. Some earlier runs used other limits or none; check the recorded protocol for each attempt.',
+    '现行规则：连续 15 次，或累计达到每题上限 30／60／120 次非动作交互。实际执行控制步只清零连续计数，不清零累计计数。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。');
 
   const recovery = figure(4, t('Example: the connection drops mid-task', '例子：做到一半网络断了'));
   story(recovery, [

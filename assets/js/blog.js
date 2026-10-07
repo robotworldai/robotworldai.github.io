@@ -87,7 +87,7 @@
         const card = el('figure', {class: 'clip'},
           el('div', {class: 'clip-media'}, v, el('span', {class: 'clip-score ' + (r.score === 1 ? 'one' : 'zero')}, score)),
           el('figcaption', {}, el('b', {}, RWPlayer.fullName(r.model)), el('span', {}, zh ? r.title : r.title_en),
-            el('small', {}, `${r.bench_name} · ${r.steps == null ? '—' : r.limit ? Math.min(r.steps, r.limit) : r.steps}/${r.limit} ${t('steps', '步')}`)));
+            el('small', {}, `${r.steps == null ? '—' : r.limit ? Math.min(r.steps, r.limit) : r.steps}/${r.limit} ${t('steps', '步')}`)));
         // Play on hover/focus (desktop) or tap (mobile); keeps the page light.
         const play = () => playable && v.play().catch(() => {});
         const stop = () => playable && v.pause();

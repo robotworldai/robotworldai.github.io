@@ -106,9 +106,9 @@
     <h2>评测口径</h2>
     <div class="rules">
       <article><h3>两种步数</h3><p><b>仿真控制步</b>是环境实际执行的物理控制步，受每题预算限制；<b>轨迹记录序号</b>是日志中的事件编号，二者不同。</p></article>
-      <article><h3>动作预算</h3><p>沿用原题预算；BEHAVIOR 用 min(官方, 2000)；16 项重新设计的场景使用已批准时长与 world-state-v1 判定。</p></article>
+      <article><h3>动作预算</h3><p>沿用原题预算，10 项家居移动操作任务额外以 2000 步为上限；16 项重新设计的场景使用已批准时长与 world-state-v1 判定。</p></article>
       <article><h3>结束原因</h3><p>达到控制步上限、环境原生终止、world-state 终止分别标注。不向模型提供放弃工具；模型结束回答但环境仍在运行时，会提醒它继续。基础设施中断不计分，不算 0 分。</p></article>
-      <article><h3>非动作预算</h3><p>现行规则：连续 15 次交互没有执行控制步，或累计达到每题上限 30／60／120 次（RoboDojo 为 30），即停止并记 0 分。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。</p></article>
+      <article><h3>非动作预算</h3><p>现行规则：连续 15 次交互没有执行控制步，或累计达到每题上限 30／60／120 次，即停止并记 0 分。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。</p></article>
       <article><h3>恢复</h3><p>API 断流与偶发图片处理拒绝，保留同一仿真与会话，退避 10/20/40 秒原地恢复，最多 3 次，不重放已完成动作。</p></article>
       <article><h3>覆盖</h3><p>每模型 84 题，覆盖五大领域。各题展示实际结果、录像与协议；未完成记录仍为未计分。</p></article>
     </div>
@@ -128,10 +128,10 @@
 </section>
 </main>
 <footer><span id="foot"></span></footer>
-<script src="/assets/js/player.js?v=20261006-complete"></script>
-<script src="/assets/js/home-zh.js?v=20261006-complete"></script>
-<script src="/assets/js/result-views.js?v=20261007-pareto"></script>
-<script src="/assets/js/protocol-visuals.js"></script>
+<script src="/assets/js/player.js?v=20261007-labels"></script>
+<script src="/assets/js/home-zh.js?v=20261007-labels"></script>
+<script src="/assets/js/result-views.js?v=20261007-labels"></script>
+<script src="/assets/js/protocol-visuals.js?v=20261007-labels"></script>
 <script src="/assets/js/charts.js?v=20261006-complete"></script>
 </body>
 </html>

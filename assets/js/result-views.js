@@ -139,7 +139,7 @@ function pareto(data, usage) {
   }
 }
 
-// Original waffle: per model, one row of squares per source group.
+// Per model, one group of squares per task domain.
 function waffle(data) {
   const note = document.createElement('p');
   note.className = 'waffle-legend';
@@ -152,19 +152,19 @@ function waffle(data) {
     title.textContent = RV_FULL[model];
     section.append(title);
     const runs = data.runs.filter(r => r.model === model);
-    for (const bench of [...new Set(runs.map(r => r.bench))].sort()) {
+    for (const [domain, info] of Object.entries(DOMAINS)) {
       const group = document.createElement('div');
       group.className = 'waffle-group';
       const label = document.createElement('h4');
-      label.textContent = runs.find(r => r.bench === bench).bench_name;
+      label.textContent = info.name;
       const squares = document.createElement('div');
       squares.className = 'waffle-squares';
-      for (const run of runs.filter(r => r.bench === bench)) {
+      for (const run of runs.filter(r => r.domain === domain)) {
         const cell = document.createElement('span');
         cell.className = 'waffle-cell ' + (run.score === 1 ? 'one' : run.score === 0 ? 'zero' : 'unscored');
         cell.textContent = run.score === null ? '?' : String(run.score);
         RWPlayer.bind(cell, run);
-        cell.title = `${RV_FULL[model]} · ${run.bench_name} · ${isZh ? run.title : run.title_en} · ${run.score === null ? T('Unscored', '未计分') : T('Score ', '得分 ') + run.score}`;
+        cell.title = `${RV_FULL[model]} · ${isZh ? run.title : run.title_en} · ${run.score === null ? T('Unscored', '未计分') : T('Score ', '得分 ') + run.score}`;
         cell.setAttribute('aria-label', cell.title);
         squares.append(cell);
       }

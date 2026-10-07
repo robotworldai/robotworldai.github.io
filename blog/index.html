@@ -42,7 +42,7 @@
       <tr><td><b>Interface</b></td><td>Each robot is exposed as tools: observe (images, joint and task state), act (environment-specific actions, executed as control steps), and receipts. Auxiliary analysis tools are allowed.</td></tr>
       <tr><td><b>Models</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>Settings</b></td><td>Reasoning effort and non-action budgets vary by model and batch; each selected run retains its settings.</td></tr>
-      <tr><td><b>Budgets</b></td><td>Native step budgets are kept; BEHAVIOR uses min(official, 2000). Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
+      <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with the 10 household mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
       <tr><td><b>Ending</b></td><td>The model has no give-up tool. If it ends a reply while the episode is still running, the control loop asks it to continue. An attempt ends only when the environment terminates or a step / non-action budget runs out.</td></tr>
       <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus 5.5 and Kimi K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
       <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
@@ -120,12 +120,12 @@
 
   <section id="limitations">
     <h2>Limitations</h2>
-    <ul><li>One selected result per model and task; infrastructure retries are not counted twice.</li><li>Reasoning effort, batches and non-action protocols differ across models; interpret scores with their experimental settings.</li><li><span data-summary="adjudicated"></span></li><li>RoboDojo uses the completed Shell-on cohort. Every model includes drone volleyball 1v1.</li><li>Simulation only. Real-robot transfer, safety and contact forces were not evaluated.</li></ul>
+    <ul><li>One selected result per model and task; infrastructure retries are not counted twice.</li><li>Reasoning effort, batches and non-action protocols differ across models; interpret scores with their experimental settings.</li><li><span data-summary="adjudicated"></span></li><li>The completed Shell-on cohort is used for the corresponding tasks. Every model includes drone volleyball 1v1.</li><li>Simulation only. Real-robot transfer, safety and contact forces were not evaluated.</li></ul>
   </section>
 </main>
 <footer>RobotWorld · Preliminary research notes grounded in recorded experiments · <a href="/">Home</a></footer>
-<script src="/assets/js/player.js"></script>
-<script src="/assets/js/blog.js"></script>
+<script src="/assets/js/player.js?v=20261007-labels"></script>
+<script src="/assets/js/blog.js?v=20261007-labels"></script>
 <script src="/assets/js/charts.js"></script>
 </body>
 </html>
