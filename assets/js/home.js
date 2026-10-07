@@ -25,7 +25,7 @@ function el(tag, attrs = {}, ...kids) {
   return n;
 }
 const pct = (a, b) => b ? (100 * a / b).toFixed(1) + '%' : '—';
-const scoreBadge = s => s === 1 ? el('span', {class: 's1'}, 'Score 1') : s === 0 ? el('span', {class: 's0'}, 'Score 0') : el('span', {class: 'sn'}, 'Unscored');
+const scoreBadge = s => s === 1 ? el('span', {class: 's1'}, 'Success') : s === 0 ? el('span', {class: 's0'}, 'Failure') : el('span', {class: 'sn'}, 'Unscored');
 const stopClass = r => r.stop === 'reached step budget' ? 'stop horizon' : 'stop';
 
 function summarize(runs) {
@@ -61,7 +61,7 @@ function board(data, runs, usage) {
   const U = usage || {};
   const tok = v => v >= 1e9 ? (v / 1e9).toFixed(2) + 'B' : Math.round(v / 1e6) + 'M';
   const t = document.getElementById('board');
-  t.append(el('tr', {}, ['Model', 'Score', 'Tokens', 'Cost'].map((h, i) => el('th', {class: i >= 1 ? 'n' : null}, h))));
+  t.append(el('tr', {}, ['Model', 'Success rate', 'Tokens', 'Cost'].map((h, i) => el('th', {class: i >= 1 ? 'n' : null}, h))));
   for (const m of MODELS) {
     const rs = runs.filter(r => r.model === m), s = summarize(rs);
     t.append(el('tr', {},
@@ -81,7 +81,7 @@ function paired(runs) {
   const astra = Object.fromEntries(runs.filter(r => r.model === 'Astra').map(r => [key(r), r]));
   const others = runs.filter(r => r.model !== 'Astra');
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
-  document.getElementById('paired-note').textContent = `· ${keys.length} tasks. Each cell: score · control steps executed / step budget (bar = share of budget used). Unscored tasks have no step count yet. Click a cell to play its recording.`;
+  document.getElementById('paired-note').textContent = `· ${keys.length} tasks. Each cell: outcome · control steps executed / step budget (bar = share of budget used). Unscored tasks have no step count yet. Click a cell to play its recording.`;
   const t = document.getElementById('paired');
   t.append(el('tr', {}, el('th', {}, 'Task'), MODELS.map(m => el('th', {}, RWPlayer.fullName(m)))));
   for (const k of keys) {
@@ -157,7 +157,7 @@ fetch('/data/data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
   hero(ALL); stats(data, astra); coverage(data, astra); fetch('/data/usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(u => board(data, ALL, u)); paired(ALL);
   seg('f-model', MODELS.map(m => [m, FULL[m]]), 'model');
   seg('f-domain', [['all', 'All domains'], ...Object.entries(DOMAINS).map(([k, d]) => [k, d.name])], 'domain');
-  seg('f-score', [['all', 'All'], ['1', 'Score 1'], ['0', 'Score 0'], ['none', 'Unscored']], 'score');
+  seg('f-score', [['all', 'All'], ['1', 'Success'], ['0', 'Failure'], ['none', 'Unscored']], 'score');
   setupMore();
   render();
   document.getElementById('foot').textContent = `Data updated ${bjt(data.opusk3_generated || data.astra_generated)} · ${data.registered} tasks per model`;

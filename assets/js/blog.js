@@ -29,7 +29,7 @@
       const hit = rs.filter(r => r.score === 1).length, scored = rs.filter(r => r.score !== null).length;
       const strip = el('div', {class: 'strip'});
       [...rs].sort((a, b) => (b.score ?? -1) - (a.score ?? -1)).forEach(r =>
-        strip.append(RWPlayer.bind(el('span', {class: 'c ' + (r.score === 1 ? 'one' : r.score === 0 ? 'zero' : 'none'), title: `${zh ? r.title : r.title_en} · ${r.score ?? t('unscored', '未计分')}`}), r)));
+        strip.append(RWPlayer.bind(el('span', {class: 'c ' + (r.score === 1 ? 'one' : r.score === 0 ? 'zero' : 'none'), title: `${zh ? r.title : r.title_en} · ${r.score === 1 ? t('Success', '成功') : r.score === 0 ? t('Failure', '失败') : t('Unscored', '未评分')}`}), r)));
       body('chart-models').append(el('div', {class: 'mrow'},
         el('div', {class: 'mname'}, el('b', {}, RWPlayer.fullName(m))),
         strip,
@@ -79,7 +79,7 @@
       for (const id of box.dataset.clips.split(',')) {
         const r = byId[id];
         if (!r) continue;
-        const score = r.score === 1 ? t('Score 1', '得分 1') : r.score === 0 ? t('Score 0', '得分 0') : t('Unscored', '未计分');
+        const score = r.score === 1 ? t('Success', '成功') : r.score === 0 ? t('Failure', '失败') : t('Unscored', '未评分');
         const playable = RWPlayer.canPlay(r);
         const v = playable ? el('video', {muted: true, loop: true, playsinline: true, preload: 'none', poster: r.poster, src: r.video})
           : r.poster ? el('img', {src: r.poster, alt: RWPlayer.mediaLabel(r)}) : el('p', {}, RWPlayer.mediaLabel(r));

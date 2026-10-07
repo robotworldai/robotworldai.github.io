@@ -24,7 +24,7 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 打完一整场 1v1 无人机排球赛并获胜（得分 1，498 个控制步后环境原生终止）。</figcaption>
+    <figcaption>Opus 5.5 打完一整场 1v1 无人机排球赛并获胜（498 个控制步后环境原生终止）。</figcaption>
   </figure>
 
   <section id="tldr">
@@ -68,13 +68,13 @@
       <div data-rc="slide"></div>
     </figure>
     <p>下图每个小方块是一道题。按结果排序后可以看到，解出的题很少，Kimi K3 和 DeepSeek V4.1 Flash 解出的题更少。</p>
-    <figure class="chart" id="chart-models" aria-label="各模型得分">
-      <figcaption><b>逐题得分</b><span>实心 = 得分 1 · 描边 = 得分 0 · 虚线 = 无结果</span></figcaption>
+    <figure class="chart" id="chart-models" aria-label="各模型任务结果">
+      <figcaption><b>逐题结果</b><span>实心 = 成功 · 描边 = 失败 · 虚线 = 无结果</span></figcaption>
       <div class="chart-body"></div>
     </figure>
     <p>在 20 道移动操作任务中，GPT-6 Astra 完成 4 道，Kimi K3 完成 1 道，其余模型均未成功。下图展示五个领域的结果。</p>
-    <figure class="chart" id="chart-domains" aria-label="各领域得分">
-      <figcaption><b>各领域得分 1 的题数</b><span>解出数 / 该领域题数</span></figcaption>
+    <figure class="chart" id="chart-domains" aria-label="各领域成功情况">
+      <figcaption><b>各领域成功任务数</b><span>解出数 / 该领域题数</span></figcaption>
       <div class="chart-body"></div>
     </figure>
   </section>
@@ -104,7 +104,7 @@
 
   <section id="failures">
     <h2>机器人闭环在哪里失效</h2>
-    <p>失败分数说明目标没有实现，交互日志则帮助解释进展为何停滞：所需物体状态丢失、一直停留在准备阶段，或把未完成的任务误判为完成。</p>
+    <p>失败结果说明目标没有实现，交互日志则帮助解释进展为何停滞：所需物体状态丢失、一直停留在准备阶段，或把未完成的任务误判为完成。</p>
     <h3>机械臂还在动，物体状态却没有恢复</h3>
     <p>Kimi K3 在接近时撞倒了瓶子，随后多次左臂尝试未能抓牢，到第 240 步才切换右臂。后续接近动作耗尽剩余预算，第 400 步时倒液任务仍未完成。机械臂到达新的位置，并没有恢复任务所需的抓持状态。</p>
     <div class="clips" data-clips="k3-025"></div>
@@ -149,8 +149,8 @@
   </section>
 </main>
 <footer>RobotWorld · 基于真实实验记录的预评测研究笔记 · <a href="/zh/">首页</a></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-domains"></script>
-<script src="/assets/js/charts.js?v=20261007-bar-layout"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/blog.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>

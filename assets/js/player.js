@@ -57,7 +57,7 @@ window.RWPlayer = (() => {
     } else {
       fallback();
     }
-    const score = r.score === 1 ? t('Score 1', '得分 1') : r.score === 0 ? t('Score 0', '得分 0') : t('Unscored', '未计分');
+    const score = r.score === 1 ? t('Success', '成功') : r.score === 0 ? t('Failure', '失败') : t('Unscored', '未评分');
     dialog.querySelector('.rw-meta b').textContent = `${({Astra: 'GPT-6 Astra', Opus: 'Opus 5.5', K3: 'Kimi K3', DPSK: 'DeepSeek V4.1 Flash', Gemini: 'Gemini 3.8 Flash'})[r.model] || r.model} · ${score}`;
     dialog.querySelector('.rw-meta span').textContent = zh ? r.title : r.title_en;
     dialog.querySelector('.rw-steps').textContent = r.score !== null && r.steps != null ? `${Math.min(r.steps, r.limit)}/${r.limit} ${t('control steps', '控制步')}` : '';

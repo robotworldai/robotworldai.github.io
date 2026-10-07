@@ -25,7 +25,7 @@ function el(tag, attrs = {}, ...kids) {
   return n;
 }
 const pct = (a, b) => b ? (100 * a / b).toFixed(1) + '%' : '—';
-const scoreBadge = s => s === 1 ? el('span', {class: 's1'}, '得分 1') : s === 0 ? el('span', {class: 's0'}, '得分 0') : el('span', {class: 'sn'}, '未计分');
+const scoreBadge = s => s === 1 ? el('span', {class: 's1'}, '成功') : s === 0 ? el('span', {class: 's0'}, '失败') : el('span', {class: 'sn'}, '未评分');
 const stopClass = r => r.stop === 'reached step budget' ? 'stop horizon' : 'stop';
 
 function summarize(runs) {
@@ -61,7 +61,7 @@ function board(data, runs, usage) {
   const U = usage || {};
   const tok = v => v >= 1e9 ? (v / 1e9).toFixed(2) + 'B' : Math.round(v / 1e6) + 'M';
   const t = document.getElementById('board');
-  t.append(el('tr', {}, ['模型', '得分', 'Tokens', '费用'].map((h, i) => el('th', {class: i >= 1 ? 'n' : null}, h))));
+  t.append(el('tr', {}, ['模型', '成功率', 'Tokens', '费用'].map((h, i) => el('th', {class: i >= 1 ? 'n' : null}, h))));
   for (const m of MODELS) {
     const rs = runs.filter(r => r.model === m), s = summarize(rs);
     t.append(el('tr', {},
@@ -81,7 +81,7 @@ function paired(runs) {
   const astra = Object.fromEntries(runs.filter(r => r.model === 'Astra').map(r => [key(r), r]));
   const others = runs.filter(r => r.model !== 'Astra');
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
-  document.getElementById('paired-note').textContent = `· ${keys.length} 题。每格：得分 · 实际执行控制步 / 步数上限（条形 = 预算使用比例）。未计分的题暂无步数。点击格子播放录像。`;
+  document.getElementById('paired-note').textContent = `· ${keys.length} 题。每格：结果 · 实际执行控制步 / 步数上限（条形 = 预算使用比例）。未评分的题暂无步数。点击格子播放录像。`;
   const t = document.getElementById('paired');
   t.append(el('tr', {}, el('th', {}, '任务'), MODELS.map(m => el('th', {}, RWPlayer.fullName(m)))));
   for (const k of keys) {
@@ -157,7 +157,7 @@ fetch('/data/data.json', {cache: 'no-cache'}).then(r => r.json()).then(data => {
   hero(ALL); stats(data, astra); coverage(data, astra); fetch('/data/usage.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(u => board(data, ALL, u)); paired(ALL);
   seg('f-model', MODELS.map(m => [m, FULL[m]]), 'model');
   seg('f-domain', [['all', '全部领域'], ...Object.entries(DOMAINS).map(([k, d]) => [k, d.name])], 'domain');
-  seg('f-score', [['all', '全部'], ['1', '得分 1'], ['0', '得分 0'], ['none', '未计分']], 'score');
+  seg('f-score', [['all', '全部'], ['1', '成功'], ['0', '失败'], ['none', '未评分']], 'score');
   setupMore();
   render();
   document.getElementById('foot').textContent = `数据更新于 ${bjt(data.opusk3_generated || data.astra_generated)} · 每模型 ${data.registered} 题`;

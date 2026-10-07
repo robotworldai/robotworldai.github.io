@@ -59,8 +59,8 @@ function pareto(data, usage) {
   plots.className = 'pareto-plots';
   const cap = document.createElement('p');
   cap.className = 'pareto-cap';
-  cap.textContent = T('Same score scale; lower resource use and higher score are better. Dashed line: Pareto frontier. Resources = valid per-task mean × task count; missing usage is estimated, not zero. Tokens include cached input + output. Cost uses list-price estimates, not invoices. Time includes simulation and API waits, not just model speed.',
-    '三个子图使用相同得分刻度；资源越少、得分越高越好。虚线为 Pareto 前沿。资源用量 = 有效任务均值 × 任务数；缺失用量按均值估算，不计为零。Tokens 含缓存输入与输出；费用为标价估算，非账单；时长含仿真与 API 等待，不代表纯模型速度。');
+  cap.textContent = T('Same success-rate scale; lower resource use and higher success rate are better. Dashed line: Pareto frontier. Resources = valid per-task mean × task count; missing usage is estimated, not zero. Tokens include cached input + output. Cost uses list-price estimates, not invoices. Time includes simulation and API waits, not just model speed.',
+    '三个子图使用相同成功率刻度；资源越少、成功率越高越好。虚线为 Pareto 前沿。资源用量 = 有效任务均值 × 任务数；缺失用量按均值估算，不计为零。Tokens 含缓存输入与输出；费用为标价估算，非账单；时长含仿真与 API 等待，不代表纯模型速度。');
   paretoPanel.append(legend, plots, cap);
 
   const ymax = Math.max(25, ...RV_MODELS.map(m => {
@@ -90,7 +90,7 @@ function pareto(data, usage) {
     const W = 360, H = 310, L = 44, R = 28, TP = 28, B = 44;
     const xmax = (Math.max(0, ...pts.map(p => p.x)) || 1) * 1.15;
     const X = v => L + (W - L - R) * v / xmax, Y = v => H - B - (H - TP - B) * v / ymax;
-    const s = svgEl('svg', {viewBox: `0 0 ${W} ${H}`, class: 'pareto-svg', role: 'group', 'aria-label': `${T('Score versus', '得分对比')} ${label}`});
+    const s = svgEl('svg', {viewBox: `0 0 ${W} ${H}`, class: 'pareto-svg', role: 'group', 'aria-label': `${T('Success rate versus', '成功率对比')} ${label}`});
     for (let g = 0; g <= ymax; g += 5) {
       s.append(svgEl('line', {x1: L, x2: W - R, y1: Y(g), y2: Y(g), class: 'pg'}));
       s.append(svgEl('text', {x: L - 10, y: Y(g) + 4, 'text-anchor': 'end', class: 'pt'}, g + '%'));
@@ -100,7 +100,7 @@ function pareto(data, usage) {
       s.append(svgEl('line', {x1: X(v), x2: X(v), y1: TP, y2: H - B, class: 'pg'}));
       s.append(svgEl('text', {x: X(v), y: H - B + 20, 'text-anchor': 'middle', class: 'pt'}, i ? fmt(v) : '0'));
     }
-    s.append(svgEl('text', {x: L, y: 14, class: 'pt'}, T('Score ↑', '得分 ↑')));
+    s.append(svgEl('text', {x: L, y: 14, class: 'pt'}, T('Success rate ↑', '成功率 ↑')));
     const front = pts.filter(p => p.front).sort((a, b) => a.x - b.x);
     if (front.length) {
       let d = `M ${X(front[0].x)} ${Y(front[0].y)}`;
@@ -143,7 +143,7 @@ function pareto(data, usage) {
 function waffle(data) {
   const note = document.createElement('p');
   note.className = 'waffle-legend';
-  note.textContent = T('1 = Score 1 · 0 = Score 0 · ? = Unscored. Click a square to play its recording.', '1 = 得分 1 · 0 = 得分 0 · ? = 未计分。点击方格播放录像。');
+  note.textContent = T('✓ = Success · × = Failure · ? = Unscored. Click a square to play its recording.', '✓ = 成功 · × = 失败 · ? = 未评分。点击方格播放录像。');
   gridPanel.append(note);
   for (const model of RV_MODELS) {
     const section = document.createElement('section');
@@ -162,9 +162,9 @@ function waffle(data) {
       for (const run of runs.filter(r => r.domain === domain)) {
         const cell = document.createElement('span');
         cell.className = 'waffle-cell ' + (run.score === 1 ? 'one' : run.score === 0 ? 'zero' : 'unscored');
-        cell.textContent = run.score === null ? '?' : String(run.score);
+        cell.textContent = run.score === null ? '?' : run.score === 1 ? '✓' : '×';
         RWPlayer.bind(cell, run);
-        cell.title = `${RV_FULL[model]} · ${isZh ? run.title : run.title_en} · ${run.score === null ? T('Unscored', '未计分') : T('Score ', '得分 ') + run.score}`;
+        cell.title = `${RV_FULL[model]} · ${isZh ? run.title : run.title_en} · ${run.score === null ? T('Unscored', '未评分') : run.score === 1 ? T('Success', '成功') : T('Failure', '失败')}`;
         cell.setAttribute('aria-label', cell.title);
         squares.append(cell);
       }

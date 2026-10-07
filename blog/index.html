@@ -24,7 +24,7 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 plays a full 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
+    <figcaption>Opus 5.5 plays a full 1v1 drone volleyball match and wins (native termination after 498 control steps).</figcaption>
   </figure>
 
   <section id="tldr">
@@ -68,13 +68,13 @@
       <div data-rc="slide"></div>
     </figure>
     <p>Each square below is one task. Sorting by result shows how few tasks are solved and how few of Kimi K3's and DeepSeek V4.1 Flash's tasks are solved.</p>
-    <figure class="chart" id="chart-models" aria-label="Score per model">
-      <figcaption><b>Score by task</b><span>Filled = score 1 · outline = score 0 · dashed = no result</span></figcaption>
+    <figure class="chart" id="chart-models" aria-label="Task outcomes by model">
+      <figcaption><b>Task outcomes</b><span>Filled = success · outline = failure · dashed = no result</span></figcaption>
       <div class="chart-body"></div>
     </figure>
     <p>In the 20 mobile-manipulation tasks, GPT-6 Astra completes four and Kimi K3 completes one; the other models complete none. The chart below reports results across all five domains.</p>
-    <figure class="chart" id="chart-domains" aria-label="Score per domain">
-      <figcaption><b>Score 1 by domain</b><span>Number solved / tasks in domain</span></figcaption>
+    <figure class="chart" id="chart-domains" aria-label="Successes by domain">
+      <figcaption><b>Successful tasks by domain</b><span>Number solved / tasks in domain</span></figcaption>
       <div class="chart-body"></div>
     </figure>
   </section>
@@ -104,7 +104,7 @@
 
   <section id="failures">
     <h2>Where the control loop breaks down</h2>
-    <p>A failed score tells us that the goal was not reached. The interaction logs help explain what stopped progress: losing the required object state, remaining in preparation, or treating an unfinished task as complete.</p>
+    <p>A failure tells us that the goal was not reached. The interaction logs help explain what stopped progress: losing the required object state, remaining in preparation, or treating an unfinished task as complete.</p>
     <h3>Arm motion without recovery of the object state</h3>
     <p>Kimi K3 knocked the bottle onto its side during approach. Repeated left-arm attempts failed to secure it; at step 240, it switched to the right arm. Further approach motions used the remaining budget, and pouring remained unfinished at step 400. Reaching new arm poses did not restore the grasp needed for the task.</p>
     <div class="clips" data-clips="k3-025"></div>
@@ -149,8 +149,8 @@
   </section>
 </main>
 <footer>RobotWorld · Preliminary research notes grounded in recorded experiments · <a href="/">Home</a></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-domains"></script>
-<script src="/assets/js/charts.js?v=20261007-bar-layout"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/blog.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>
