@@ -50,6 +50,19 @@ function stats(data, astra) {
 }
 
 function coverage(data, astra) {
+  const section = el('section', {class: 'domain-summary', 'aria-label': 'Five task domains'},
+    el('h3', {}, 'Five task domains'),
+    el('p', {}, 'Manipulation and mobile manipulation are separate domains; each task belongs to exactly one domain.'));
+  const cards = el('div', {class: 'domain-summary-grid'});
+  for (const [key, domain] of Object.entries(DOMAINS)) {
+    const count = astra.filter(r => r.domain === key).length;
+    const link = el('a', {class: 'domain-summary-card', href: '#gallery'},
+      el('b', {}, domain.name), el('span', {}, `${count} tasks`));
+    link.addEventListener('click', () => document.querySelector(`#f-domain [data-v="${key}"]`)?.click());
+    cards.append(link);
+  }
+  section.append(cards);
+  document.getElementById('domains').before(section);
   document.getElementById('coverage-intro').textContent = "Embodiment types follow the paper's provisional grouping; one task belongs to one type. Bar length = number of tasks.";
   document.getElementById('benches').remove();
 }

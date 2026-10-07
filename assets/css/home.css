@@ -1,4 +1,5 @@
 @font-face{font-family:'Google Sans Code';src:url('/assets/fonts/google-sans-code.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.domain-summary{margin:28px 0}.domain-summary h3{margin-bottom:8px}.domain-summary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}.domain-summary-card{display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:18px;border:1px solid var(--line);border-radius:8px;color:inherit;text-decoration:none;background:var(--paper)}.domain-summary-card:hover{border-color:var(--teal)}.domain-summary-card span{font:600 22px var(--mono)}@media(max-width:760px){.domain-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 :root{
   --ink:#1c2226;--muted:#66707a;--paper:#f7f5ef;--paper2:#efece3;--line:#dcd7ca;
   --night:#111418;--night2:#191e24;--nline:#2b333c;--nink:#e9ecef;--nmuted:#9aa4ae;
