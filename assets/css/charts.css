@@ -46,7 +46,7 @@
 .rc-slide>.rc-wallbox{grid-column:1/-1}
 .rc-kicker{font:600 18px var(--mono);margin:0}
 .rc-sub{font:12px var(--mono);letter-spacing:1.5px;color:var(--muted);margin:18px 0 10px}
-.rc-vbars{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;height:300px;padding:0 0 74px 38px}
+.rc-vbars{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;height:300px;padding:0 0 74px 38px}
 .rc-grid{position:absolute;left:0;right:0;border-top:1px solid var(--line);font:10px var(--mono);color:var(--muted);transform:translateY(-1px);margin-bottom:74px;padding-top:2px}
 .rc-vcol{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1}
 .rc-vtrack{position:relative;flex:1;width:100%;margin-bottom:8px}

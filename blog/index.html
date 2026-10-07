@@ -24,18 +24,12 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus plays a full VolleyBots 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
+    <figcaption>Opus 5.5 plays a full VolleyBots 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
   </figure>
 
   <section id="tldr">
     <h2>TL;DR</h2>
-    <ul class="tldr">
-      <li>84 simulated robot tasks across 8 embodiment types and 5 task domains. Each task scores <b>0 or 1</b>.</li>
-      <li>Two models have a result on every task: <b>Astra 17.9%</b> and <b>Opus 14.3%</b>. Opus's total includes 21 adjudicated results, all score 0.</li>
-      <li>K3 and DPSK score far lower: <b>K3 2.4%</b> and <b>DPSK 1.2%</b>. A few of their tasks are still running.</li>
-      <li>The two complete models solved <b>mostly different tasks</b>: they share 8 successes, Astra has 7 more, Opus 4 more. 65 tasks were solved by neither.</li>
-      <li>No model scored on <b>household mobile manipulation</b> (BEHAVIOR-1K, 0 of 10 for both complete models).</li>
-    </ul>
+    <p>Each task scores 0 or 1. These statistics use the same result data as the homepage.</p><ul class="tldr" data-summary="tldr"></ul>
     <p>RobotWorld asks a simple question: if you give a general multimodal agent a robot as a set of tools, can it get the job done? The agent sees camera images and robot state, sends actions, and gets back execution receipts. A hidden evaluator, which the agent never sees, decides the score.</p>
     <p>This is an early snapshot, not a leaderboard. Models ran in different batches with different reasoning-effort settings and non-action protocols. We report what happened, show recordings, and flag where the numbers are not comparable.</p>
   </section>
@@ -46,26 +40,26 @@
       <tr><th>Setup</th><th>Configuration</th></tr>
       <tr><td><b>Tasks</b></td><td>84 tasks per model, built on open-source simulators. By embodiment: 24 bimanual or dexterous, 20 mobile manipulators, 14 fixed-base arms, 11 wheeled vehicles, 4 bipeds or humanoids, 4 wheel-legged, 4 aerial, 3 quadrupeds. By domain: 48 manipulation, 10 household mobile manipulation, 11 locomotion, 11 driving, 4 aerial.</td></tr>
       <tr><td><b>Interface</b></td><td>Each robot is exposed as tools: observe (images, joint and task state), act (environment-specific actions, executed as control steps), and receipts. Auxiliary analysis tools are allowed.</td></tr>
-      <tr><td><b>Models</b></td><td>Astra, Opus, Kimi K3 (K3) and DeepSeek V4.1 Flash (DPSK).</td></tr>
-      <tr><td><b>Settings</b></td><td>Reasoning effort: xhigh for Astra and Opus, xhigh or high for K3, high for DPSK. Current runs use 15 consecutive or 30 / 60 / 120 cumulative non-action limits per task; some earlier batches used other limits.</td></tr>
+      <tr><td><b>Models</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
+      <tr><td><b>Settings</b></td><td>Reasoning effort and non-action budgets vary by model and batch; each selected run retains its settings.</td></tr>
       <tr><td><b>Budgets</b></td><td>Native step budgets are kept; BEHAVIOR uses min(official, 2000). Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
       <tr><td><b>Ending</b></td><td>The model has no give-up tool. If it ends a reply while the episode is still running, the control loop asks it to continue. An attempt ends only when the environment terminates or a step / non-action budget runs out.</td></tr>
-      <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus and K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
-      <tr><td><b>Attempts</b></td><td>One attempt per model per task. Infrastructure interruptions are unscored, not 0.</td></tr>
+      <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus 5.5 and Kimi K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
+      <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
     </table></div>
     <p class="note">A <b>control step</b> is one physical simulation step actually executed. It is different from the index of a logged event.</p>
   </section>
 
   <section id="results">
     <h2>Results</h2>
-    <p>Astra solved 15 tasks and Opus 12. K3 (2) and DPSK (1) solve far fewer.</p>
+    <p data-summary="scores"></p>
     <figure class="rc-fig" aria-label="Results overview">
       <figcaption><b>RobotWorld at a glance</b><span>Bar = score · right: every recorded attempt, click a tile to play it</span></figcaption>
       <div data-rc="slide"></div>
     </figure>
-    <p>Each square below is one task. Sorting by result shows how few tasks are solved and how few of K3's and DPSK's tasks are solved.</p>
+    <p>Each square below is one task. Sorting by result shows how few tasks are solved and how few of Kimi K3's and DeepSeek V4.1 Flash's tasks are solved.</p>
     <figure class="chart" id="chart-models" aria-label="Score per model">
-      <figcaption><b>Score by task</b><span>Filled = score 1 · outline = score 0 · dashed = still running</span></figcaption>
+      <figcaption><b>Score by task</b><span>Filled = score 1 · outline = score 0 · dashed = no result</span></figcaption>
       <div class="chart-body"></div>
     </figure>
     <p>By domain, most successes are in manipulation, with a few in driving and drone tasks. Household mobile manipulation is still at zero for every model.</p>
@@ -76,28 +70,28 @@
   </section>
 
   <section id="overlap">
-    <h2>The two complete models solved different tasks</h2>
-    <p>Astra and Opus both have a result on every task, so we can compare them task by task. They agree on 8 successes. Astra's 7 extra successes are mostly kitchen and tabletop tasks; Opus's 4 extra successes are dynamic tasks: catching a ball, a pushed quadruped, a drone with a hanging payload, and solo drone volleyball.</p>
+    <h2>Which tasks did GPT-6 Astra and Opus 5.5 solve?</h2>
+    <p data-summary="overlap"></p>
     <figure class="chart" id="chart-overlap" aria-label="Overlap of successes">
-      <figcaption><b>Who solved what</b><span>Astra vs Opus</span></figcaption>
+      <figcaption><b>Who solved what</b><span>GPT-6 Astra vs Opus 5.5</span></figcaption>
       <div class="chart-body"></div>
     </figure>
   </section>
 
   <section id="success">
     <h2>Success modes</h2>
-    <p>Successful runs include long-horizon kitchen work and fast closed-loop control. Astra loaded a dishwasher in 949 of 1,800 allowed steps and drove a hairpin course. Opus caught a ball in a cup in 30 steps and kept a quadruped walking under pushes for its full 1,000-step episode.</p>
+    <p>Successful runs include long-horizon kitchen work and fast closed-loop control. GPT-6 Astra loaded a dishwasher in 949 of 1,800 allowed steps and drove a hairpin course. Opus 5.5 caught a ball in a cup in 30 steps and kept a quadruped walking under pushes for its full 1,000-step episode.</p>
     <div class="clips" data-clips="astra-53,astra-70,opus-150,opus-142"></div>
   </section>
 
   <section id="failures">
     <h2>Failure modes</h2>
-    <p>Most attempts end at 0, but they end in different ways. Astra's failures mostly end when the environment terminates or the step budget runs out. For Opus, the most common way to fail is the non-action limit: 24 of its attempts stopped because it kept analysing without moving the robot. DPSK hits the same limit even more often, in 33 of its attempts.</p>
+    <p data-summary="failures"></p>
     <figure class="rc-fig" aria-label="How attempts ended">
       <figcaption><b>How each attempt ended</b><span>Centre = number of tasks solved</span></figcaption>
       <div data-rc="endings"></div>
     </figure>
-    <p>Step use tells a similar story. Many attempts end long before the step budget is used: 46 Opus attempts and 26 Astra attempts used less than half. A step budget is a maximum, not a target, so finishing early is fine when the task is solved; most early stops here are not.</p>
+    <p data-summary="early"></p>
     <figure class="rc-fig" aria-label="Share of step budget used">
       <figcaption><b>How much of the step budget each attempt used</b><span>One dot per attempt · executed control steps / task budget · click a dot to play</span></figcaption>
       <div data-rc="steps"></div>
@@ -105,35 +99,28 @@
     <p>Below are two recurring patterns, each with recordings.</p>
 
     <h3 id="never-moved">Looking without moving</h3>
-    <p>The model keeps inspecting images and running analysis without ever moving the robot. On Bench2Dex dexterous-hand tasks, three Opus attempts hit the consecutive non-action limit with <b>0 control steps</b> executed. The traces show only image views and shell analysis before the stop.</p>
+    <p>An agent can keep observing and analysing without executing a control action. Media availability and the stopping reason are shown for each selected attempt.</p>
     <div class="clips" data-clips="opus-128,opus-134"></div>
 
     <h3 id="household">Household tasks stay out of reach</h3>
-    <p>BEHAVIOR-1K tasks such as carrying in groceries or setting the table ask a mobile robot to navigate, open, pick and place in sequence. Astra used the full 2,000-step budget on all 10 and scored 0. Opus also scored 0 on all 10; 7 of those are adjudicated results.</p>
+    <p>Household mobile manipulation combines navigation, opening, grasping and placement. The domain chart above reports the current results for each model.</p>
     <div class="clips" data-clips="astra-39,opus-050"></div>
   </section>
 
   <section id="time">
-    <h2>Time</h2>
-    <p>Median wall-clock time per attempt was <b>27 minutes for Astra</b> and <b>51 minutes for Opus</b>. This includes model thinking, API waits and simulation, and the two models ran different batches on different infrastructure, so it is not a speed comparison. We do not report API cost, because we do not have comparable cost records.</p>
+    <h2>Time and cost</h2>
+    <p data-summary="time"></p>
   </section>
 
   <section id="explore">
     <h2>Explore the recordings</h2>
-    <p>Click any square, task name or bar in the figures above to play its recording. The task gallery on the home page has recordings for every model and task.</p>
+    <p>Open a chart item or task card to inspect its recording. Motion recordings can be played; single-frame captures show a still image. Missing or unavailable recordings are labelled separately.</p>
     <p class="cta-row"><a class="btn solid" href="/#gallery">Task gallery →</a></p>
   </section>
 
   <section id="limitations">
     <h2>Limitations</h2>
-    <ul>
-      <li>One attempt per model per task. One more success changes a score by about 1.2 points.</li>
-      <li>Settings are not unified: reasoning effort, batch and non-action protocol differ across models. This is not a ranking.</li>
-      <li>A few K3 and DPSK tasks are still running; their totals may still change slightly.</li>
-      <li>27 results (21 Opus, 6 K3) are adjudicated under a user-authorized rule, not read from a native checker. All are score 0.</li>
-      <li>Some early results predate the current ending rules: 9 Astra RoboDojo attempts ended when the model gave up while that tool was still offered, and some Opus and K3 RoboDojo attempts ended when the model stopped replying, before the continue prompt was added. They are shown as recorded. Opus and K3 RoboDojo tasks are being rerun under the current protocol; the 9 Astra attempts have not been rerun yet.</li>
-      <li>Simulation only. Real-robot transfer, safety and contact forces were not evaluated.</li>
-    </ul>
+    <ul><li>One selected result per model and task; infrastructure retries are not counted twice.</li><li>Reasoning effort, batches and non-action protocols differ across models; interpret scores with their experimental settings.</li><li><span data-summary="adjudicated"></span></li><li>RoboDojo uses the completed Shell-on cohort. Every model includes drone volleyball 1v1.</li><li>Simulation only. Real-robot transfer, safety and contact forces were not evaluated.</li></ul>
   </section>
 </main>
 <footer>RobotWorld · Preliminary research notes grounded in recorded experiments · <a href="/">Home</a></footer>

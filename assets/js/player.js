@@ -4,8 +4,13 @@ window.RWPlayer = (() => {
   const zh = document.documentElement.lang.startsWith('zh');
   const t = (en, cn) => zh ? cn : en;
   let dialog = null;
-  // These four inspected recordings contain only the reset frame.
-  const isInitialFrame = r => r.model === 'Gemini' && r.domain === 'aerial' && r.steps === 0;
+  const fullName = m => ({Astra:'GPT-6 Astra', Opus:'Opus 5.5', K3:'Kimi K3', DPSK:'DeepSeek V4.1 Flash', Gemini:'Gemini 3.8 Flash'})[m] || m;
+  const isInitialFrame = r => r.media_status === 'initial';
+  const canPlay = r => Boolean(r.video) && (!r.media_status || r.media_status === 'video');
+  const mediaLabel = r => isInitialFrame(r)
+    ? (r.steps === 0 ? t('Initial frame · No action', '仅初始画面 · 未执行动作') : t('Single frame only', '仅单帧画面'))
+    : r.media_status === 'unavailable' ? t('Recording unavailable', '录像不可用')
+    : canPlay(r) ? t('Play recording', '播放录像') : t('No recording', '无录像');
   function build() {
     dialog = document.createElement('dialog');
     dialog.className = 'rw-player';
@@ -22,18 +27,19 @@ window.RWPlayer = (() => {
     if (isInitialFrame(r)) {
       const img = document.createElement('img');
       img.src = r.poster;
-      img.alt = t('Initial scene; no control action executed', '初始场景，未执行控制动作');
+      img.alt = mediaLabel(r);
       img.style.cssText = 'display:block;width:100%;max-height:70vh;object-fit:contain';
       const note = document.createElement('p');
       note.className = 'rw-empty';
-      note.textContent = t('Initial frame only. No control action was executed before the consecutive non-action limit was reached.', '仅初始画面：未执行控制动作，因达到连续非动作次数上限而结束。');
+      note.textContent = mediaLabel(r) + (r.steps === 0 && (r.stop || '').includes('nonaction consecutive')
+        ? t('. Stopped at the consecutive non-action limit.', '，因达到连续非动作次数上限而结束。') : '');
       media.replaceChildren(img, note);
-    } else if (r.video) {
+    } else if (canPlay(r)) {
       const v = document.createElement('video');
       Object.assign(v, {src: r.video, poster: r.poster || '', controls: true, autoplay: true, muted: true, playsInline: true, loop: true});
       media.replaceChildren(v);
     } else {
-      media.replaceChildren(Object.assign(document.createElement('p'), {className: 'rw-empty', textContent: t('No recording available for this attempt.', '这次尝试没有可用录像。')}));
+      media.replaceChildren(Object.assign(document.createElement('p'), {className: 'rw-empty', textContent: mediaLabel(r)}));
     }
     const score = r.score === 1 ? t('Score 1', '得分 1') : r.score === 0 ? t('Score 0', '得分 0') : t('Unscored', '未计分');
     dialog.querySelector('.rw-meta b').textContent = `${({Astra: 'GPT-6 Astra', Opus: 'Opus 5.5', K3: 'Kimi K3', DPSK: 'DeepSeek V4.1 Flash', Gemini: 'Gemini 3.8 Flash'})[r.model] || r.model} · ${score}`;
@@ -50,5 +56,5 @@ window.RWPlayer = (() => {
     node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(r); } });
     return node;
   }
-  return {open, bind, isInitialFrame};
+  return {open, bind, isInitialFrame, canPlay, mediaLabel, fullName};
 })();

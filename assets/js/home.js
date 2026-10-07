@@ -83,7 +83,7 @@ function paired(runs) {
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
   document.getElementById('paired-note').textContent = `· ${keys.length} tasks. Each cell: score · control steps executed / step budget (bar = share of budget used). Unscored tasks have no step count yet. Click a cell to play its recording.`;
   const t = document.getElementById('paired');
-  t.append(el('tr', {}, el('th', {}, 'Task'), MODELS.map(m => el('th', {}, m))));
+  t.append(el('tr', {}, el('th', {}, 'Task'), MODELS.map(m => el('th', {}, RWPlayer.fullName(m)))));
   for (const k of keys) {
     const a = astra[k];
     t.append(el('tr', {}, el('td', {}, a.title_en),
@@ -120,9 +120,9 @@ function card(r, i) {
     el('div', {class: 'meta'},
       el('div', {class: 'src'}, `${r.bench_name} · #${r.id}`),
       el('h4', {}, r.title_en),
-      el('div', {class: 'row'}, el('span', {}, r.model), el('span', {}, RWPlayer.isInitialFrame(r) ? 'Initial frame · No action' : r.video ? 'Play recording ▶' : 'No recording'))));
+      el('div', {class: 'row'}, el('span', {}, RWPlayer.fullName(r.model)), el('span', {}, RWPlayer.mediaLabel(r)))));
   RWPlayer.bind(a, r);
-  if (r.video && !RWPlayer.isInitialFrame(r)) {
+  if (RWPlayer.canPlay(r)) {
     let v = null;
     a.addEventListener('mouseenter', () => {
       v = el('video', {src: r.video, muted: true, loop: true, playsinline: true, autoplay: true});

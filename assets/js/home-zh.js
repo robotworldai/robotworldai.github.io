@@ -83,7 +83,7 @@ function paired(runs) {
   const keys = [...new Set(others.map(key))].filter(k => astra[k]);
   document.getElementById('paired-note').textContent = `· ${keys.length} 题。每格：得分 · 实际执行控制步 / 步数上限（条形 = 预算使用比例）。未计分的题暂无步数。点击格子播放录像。`;
   const t = document.getElementById('paired');
-  t.append(el('tr', {}, el('th', {}, '任务'), MODELS.map(m => el('th', {}, m))));
+  t.append(el('tr', {}, el('th', {}, '任务'), MODELS.map(m => el('th', {}, RWPlayer.fullName(m)))));
   for (const k of keys) {
     const a = astra[k];
     t.append(el('tr', {}, el('td', {}, a.title),
@@ -120,9 +120,9 @@ function card(r, i) {
     el('div', {class: 'meta'},
       el('div', {class: 'src'}, `${r.bench_name} · #${r.id}`),
       el('h4', {}, r.title),
-      el('div', {class: 'row'}, el('span', {}, r.model), el('span', {}, RWPlayer.isInitialFrame(r) ? '仅初始画面 · 未执行动作' : r.video ? '播放录像 ▶' : '暂无录像'))));
+      el('div', {class: 'row'}, el('span', {}, RWPlayer.fullName(r.model)), el('span', {}, RWPlayer.mediaLabel(r)))));
   RWPlayer.bind(a, r);
-  if (r.video && !RWPlayer.isInitialFrame(r)) {
+  if (RWPlayer.canPlay(r)) {
     let v = null;
     a.addEventListener('mouseenter', () => {
       v = el('video', {src: r.video, muted: true, loop: true, playsinline: true, autoplay: true});

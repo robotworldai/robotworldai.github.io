@@ -24,7 +24,10 @@
    "poster": "/assets/recordings/bb76f54017addf729a61.png",
    "video": "/assets/recordings/8eeec77536d85a39df58.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 300,
+   "video_seconds": 6.0
   },
   {
    "id": "astra-02",
@@ -47,7 +50,10 @@
    "poster": "/assets/recordings/84f52963a45f3301ee88.png",
    "video": "/assets/recordings/6d9467bd66eb278e1b88.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 42,
+   "video_seconds": 1.68
   },
   {
    "id": "astra-03",
@@ -70,7 +76,10 @@
    "poster": "/assets/recordings/de76e04d7852c169f679.png",
    "video": "/assets/recordings/5108ece78253a9c5732f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 100,
+   "video_seconds": 2.0
   },
   {
    "id": "astra-04",
@@ -93,7 +102,10 @@
    "poster": "/assets/recordings/1ffa57e4cf867878783c.png",
    "video": "/assets/recordings/26e5c47ac8a1547c829f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 192,
+   "video_seconds": 3.84
   },
   {
    "id": "astra-05",
@@ -116,7 +128,10 @@
    "poster": "/assets/recordings/9e9dd3c3beed6e94006a.png",
    "video": "/assets/recordings/e2947209f918d3210e25.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 512,
+   "video_seconds": 10.24
   },
   {
    "id": "astra-06",
@@ -139,7 +154,10 @@
    "poster": "/assets/recordings/2f238a10f5575472a6ad.png",
    "video": "/assets/recordings/a55eba6d9a8ce835f183.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "astra-07",
@@ -162,7 +180,10 @@
    "poster": "/assets/recordings/2d522ff8825d0b136c5e.png",
    "video": "/assets/recordings/6b9cc73d9e7b70a45a87.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "astra-08",
@@ -185,7 +206,10 @@
    "poster": "/assets/recordings/1527f2008ce868f3b12b.png",
    "video": "/assets/recordings/ad39cb32bde2305e80db.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "astra-09",
@@ -208,7 +232,10 @@
    "poster": "/assets/recordings/055b758efa9380ac6f2c.png",
    "video": "/assets/recordings/bd3f06aff90ee5cf1b3e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 20.025
   },
   {
    "id": "astra-10",
@@ -231,7 +258,10 @@
    "poster": "/assets/recordings/a3c0023bcb0041a87220.png",
    "video": "/assets/recordings/142b680a0fd5f443d9bb.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 8.080645
   },
   {
    "id": "astra-11",
@@ -254,7 +284,10 @@
    "poster": "/assets/recordings/b34eb2bbcdce4d3bfa44.png",
    "video": "/assets/recordings/c219245014f368b766f5.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 682,
+   "video_seconds": 34.1
   },
   {
    "id": "astra-12",
@@ -277,7 +310,10 @@
    "poster": "/assets/recordings/5f133ac381e389b61f83.png",
    "video": "/assets/recordings/066e30740c51fa8be9b7.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 987,
+   "video_seconds": 49.35
   },
   {
    "id": "astra-13",
@@ -300,7 +336,10 @@
    "poster": "/assets/recordings/a0261fdf1c9ccab464db.png",
    "video": "/assets/recordings/96c3ef652d168a94ac62.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1150,
+   "video_seconds": 57.5
   },
   {
    "id": "astra-14",
@@ -323,7 +362,10 @@
    "poster": "/assets/recordings/5ded04bfc03c2e01dd40.png",
    "video": "/assets/recordings/a6cf99e17bf8f1d159e4.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1081,
+   "video_seconds": 54.05
   },
   {
    "id": "astra-15",
@@ -346,7 +388,10 @@
    "poster": "/assets/recordings/13748c03228ccac9ce57.png",
    "video": "/assets/recordings/914d5034fe4e02b3e281.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 965,
+   "video_seconds": 48.25
   },
   {
    "id": "astra-16",
@@ -369,7 +414,10 @@
    "poster": "/assets/recordings/7c7de030fd9e693ccd62.png",
    "video": "/assets/recordings/1a779c21af6c69ebfe38.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1062,
+   "video_seconds": 53.1
   },
   {
    "id": "astra-17",
@@ -392,7 +440,10 @@
    "poster": "/assets/recordings/b93f42463538b5763d5f.png",
    "video": "/assets/recordings/f719c62bdad35433fac6.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 594,
+   "video_seconds": 29.7
   },
   {
    "id": "astra-18",
@@ -415,7 +466,10 @@
    "poster": "/assets/recordings/1d2d9023237b1f708c01.png",
    "video": "/assets/recordings/163727ca7e5e5dc8e284.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1214,
+   "video_seconds": 60.7
   },
   {
    "id": "astra-20",
@@ -438,7 +492,10 @@
    "poster": "/assets/recordings/16b27828ad9c8a906100.png",
    "video": "/assets/recordings/ebc801f3c8343f0dec9a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 306,
+   "video_seconds": 15.3
   },
   {
    "id": "astra-21",
@@ -461,7 +518,10 @@
    "poster": "/assets/recordings/c4aeb9c785eb8e8d12c6.png",
    "video": "/assets/recordings/8dd63f28d6829f640ea5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 596,
+   "video_seconds": 29.8
   },
   {
    "id": "astra-22",
@@ -484,7 +544,10 @@
    "poster": "/assets/recordings/65e7e3bf72b12c7afa87.png",
    "video": "/assets/recordings/c7ede5a3295998aa8172.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 440,
+   "video_seconds": 22.0
   },
   {
    "id": "astra-23",
@@ -507,7 +570,10 @@
    "poster": "/assets/recordings/0aa0ab1c7ea38ac49abd.png",
    "video": "/assets/recordings/7e8406705fc99e8b846d.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 279,
+   "video_seconds": 18.6
   },
   {
    "id": "astra-24",
@@ -530,7 +596,10 @@
    "poster": "/assets/recordings/d2edf8a5fd65efc81026.png",
    "video": "/assets/recordings/87daf3b323908f4b56e7.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "astra-25",
@@ -553,7 +622,10 @@
    "poster": "/assets/recordings/0f5cc9d32b664c9e0067.png",
    "video": "/assets/recordings/3b059e019a76ca7483aa.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 40.04
   },
   {
    "id": "astra-26",
@@ -576,7 +648,10 @@
    "poster": "/assets/recordings/cce8b925d5d6923f249b.png",
    "video": "/assets/recordings/19402d6dd82a112f19be.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "astra-27",
@@ -599,7 +674,10 @@
    "poster": "/assets/recordings/74cde07b4987bffd9d00.png",
    "video": "/assets/recordings/a91481f7b444f5ee1345.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1401,
+   "video_seconds": 56.04
   },
   {
    "id": "astra-28",
@@ -622,7 +700,10 @@
    "poster": "/assets/recordings/a6083b052b2965fd7f29.png",
    "video": "/assets/recordings/4bf65660cf4bd3d3e0ae.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "astra-29",
@@ -645,7 +726,10 @@
    "poster": "/assets/recordings/f9539daca375d2efb696.png",
    "video": "/assets/recordings/afe5bd6765ad284eaa73.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "astra-30",
@@ -668,7 +752,10 @@
    "poster": "/assets/recordings/286d6fc81fae23401a8d.png",
    "video": "/assets/recordings/ccfab216a4b3ade2bbb3.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 324,
+   "video_seconds": 12.96
   },
   {
    "id": "astra-31",
@@ -691,7 +778,10 @@
    "poster": "/assets/recordings/798923e187041b53a6fd.png",
    "video": "/assets/recordings/c0bea77f7e6607d3d697.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "astra-32",
@@ -714,7 +804,10 @@
    "poster": "/assets/recordings/e9ad58f527fbf7700d87.png",
    "video": "/assets/recordings/f9e1de3fd82a518c1a24.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "astra-33",
@@ -737,7 +830,10 @@
    "poster": "/assets/recordings/d35cf72acbc06f8370a8.png",
    "video": "/assets/recordings/4ba992c51e0b749b1e3b.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1101,
+   "video_seconds": 44.04
   },
   {
    "id": "astra-34",
@@ -760,7 +856,10 @@
    "poster": "/assets/recordings/c6964ab811a75c37d726.png",
    "video": "/assets/recordings/2f76a97172c340688dbf.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "astra-35",
@@ -783,7 +882,10 @@
    "poster": "/assets/recordings/154834d4119a5a7e0e7f.png",
    "video": "/assets/recordings/1a43dc497a20b8e52218.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "astra-36",
@@ -806,7 +908,10 @@
    "poster": "/assets/recordings/ea5f27e1f6a4f6b861aa.png",
    "video": "/assets/recordings/aa79a07dd16c63d6871a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "astra-37",
@@ -829,7 +934,10 @@
    "poster": "/assets/recordings/f64a8837aa1788f3eb17.png",
    "video": "/assets/recordings/60bc15212635a8c7948c.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 381,
+   "video_seconds": 15.24
   },
   {
    "id": "astra-38",
@@ -852,7 +960,10 @@
    "poster": "/assets/recordings/e9c570ec5198b3cf1298.png",
    "video": "/assets/recordings/dd37b54d7c62bf4888c8.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 301,
+   "video_seconds": 12.04
   },
   {
    "id": "astra-39",
@@ -875,7 +986,10 @@
    "poster": "/assets/recordings/ab997d6b2c6cb236af1b.png",
    "video": "/assets/recordings/eae865e2982fad140207.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-40",
@@ -898,7 +1012,10 @@
    "poster": "/assets/recordings/96d36ae03efa46f8d769.png",
    "video": "/assets/recordings/d49edbf7887722c25a80.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-41",
@@ -921,7 +1038,10 @@
    "poster": "/assets/recordings/7aa5b40ad2cffce398a2.png",
    "video": "/assets/recordings/b59660d19622c387d788.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-42",
@@ -944,7 +1064,10 @@
    "poster": "/assets/recordings/8ea2580adb9ecb3133e2.png",
    "video": "/assets/recordings/d5772ad9b1c7388304e2.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-43",
@@ -967,7 +1090,10 @@
    "poster": "/assets/recordings/0db223da26cf44f406b2.png",
    "video": "/assets/recordings/8c145e77e671e496e0d9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-44",
@@ -990,7 +1116,10 @@
    "poster": "/assets/recordings/2b97f994676178b17b4e.png",
    "video": "/assets/recordings/7603d31a2ea67d953f21.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-45",
@@ -1013,7 +1142,10 @@
    "poster": "/assets/recordings/ac9e0c8e26e09362644a.png",
    "video": "/assets/recordings/b977d860865718d38489.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-46",
@@ -1036,7 +1168,10 @@
    "poster": "/assets/recordings/5e2f708c02e468d32942.png",
    "video": "/assets/recordings/a2d822acc2f073c86efa.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-47",
@@ -1059,7 +1194,10 @@
    "poster": "/assets/recordings/80d95eee0941f1e1f5f8.png",
    "video": "/assets/recordings/de12fea47cd48a132080.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-48",
@@ -1082,7 +1220,10 @@
    "poster": "/assets/recordings/a36e832eb057ce515aea.png",
    "video": "/assets/recordings/919b4631a0879e172894.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "astra-49",
@@ -1105,7 +1246,10 @@
    "poster": "/assets/recordings/b7a7338059b61212ebd5.png",
    "video": "/assets/recordings/33c60738d0f205570d64.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 30.05
   },
   {
    "id": "astra-50",
@@ -1128,7 +1272,10 @@
    "poster": "/assets/recordings/8996d436878dac8e22f8.png",
    "video": "/assets/recordings/49c6a4cc3dec731432aa.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3001,
+   "video_seconds": 150.05
   },
   {
    "id": "astra-51",
@@ -1151,7 +1298,10 @@
    "poster": "/assets/recordings/86c0bc4c5850f5ad89c7.png",
    "video": "/assets/recordings/193b58a74d431470ce1b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3901,
+   "video_seconds": 195.05
   },
   {
    "id": "astra-52",
@@ -1174,7 +1324,10 @@
    "poster": "/assets/recordings/4a4dff4a6f05b63a3a10.png",
    "video": "/assets/recordings/2ae8df3d66cc6c6f5d87.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1351,
+   "video_seconds": 67.55
   },
   {
    "id": "astra-53",
@@ -1197,7 +1350,10 @@
    "poster": "/assets/recordings/cbc6c5225fca517c84c1.png",
    "video": "/assets/recordings/4d2f70a9b1f10d9e8796.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 950,
+   "video_seconds": 47.5
   },
   {
    "id": "astra-54",
@@ -1220,7 +1376,10 @@
    "poster": "/assets/recordings/47bfe5d8ff3efc4a63f8.png",
    "video": "/assets/recordings/cc2242d83b2f7ea84697.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1501,
+   "video_seconds": 75.05
   },
   {
    "id": "astra-55",
@@ -1243,7 +1402,10 @@
    "poster": "/assets/recordings/e6ff96cb2ba74630cec4.png",
    "video": "/assets/recordings/dc14df7119f5bffc1f0d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3301,
+   "video_seconds": 165.05
   },
   {
    "id": "astra-56",
@@ -1266,7 +1428,10 @@
    "poster": "/assets/recordings/ed6a259dd6b7d7a16466.png",
    "video": "/assets/recordings/ad1839608dcf27c9a09c.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2699,
+   "video_seconds": 179.933333
   },
   {
    "id": "astra-57",
@@ -1289,7 +1454,10 @@
    "poster": "/assets/recordings/f2a7203895ada1b2f739.png",
    "video": "/assets/recordings/de92f09c16f25cfd3e37.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2699,
+   "video_seconds": 179.933333
   },
   {
    "id": "astra-58",
@@ -1312,7 +1480,10 @@
    "poster": "/assets/recordings/52a3e592d5c581ad92df.png",
    "video": "/assets/recordings/afc1778119df865a8a15.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1066,
+   "video_seconds": 71.066667
   },
   {
    "id": "astra-59",
@@ -1335,7 +1506,10 @@
    "poster": "/assets/recordings/0195af253f18c77adc76.png",
    "video": "/assets/recordings/7c1863fede0eefb50552.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 285,
+   "video_seconds": 19.0
   },
   {
    "id": "astra-60",
@@ -1358,7 +1532,10 @@
    "poster": "/assets/recordings/6318f4fd0a4f650a7f2a.png",
    "video": "/assets/recordings/398d3db1b5b0067967ff.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 283,
+   "video_seconds": 18.866667
   },
   {
    "id": "astra-61",
@@ -1381,7 +1558,10 @@
    "poster": "/assets/recordings/afaf3dec6810a443911d.png",
    "video": "/assets/recordings/f3fc7b337c12c8a8312c.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2699,
+   "video_seconds": 179.933333
   },
   {
    "id": "astra-62",
@@ -1404,7 +1584,10 @@
    "poster": "/assets/recordings/2ccfb1c6f122691f1338.png",
    "video": "/assets/recordings/53848a69bc5bdf28847a.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 634,
+   "video_seconds": 42.266667
   },
   {
    "id": "astra-63",
@@ -1427,7 +1610,10 @@
    "poster": "/assets/recordings/d6cbd9edeab51cafcbb3.png",
    "video": "/assets/recordings/6f0400d56a3a4272571b.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 783,
+   "video_seconds": 52.2
   },
   {
    "id": "astra-64",
@@ -1450,7 +1636,10 @@
    "poster": "/assets/recordings/ef26220cb4f5b2ab4304.png",
    "video": "/assets/recordings/76978b2a8db681ee29a1.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 899,
+   "video_seconds": 59.933333
   },
   {
    "id": "astra-65",
@@ -1473,7 +1662,10 @@
    "poster": "/assets/recordings/442c70ecac637d596b7c.png",
    "video": "/assets/recordings/838f23f44b39203605fe.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 124,
+   "video_seconds": 2.48
   },
   {
    "id": "astra-66",
@@ -1496,7 +1688,10 @@
    "poster": "/assets/recordings/350d18b780346a0d54f0.png",
    "video": "/assets/recordings/68cdbde3872dab90442e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 92,
+   "video_seconds": 1.84
   },
   {
    "id": "astra-67",
@@ -1519,7 +1714,10 @@
    "poster": "/assets/recordings/799de450328e9a589382.png",
    "video": "/assets/recordings/0436b68f5a80581ce31a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 77,
+   "video_seconds": 7.7
   },
   {
    "id": "astra-68",
@@ -1542,7 +1740,10 @@
    "poster": "/assets/recordings/369e63679dae5de7a807.png",
    "video": "/assets/recordings/6a678e1c7d1766beddf5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 32,
+   "video_seconds": 6.4
   },
   {
    "id": "astra-69",
@@ -1565,7 +1766,10 @@
    "poster": "/assets/recordings/d6110e540a75d5a25ef9.png",
    "video": "/assets/recordings/f1dc802d864004da50c1.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 704,
+   "video_seconds": 14.08
   },
   {
    "id": "astra-70",
@@ -1588,7 +1792,10 @@
    "poster": "/assets/recordings/b1dc7998635e7ade21fe.png",
    "video": "/assets/recordings/0dc5b08a1df6229d2702.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1384,
+   "video_seconds": 27.68
   },
   {
    "id": "astra-71",
@@ -1611,7 +1818,10 @@
    "poster": "/assets/recordings/8b98f0f567f88b9fff4b.png",
    "video": "/assets/recordings/29b15d8aa179961fbf66.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 804,
+   "video_seconds": 16.08
   },
   {
    "id": "astra-72",
@@ -1634,7 +1844,10 @@
    "poster": "/assets/recordings/a1073e8cba47f35e1c11.png",
    "video": "/assets/recordings/3925c01d0081891cc8ce.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 138,
+   "video_seconds": 2.76
   },
   {
    "id": "astra-73",
@@ -1657,7 +1870,10 @@
    "poster": "/assets/recordings/562f5346305c1340cd98.png",
    "video": "/assets/recordings/d20b1e097369bb9204d8.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 341,
+   "video_seconds": 6.82
   },
   {
    "id": "astra-74",
@@ -1680,7 +1896,10 @@
    "poster": "/assets/recordings/ee67dc48409ce4298ebe.png",
    "video": "/assets/recordings/c33d34afa909f16f9f28.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 475,
+   "video_seconds": 9.5
   },
   {
    "id": "astra-75",
@@ -1703,7 +1922,10 @@
    "poster": "/assets/recordings/087bda8cdb88ca1a5fde.png",
    "video": "/assets/recordings/13e01cb8f30a367126b0.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 445,
+   "video_seconds": 8.9
   },
   {
    "id": "astra-76",
@@ -1726,7 +1948,10 @@
    "poster": "/assets/recordings/5e9b6de5345f353d59f0.png",
    "video": "/assets/recordings/90804706d8eb66544cf7.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1083,
+   "video_seconds": 54.15
   },
   {
    "id": "astra-77",
@@ -1749,7 +1974,10 @@
    "poster": "/assets/recordings/c16d7eb0db8f41569c48.png",
    "video": "/assets/recordings/191cbe53c401f74af3b7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 621,
+   "video_seconds": 10.016129
   },
   {
    "id": "astra-78",
@@ -1772,7 +2000,10 @@
    "poster": "/assets/recordings/6ee01e1c7bb6ef5d4f12.png",
    "video": "/assets/recordings/8b2656c5b26a59facfc8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 36,
+   "video_seconds": 0.72
   },
   {
    "id": "astra-79",
@@ -1795,7 +2026,10 @@
    "poster": "/assets/recordings/be1b464bbd1bb4e8e5d7.png",
    "video": "/assets/recordings/34c0195db6c16faf46ad.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 40,
+   "video_seconds": 0.8
   },
   {
    "id": "astra-80",
@@ -1818,7 +2052,10 @@
    "poster": "/assets/recordings/4c632b100ff532f8a18b.png",
    "video": "/assets/recordings/0458f0654d9d4e885e2c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 180,
+   "video_seconds": 3.6
   },
   {
    "id": "astra-81",
@@ -1841,7 +2078,10 @@
    "poster": "/assets/recordings/7f405df91bec7ca76716.png",
    "video": "/assets/recordings/eca594fef3b61a26661f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 136,
+   "video_seconds": 2.72
   },
   {
    "id": "astra-82",
@@ -1864,7 +2104,10 @@
    "poster": "/assets/recordings/8d90135b14d8bc209f23.png",
    "video": "/assets/recordings/48929547f345dc5439e2.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 189,
+   "video_seconds": 3.78
   },
   {
    "id": "astra-83",
@@ -1887,7 +2130,10 @@
    "poster": "/assets/recordings/f238210165ede29aca73.png",
    "video": "/assets/recordings/a85f1cf465616d1fd934.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 150,
+   "video_seconds": 1.5
   },
   {
    "id": "astra-84",
@@ -1910,7 +2156,10 @@
    "poster": "/assets/recordings/6fb8ec71518057720227.png",
    "video": "/assets/recordings/abe703ab1132c2f8720e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 83,
+   "video_seconds": 0.83
   },
   {
    "id": "astra-85",
@@ -1933,7 +2182,10 @@
    "poster": "/assets/recordings/ed816231d3e4d3967592.png",
    "video": "/assets/recordings/3ba84023301a423ae37d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 65,
+   "video_seconds": 1.3
   },
   {
    "id": "opus-000",
@@ -1956,7 +2208,10 @@
    "poster": "/assets/recordings/6a97ab82511c4569a93a.png",
    "video": "/assets/recordings/e33f366529750c28be43.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 354,
+   "video_seconds": 17.7
   },
   {
    "id": "k3-001",
@@ -1979,7 +2234,10 @@
    "poster": "/assets/recordings/a8c321dc1674b579d4df.png",
    "video": "/assets/recordings/1e6d89354fc2a611ffaa.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 30.05
   },
   {
    "id": "opus-002",
@@ -2002,7 +2260,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "unavailable"
   },
   {
    "id": "k3-003",
@@ -2025,7 +2284,10 @@
    "poster": "/assets/recordings/b7b263b41149c220336b.png",
    "video": "/assets/recordings/30d09709dc76404f38d3.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 307,
+   "video_seconds": 15.35
   },
   {
    "id": "opus-004",
@@ -2048,7 +2310,10 @@
    "poster": "/assets/recordings/1e87026feb8f22f4bb87.png",
    "video": "/assets/recordings/8582ddd8358a9bb7f1ba.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 30.05
   },
   {
    "id": "k3-005",
@@ -2071,7 +2336,10 @@
    "poster": "/assets/recordings/3b60480baea910b05521.png",
    "video": "/assets/recordings/98197ad5adcd4a433592.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 30.05
   },
   {
    "id": "opus-006",
@@ -2094,7 +2362,10 @@
    "poster": "/assets/recordings/0de0b00fa57e5efff5f5.png",
    "video": "/assets/recordings/d2308c64c4809c4a59b4.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 344,
+   "video_seconds": 17.2
   },
   {
    "id": "k3-007",
@@ -2117,7 +2388,10 @@
    "poster": "/assets/recordings/2ede05e8edf67963195a.png",
    "video": "/assets/recordings/307367d1855556171063.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 266,
+   "video_seconds": 13.3
   },
   {
    "id": "opus-008",
@@ -2140,7 +2414,10 @@
    "poster": "/assets/recordings/7d467a7ed678494ee88f.png",
    "video": "/assets/recordings/c2ada751b888e25378d7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 451,
+   "video_seconds": 22.55
   },
   {
    "id": "k3-009",
@@ -2163,7 +2440,10 @@
    "poster": "/assets/recordings/de4154f601b8909f90e2.png",
    "video": "/assets/recordings/7bdc6c317709db212016.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 451,
+   "video_seconds": 22.55
   },
   {
    "id": "opus-010",
@@ -2186,7 +2466,10 @@
    "poster": "/assets/recordings/2b070fc5c43986289b57.png",
    "video": "/assets/recordings/88910e14b5c512f2ddd8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 77,
+   "video_seconds": 3.85
   },
   {
    "id": "k3-011",
@@ -2209,7 +2492,10 @@
    "poster": "/assets/recordings/8ff809ac956f26ae66d6.png",
    "video": "/assets/recordings/cb6e7d98cf2f66a23a07.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 688,
+   "video_seconds": 34.4
   },
   {
    "id": "opus-012",
@@ -2232,7 +2518,10 @@
    "poster": "/assets/recordings/abf22d5700f446a9915b.png",
    "video": "/assets/recordings/dddce2eeff4ae60fadc6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 160,
+   "video_seconds": 8.0
   },
   {
    "id": "k3-013",
@@ -2255,7 +2544,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "unavailable"
   },
   {
    "id": "opus-014",
@@ -2278,7 +2568,10 @@
    "poster": "/assets/recordings/0f65c0710eae48a5ff1e.png",
    "video": "/assets/recordings/2205b301a4546f83a4be.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1801,
+   "video_seconds": 90.05
   },
   {
    "id": "k3-015",
@@ -2301,7 +2594,10 @@
    "poster": "/assets/recordings/f1dd14e52dc80a0b3757.png",
    "video": "/assets/recordings/6b3a64b449e8e7c7105d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1801,
+   "video_seconds": 90.05
   },
   {
    "id": "opus-016",
@@ -2324,7 +2620,10 @@
    "poster": "/assets/recordings/1bf72706858a56b67659.png",
    "video": "/assets/recordings/870b3e8b0a9bb24d2eca.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 256,
+   "video_seconds": 12.8
   },
   {
    "id": "k3-017",
@@ -2347,7 +2646,10 @@
    "poster": "/assets/recordings/48e88c42afd225eff448.png",
    "video": "/assets/recordings/26cff79951a91db5833d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 373,
+   "video_seconds": 18.65
   },
   {
    "id": "opus-018",
@@ -2370,7 +2672,10 @@
    "poster": "/assets/recordings/3ae65061675546c7cfe9.png",
    "video": "/assets/recordings/c88b014a4fa587244919.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3301,
+   "video_seconds": 165.05
   },
   {
    "id": "k3-019",
@@ -2393,7 +2698,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "unavailable"
   },
   {
    "id": "opus-020",
@@ -2416,7 +2722,10 @@
    "poster": "/assets/recordings/a2fac52d23a0250bb1e2.png",
    "video": "/assets/recordings/a5b1eb55deaeaeaa6475.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "k3-021",
@@ -2439,7 +2748,10 @@
    "poster": "/assets/recordings/338c0763db66b81800aa.png",
    "video": "/assets/recordings/eef5ed151a93b8f3bf49.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "opus-022",
@@ -2462,7 +2774,10 @@
    "poster": "/assets/recordings/16a5004f08f1095d43db.png",
    "video": "/assets/recordings/0f8bcc374551fa762887.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 886,
+   "video_seconds": 35.44
   },
   {
    "id": "k3-023",
@@ -2485,7 +2800,10 @@
    "poster": "/assets/recordings/83d80fa7136256a06804.png",
    "video": "/assets/recordings/2ce57e4fbab6786a00f7.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 40.04
   },
   {
    "id": "opus-024",
@@ -2508,7 +2826,10 @@
    "poster": "/assets/recordings/0da01c819766db7d6961.png",
    "video": "/assets/recordings/fbeca808458d52e79fac.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "k3-025",
@@ -2531,7 +2852,10 @@
    "poster": "/assets/recordings/92703d2ad231e149e77b.png",
    "video": "/assets/recordings/ae1443f7847ac60b9206.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "opus-026",
@@ -2554,7 +2878,10 @@
    "poster": "/assets/recordings/90392f074aa2c53eda5b.png",
    "video": "/assets/recordings/8286c3877998dce05670.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1401,
+   "video_seconds": 56.04
   },
   {
    "id": "k3-027",
@@ -2577,7 +2904,10 @@
    "poster": "/assets/recordings/0964d3449600de1b8eb8.png",
    "video": "/assets/recordings/12b6dd75be4233eb63b9.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1225,
+   "video_seconds": 49.0
   },
   {
    "id": "opus-028",
@@ -2600,7 +2930,10 @@
    "poster": "/assets/recordings/c2e87d1101955506e679.png",
    "video": "/assets/recordings/86ce62c0052e87dcbf50.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "k3-029",
@@ -2623,7 +2956,10 @@
    "poster": "/assets/recordings/0cf318f499b378c7c6dd.png",
    "video": "/assets/recordings/d97319e12f0cfd8a974e.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "opus-030",
@@ -2646,7 +2982,10 @@
    "poster": "/assets/recordings/13be0b4c07d18baf6f6c.png",
    "video": "/assets/recordings/52f9f40c84252650ebb5.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "k3-031",
@@ -2669,7 +3008,10 @@
    "poster": "/assets/recordings/dd12e4fc92301a02d7a0.png",
    "video": "/assets/recordings/ce27d5d9c243468de05c.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "opus-032",
@@ -2692,7 +3034,10 @@
    "poster": "/assets/recordings/47d1d49bf0fad97a86cc.png",
    "video": "/assets/recordings/9d4c74e728e49ebf10fb.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "k3-033",
@@ -2715,7 +3060,10 @@
    "poster": "/assets/recordings/6aa18d944196883d505a.png",
    "video": "/assets/recordings/e003a6956b8e70af6612.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "opus-034",
@@ -2738,7 +3086,10 @@
    "poster": "/assets/recordings/b91d1cc61552dff1f33e.png",
    "video": "/assets/recordings/ba4eca8c74662b2a4ea0.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 595,
+   "video_seconds": 23.8
   },
   {
    "id": "k3-035",
@@ -2761,7 +3112,10 @@
    "poster": "/assets/recordings/9394f48a18029451848d.png",
    "video": "/assets/recordings/681a6ec24eef4d8110a7.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "opus-036",
@@ -2784,7 +3138,10 @@
    "poster": "/assets/recordings/7b055d7d64497af32a6c.png",
    "video": "/assets/recordings/46694bc6f8b5bc3abc4e.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "k3-037",
@@ -2807,7 +3164,10 @@
    "poster": "/assets/recordings/abadbdf16106231c29ca.png",
    "video": "/assets/recordings/745db66bc69fda79ffbd.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "opus-038",
@@ -2830,7 +3190,10 @@
    "poster": "/assets/recordings/53209276fbe89d9e23b6.png",
    "video": "/assets/recordings/14ace4a1098e79fdd30e.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1101,
+   "video_seconds": 44.04
   },
   {
    "id": "k3-039",
@@ -2853,7 +3216,10 @@
    "poster": "/assets/recordings/542710ec3b30b0030671.png",
    "video": "/assets/recordings/1f55e85821ca6eb62921.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1101,
+   "video_seconds": 44.04
   },
   {
    "id": "opus-040",
@@ -2876,7 +3242,10 @@
    "poster": "/assets/recordings/badc8d1fdca9c37a7b09.png",
    "video": "/assets/recordings/8678239b9bc587f1b608.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 699,
+   "video_seconds": 27.96
   },
   {
    "id": "k3-041",
@@ -2899,7 +3268,10 @@
    "poster": "/assets/recordings/d40b65ab889fb305841e.png",
    "video": "/assets/recordings/6b4e1796baebbf949bed.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "opus-042",
@@ -2922,7 +3294,10 @@
    "poster": "/assets/recordings/e251dbb6e9b3fe1e4e2f.png",
    "video": "/assets/recordings/27d5b7cd9ff3885ab7d1.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "k3-043",
@@ -2945,7 +3320,10 @@
    "poster": "/assets/recordings/0e6e82218d75d9d54521.png",
    "video": "/assets/recordings/2c07dd41e6374a59b63b.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "opus-044",
@@ -2968,7 +3346,10 @@
    "poster": "/assets/recordings/120275a3bf7f96b13f03.png",
    "video": "/assets/recordings/384b90e034faa4b05f4d.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "k3-045",
@@ -2991,7 +3372,10 @@
    "poster": "/assets/recordings/42646a1e416ca4379143.png",
    "video": "/assets/recordings/e225986c1c60e1f6fd01.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "opus-046",
@@ -3014,7 +3398,10 @@
    "poster": "/assets/recordings/a86d420bb225ef1d4ed4.png",
    "video": "/assets/recordings/a200e6b7cfe2da7bdf6a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 348,
+   "video_seconds": 13.92
   },
   {
    "id": "k3-047",
@@ -3037,7 +3424,10 @@
    "poster": "/assets/recordings/c96de062675427929b87.png",
    "video": "/assets/recordings/91e8f91a2dd913ca6dc8.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "opus-048",
@@ -3060,7 +3450,10 @@
    "poster": "/assets/recordings/beef044145767bdf2492.png",
    "video": "/assets/recordings/5be478602c6b3c8d8a6f.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 301,
+   "video_seconds": 12.04
   },
   {
    "id": "k3-049",
@@ -3083,7 +3476,10 @@
    "poster": "/assets/recordings/86c91f2edfe273739b0e.png",
    "video": "/assets/recordings/f94b7bc718ad515b911f.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 301,
+   "video_seconds": 12.04
   },
   {
    "id": "opus-050",
@@ -3106,7 +3502,10 @@
    "poster": "/assets/recordings/df36303f3a8295172564.png",
    "video": "/assets/recordings/5a17c2782aa2236e2f6b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1112,
+   "video_seconds": 37.066667
   },
   {
    "id": "k3-051",
@@ -3129,7 +3528,10 @@
    "poster": "/assets/recordings/42fd23ec963f717992bb.png",
    "video": "/assets/recordings/74f6560e5c491f25e7cc.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-052",
@@ -3152,7 +3554,10 @@
    "poster": "/assets/recordings/680a6a55af133ae016fc.png",
    "video": "/assets/recordings/16b63fcfaaea9d7610f3.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "k3-053",
@@ -3175,7 +3580,10 @@
    "poster": "/assets/recordings/7b5ee3bb146c21c5101a.png",
    "video": "/assets/recordings/3294dbd6afa3087a067b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 925,
+   "video_seconds": 30.833333
   },
   {
    "id": "opus-054",
@@ -3198,7 +3606,10 @@
    "poster": "/assets/recordings/2bd45b7cdcee64efe48d.png",
    "video": "/assets/recordings/3e5ecaf8531e9ff5fcd5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "k3-055",
@@ -3221,7 +3632,10 @@
    "poster": "/assets/recordings/033fcd66c77a6e81272c.png",
    "video": "/assets/recordings/ee8c5d7e418622df984b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-056",
@@ -3244,7 +3658,10 @@
    "poster": "/assets/recordings/8d248cae2d2cbc94f521.png",
    "video": "/assets/recordings/4b70ef109d4d477dd007.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 435,
+   "video_seconds": 14.5
   },
   {
    "id": "k3-057",
@@ -3267,7 +3684,10 @@
    "poster": "/assets/recordings/405ab302cd85ecdb910a.png",
    "video": "/assets/recordings/8a820039eeae2552732a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-058",
@@ -3290,7 +3710,10 @@
    "poster": "/assets/recordings/60ca182de7146b79ef62.png",
    "video": "/assets/recordings/f416d239aa5be4513a08.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 66.7
   },
   {
    "id": "k3-059",
@@ -3313,7 +3736,10 @@
    "poster": "/assets/recordings/045ff0a7c1736dfd9398.png",
    "video": "/assets/recordings/18ce16d96c79a7001a07.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-060",
@@ -3336,7 +3762,10 @@
    "poster": "/assets/recordings/d409a0ee41254cbd8192.png",
    "video": "/assets/recordings/8d483dffca416cc4f420.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "k3-061",
@@ -3359,7 +3788,10 @@
    "poster": "/assets/recordings/1037ca514ce5bd888b2b.png",
    "video": "/assets/recordings/74d294d940367eaabc74.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-062",
@@ -3382,7 +3814,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "unavailable"
   },
   {
    "id": "k3-063",
@@ -3405,7 +3838,10 @@
    "poster": "/assets/recordings/663d1de00ce4bfbdad45.png",
    "video": "/assets/recordings/3becaf35fdbdc4d7e1bd.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-064",
@@ -3428,7 +3864,10 @@
    "poster": "/assets/recordings/04ec008839b3385e3b37.png",
    "video": "/assets/recordings/f9d0f80c6760afae04f4.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1132,
+   "video_seconds": 37.733333
   },
   {
    "id": "k3-065",
@@ -3451,7 +3890,10 @@
    "poster": "/assets/recordings/0533c1828bf98e11d94c.png",
    "video": "/assets/recordings/0e239a316a048ca005ec.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-066",
@@ -3474,7 +3916,10 @@
    "poster": "/assets/recordings/68389770c3aadffe88c0.png",
    "video": "/assets/recordings/0319d9c0e1b6940b273e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 473,
+   "video_seconds": 15.766667
   },
   {
    "id": "k3-067",
@@ -3497,7 +3942,10 @@
    "poster": "/assets/recordings/9a8c0352f4cb2e4993ac.png",
    "video": "/assets/recordings/3d2791da5b270c6353e1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-068",
@@ -3520,7 +3968,10 @@
    "poster": "/assets/recordings/477d72db9174ddac0926.png",
    "video": "/assets/recordings/e1abac27c03c940ea5a0.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "k3-069",
@@ -3543,7 +3994,10 @@
    "poster": "/assets/recordings/fb346017fe7eb1b24a96.png",
    "video": "/assets/recordings/7327bdf6eda3c7c6ca4e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "opus-070",
@@ -3566,7 +4020,10 @@
    "poster": "/assets/recordings/1f6ca645314ee604b645.png",
    "video": "/assets/recordings/d59003a7785960237b0b.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1025,
+   "video_seconds": 68.333333
   },
   {
    "id": "k3-071",
@@ -3589,7 +4046,10 @@
    "poster": "/assets/recordings/b6f05b90763115041363.png",
    "video": "/assets/recordings/9e0c85f0edd818800748.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 562,
+   "video_seconds": 37.466667
   },
   {
    "id": "opus-072",
@@ -3612,7 +4072,10 @@
    "poster": "/assets/recordings/4cd783709609dd8de663.png",
    "video": "/assets/recordings/fa56c2a96c5bba0e2334.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1392,
+   "video_seconds": 92.8
   },
   {
    "id": "k3-073",
@@ -3635,7 +4098,10 @@
    "poster": "/assets/recordings/eaeb8f7e4ad33437a3f8.png",
    "video": "/assets/recordings/748d8ce4242cba5e608d.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 961,
+   "video_seconds": 64.066667
   },
   {
    "id": "opus-074",
@@ -3658,7 +4124,10 @@
    "poster": "/assets/recordings/2cb868955b9b3224a32a.png",
    "video": "/assets/recordings/423487b2167ffe68bbb8.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 531,
+   "video_seconds": 35.4
   },
   {
    "id": "k3-075",
@@ -3681,7 +4150,10 @@
    "poster": "/assets/recordings/c4dd4ce7faed72130e7f.png",
    "video": "/assets/recordings/95b6ead71ecec8a26e86.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 152,
+   "video_seconds": 10.133333
   },
   {
    "id": "opus-076",
@@ -3704,7 +4176,10 @@
    "poster": "/assets/recordings/778ab3aa56959ed9d650.png",
    "video": "/assets/recordings/eca6671056c3f765c3c4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 238,
+   "video_seconds": 15.866667
   },
   {
    "id": "k3-077",
@@ -3727,7 +4202,10 @@
    "poster": "/assets/recordings/0ede32c23126f15e223f.png",
    "video": "/assets/recordings/5c9a0f63526bc98960a4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 449,
+   "video_seconds": 29.933333
   },
   {
    "id": "opus-078",
@@ -3750,7 +4228,10 @@
    "poster": "/assets/recordings/316995cbc9368f1918ab.png",
    "video": "/assets/recordings/9ff753d4708512a8c3cf.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 418,
+   "video_seconds": 27.866667
   },
   {
    "id": "k3-079",
@@ -3773,7 +4254,10 @@
    "poster": "/assets/recordings/395e39b29c6ddb18b4da.png",
    "video": "/assets/recordings/6b442ab7f036c3adf230.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 156,
+   "video_seconds": 10.4
   },
   {
    "id": "opus-080",
@@ -3796,7 +4280,10 @@
    "poster": "/assets/recordings/8b4a0017fff355e63aba.png",
    "video": "/assets/recordings/9668a3e235ee60cef96a.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 466,
+   "video_seconds": 31.066667
   },
   {
    "id": "k3-081",
@@ -3819,7 +4306,10 @@
    "poster": "/assets/recordings/64be5019241e438cc578.png",
    "video": "/assets/recordings/adb318fbd3fd0377b450.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 140,
+   "video_seconds": 9.333333
   },
   {
    "id": "opus-082",
@@ -3842,7 +4332,10 @@
    "poster": "/assets/recordings/770861573c30858b9716.png",
    "video": "/assets/recordings/f4d830e28711e97c2883.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 40.066667
   },
   {
    "id": "k3-083",
@@ -3865,7 +4358,10 @@
    "poster": "/assets/recordings/0f12224416f9ebfbf8e6.png",
    "video": "/assets/recordings/10565092dc153dd070b4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 176,
+   "video_seconds": 11.733333
   },
   {
    "id": "opus-084",
@@ -3888,7 +4384,10 @@
    "poster": "/assets/recordings/bd49303775d34d4f880b.png",
    "video": "/assets/recordings/360d26d74d60d3a75c09.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1496,
+   "video_seconds": 99.733333
   },
   {
    "id": "k3-085",
@@ -3911,7 +4410,10 @@
    "poster": "/assets/recordings/e224fddc27e6f3cf974d.png",
    "video": "/assets/recordings/51240e0bb18c31c9ba0d.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 164,
+   "video_seconds": 10.933333
   },
   {
    "id": "opus-086",
@@ -3934,7 +4436,10 @@
    "poster": "/assets/recordings/0fa2d3625e57f21b6355.png",
    "video": "/assets/recordings/d1e47cb55a945c47c7e4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 65,
+   "video_seconds": 4.333333
   },
   {
    "id": "k3-087",
@@ -3957,7 +4462,10 @@
    "poster": "/assets/recordings/45401933e73ff9ea6d0d.png",
    "video": "/assets/recordings/2985fc0a54e935d9b670.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 899,
+   "video_seconds": 59.933333
   },
   {
    "id": "opus-088",
@@ -3980,7 +4488,10 @@
    "poster": "/assets/recordings/473f0fb8cfcef18bf6c5.png",
    "video": "/assets/recordings/1e11a8a7eaafb15d3751.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 340,
+   "video_seconds": 22.666667
   },
   {
    "id": "k3-089",
@@ -4003,7 +4514,10 @@
    "poster": "/assets/recordings/b0f2b9045f267062dfa9.png",
    "video": "/assets/recordings/41cddd26c1e65a9a3bf5.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 449,
+   "video_seconds": 29.933333
   },
   {
    "id": "opus-090",
@@ -4026,7 +4540,10 @@
    "poster": "/assets/recordings/25ce053731c8300b0774.png",
    "video": "/assets/recordings/a7d1c68b20370aa45ec0.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 300,
+   "video_seconds": 6.0
   },
   {
    "id": "k3-091",
@@ -4049,7 +4566,10 @@
    "poster": "/assets/recordings/a2ac12f62dee4dc9f403.png",
    "video": "/assets/recordings/fd26edb237fad131b93b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 300,
+   "video_seconds": 6.0
   },
   {
    "id": "opus-092",
@@ -4072,7 +4592,10 @@
    "poster": "/assets/recordings/e2b6e15872ca6b56c6c6.png",
    "video": "/assets/recordings/5343b771c764962a2fac.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 18,
+   "video_seconds": 0.3
   },
   {
    "id": "k3-093",
@@ -4095,7 +4618,10 @@
    "poster": "/assets/recordings/66649732262766e776dd.png",
    "video": "/assets/recordings/ba49819b6b18a206dbf3.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 71,
+   "video_seconds": 1.183333
   },
   {
    "id": "opus-094",
@@ -4118,7 +4644,10 @@
    "poster": "/assets/recordings/5bd9c1354929e3178c14.png",
    "video": "/assets/recordings/6d323f4d0538dc2d9084.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "k3-095",
@@ -4141,7 +4670,10 @@
    "poster": "/assets/recordings/d5234eb987c25bde28d6.png",
    "video": "/assets/recordings/a33bde5715b38cda8e8c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "opus-096",
@@ -4164,7 +4696,10 @@
    "poster": "/assets/recordings/8c03a7ce402d7075ff37.png",
    "video": "/assets/recordings/baf9acc50806c674cad5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 210,
+   "video_seconds": 3.5
   },
   {
    "id": "k3-097",
@@ -4187,7 +4722,10 @@
    "poster": "/assets/recordings/9dab1579ebdd956d06ea.png",
    "video": "/assets/recordings/b22aa1a00ae68b985802.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 14,
+   "video_seconds": 0.233333
   },
   {
    "id": "opus-098",
@@ -4210,7 +4748,10 @@
    "poster": "/assets/recordings/4bde4fc7f76685c1ba53.png",
    "video": "/assets/recordings/0a484c971f2463dbff1f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 206,
+   "video_seconds": 4.12
   },
   {
    "id": "k3-099",
@@ -4233,7 +4774,10 @@
    "poster": "/assets/recordings/2c0c99dba043f5e401e1.png",
    "video": "/assets/recordings/ab58807d86063ed02a4c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 87,
+   "video_seconds": 1.74
   },
   {
    "id": "opus-100",
@@ -4256,7 +4800,10 @@
    "poster": "/assets/recordings/d2e32bb7fe7dc732e40d.png",
    "video": "/assets/recordings/e4b79534a8e5be7466c9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 86,
+   "video_seconds": 1.72
   },
   {
    "id": "k3-101",
@@ -4279,7 +4826,10 @@
    "poster": "/assets/recordings/4cf599b0c9495562f356.png",
    "video": "/assets/recordings/c0cfcf2738de5e0b40b9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 87,
+   "video_seconds": 1.74
   },
   {
    "id": "opus-102",
@@ -4302,7 +4852,10 @@
    "poster": "/assets/recordings/ba4c14a79e5e0dea9ff7.png",
    "video": "/assets/recordings/7049ad1f188ede77442e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3,
+   "video_seconds": 0.3
   },
   {
    "id": "k3-103",
@@ -4325,7 +4878,10 @@
    "poster": "/assets/recordings/7b4e8b07d36561aff78c.png",
    "video": "/assets/recordings/30b8171027b7e7c522f1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3,
+   "video_seconds": 0.3
   },
   {
    "id": "opus-104",
@@ -4348,7 +4904,10 @@
    "poster": "/assets/recordings/23997646cf06f9e9937d.png",
    "video": "/assets/recordings/f29ae8f611e8cf4aea54.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 144,
+   "video_seconds": 28.8
   },
   {
    "id": "k3-105",
@@ -4371,7 +4930,10 @@
    "poster": "/assets/recordings/e96da097911d4a7982bf.png",
    "video": "/assets/recordings/98a97c54ca558c01fc56.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 27,
+   "video_seconds": 5.4
   },
   {
    "id": "opus-106",
@@ -4394,7 +4956,10 @@
    "poster": "/assets/recordings/019f3622d4a501c7a9af.png",
    "video": "/assets/recordings/66b4c130063a339f54d8.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1007,
+   "video_seconds": 20.14
   },
   {
    "id": "k3-107",
@@ -4417,7 +4982,10 @@
    "poster": "/assets/recordings/a633a759c407d5af23c1.png",
    "video": "/assets/recordings/03f7e74c5e8d9ffe0dd9.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1882,
+   "video_seconds": 37.64
   },
   {
    "id": "opus-108",
@@ -4440,7 +5008,10 @@
    "poster": "/assets/recordings/ff00f7a9291a21e5ccb6.png",
    "video": "/assets/recordings/f12b4beedf9702f132c3.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1830,
+   "video_seconds": 36.6
   },
   {
    "id": "k3-109",
@@ -4463,7 +5034,10 @@
    "poster": "/assets/recordings/fc55ea3d3d6281f92ca1.png",
    "video": "/assets/recordings/f45da25348c71729caca.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 817,
+   "video_seconds": 16.34
   },
   {
    "id": "opus-110",
@@ -4486,7 +5060,10 @@
    "poster": "/assets/recordings/be34bfae3533ba03a66f.png",
    "video": "/assets/recordings/d4cb6bc3b5adc478f991.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 871,
+   "video_seconds": 17.42
   },
   {
    "id": "k3-111",
@@ -4509,7 +5086,10 @@
    "poster": "/assets/recordings/489755cb99c0b8606de6.png",
    "video": "/assets/recordings/2ec38df61c964665591c.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 975,
+   "video_seconds": 19.5
   },
   {
    "id": "opus-112",
@@ -4532,7 +5112,10 @@
    "poster": "/assets/recordings/94ebad954320a8b6a22d.png",
    "video": "/assets/recordings/52df5d816552a80fdfd1.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 117,
+   "video_seconds": 2.34
   },
   {
    "id": "k3-113",
@@ -4555,7 +5138,10 @@
    "poster": "/assets/recordings/7d387def3ac554dcf181.png",
    "video": "/assets/recordings/cb438df41e8bfdb81c0c.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 133,
+   "video_seconds": 2.66
   },
   {
    "id": "opus-114",
@@ -4578,7 +5164,10 @@
    "poster": "/assets/recordings/aa354771730d93184ed2.png",
    "video": "/assets/recordings/85645d6e3e84836ace07.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 266,
+   "video_seconds": 5.32
   },
   {
    "id": "k3-115",
@@ -4601,7 +5190,10 @@
    "poster": "/assets/recordings/bcfeab934d5e8e24aa76.png",
    "video": "/assets/recordings/4168174245107657974a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 755,
+   "video_seconds": 15.1
   },
   {
    "id": "opus-116",
@@ -4624,7 +5216,10 @@
    "poster": "/assets/recordings/633befc2b635fbf8893e.png",
    "video": "/assets/recordings/8c9f2a3a51693b4b583d.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 78,
+   "video_seconds": 1.56
   },
   {
    "id": "k3-117",
@@ -4647,7 +5242,10 @@
    "poster": "/assets/recordings/a31276c8dc3f88a79805.png",
    "video": "/assets/recordings/48401f8a16e91324a368.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 313,
+   "video_seconds": 6.26
   },
   {
    "id": "opus-118",
@@ -4670,7 +5268,10 @@
    "poster": "/assets/recordings/7514f4a06c8198fd483f.png",
    "video": "/assets/recordings/4a60b467f4663a67e9c5.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 360,
+   "video_seconds": 7.2
   },
   {
    "id": "k3-119",
@@ -4693,7 +5294,10 @@
    "poster": "/assets/recordings/83fa8c4437193c595520.png",
    "video": "/assets/recordings/98f74925b581c636d00a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 309,
+   "video_seconds": 6.18
   },
   {
    "id": "opus-120",
@@ -4716,7 +5320,10 @@
    "poster": "/assets/recordings/d4cd17f7171da8dfa050.png",
    "video": "/assets/recordings/cfe74527e2d3f52b8830.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 26,
+   "video_seconds": 1.3
   },
   {
    "id": "k3-121",
@@ -4739,7 +5346,10 @@
    "poster": "/assets/recordings/aaa590e00fb5eabcfe18.png",
    "video": "/assets/recordings/9d8ff0d44a9351e66254.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 387,
+   "video_seconds": 19.35
   },
   {
    "id": "opus-122",
@@ -4762,7 +5372,10 @@
    "poster": "/assets/recordings/ed063250d3d9bc9a19fa.png",
    "video": "/assets/recordings/85bee8ac8d2d25bf9e88.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 16,
+   "video_seconds": 0.8
   },
   {
    "id": "k3-123",
@@ -4785,7 +5398,10 @@
    "poster": "/assets/recordings/a26c2e06d99dde313903.png",
    "video": "/assets/recordings/12a6ead63b610254d0c5.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "opus-124",
@@ -4808,7 +5424,10 @@
    "poster": "/assets/recordings/ec5bfc98957bf27c2dd1.png",
    "video": "/assets/recordings/848cb6e8190d74941870.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 626,
+   "video_seconds": 31.3
   },
   {
    "id": "k3-125",
@@ -4831,7 +5450,10 @@
    "poster": "/assets/recordings/ac31726309ff01a800d4.png",
    "video": "/assets/recordings/ea37c485c5c71b8f96c5.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1150,
+   "video_seconds": 57.5
   },
   {
    "id": "opus-126",
@@ -4854,7 +5476,10 @@
    "poster": "/assets/recordings/798063a7fd3eb42227b1.png",
    "video": "/assets/recordings/267f70519776f51c091d.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 26,
+   "video_seconds": 1.3
   },
   {
    "id": "k3-127",
@@ -4877,7 +5502,10 @@
    "poster": "/assets/recordings/053660fb59758f0b4684.png",
    "video": "/assets/recordings/b08d43bbac0cafabac2d.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1081,
+   "video_seconds": 54.05
   },
   {
    "id": "opus-128",
@@ -4900,7 +5528,10 @@
    "poster": "/assets/recordings/b293157d985a18ee751b.png",
    "video": "/assets/recordings/f5aea01e261e4730259d.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "k3-129",
@@ -4923,7 +5554,10 @@
    "poster": "/assets/recordings/64ba24d96c7bbf72036a.png",
    "video": "/assets/recordings/8585ca55b4ef2860e5eb.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 965,
+   "video_seconds": 48.25
   },
   {
    "id": "opus-130",
@@ -4946,7 +5580,10 @@
    "poster": "/assets/recordings/f21da7e036ba55d78d80.png",
    "video": "/assets/recordings/6e75ba502eea32a210fe.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 36,
+   "video_seconds": 1.8
   },
   {
    "id": "k3-131",
@@ -4969,7 +5606,10 @@
    "poster": "/assets/recordings/6957bdd4f0519c01428b.png",
    "video": "/assets/recordings/49e2c750ba29d1c04e30.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 281,
+   "video_seconds": 14.05
   },
   {
    "id": "opus-132",
@@ -4992,7 +5632,10 @@
    "poster": "/assets/recordings/aa2494f64306a38b05cc.png",
    "video": "/assets/recordings/d0e4a5e6580640bccba5.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 93,
+   "video_seconds": 4.65
   },
   {
    "id": "k3-133",
@@ -5015,7 +5658,10 @@
    "poster": "/assets/recordings/bf12d987d1be97991376.png",
    "video": "/assets/recordings/97ffda335a7435529d45.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 594,
+   "video_seconds": 29.7
   },
   {
    "id": "opus-134",
@@ -5038,7 +5684,10 @@
    "poster": "/assets/recordings/fd9421949b7821bfe72c.png",
    "video": "/assets/recordings/a90439dd12383e31cf2e.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "k3-135",
@@ -5061,7 +5710,10 @@
    "poster": "/assets/recordings/4535dec0f4262f1c520f.png",
    "video": "/assets/recordings/e57bae5f55100df4324b.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 611,
+   "video_seconds": 30.55
   },
   {
    "id": "opus-136",
@@ -5084,7 +5736,10 @@
    "poster": "/assets/recordings/52353fb13689695a4929.png",
    "video": "/assets/recordings/09b3e653688b5e0fe793.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "k3-137",
@@ -5107,7 +5762,10 @@
    "poster": "/assets/recordings/b15b32b57b2842a9e599.png",
    "video": "/assets/recordings/fe8cf3342a010f1fde85.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "opus-138",
@@ -5130,7 +5788,10 @@
    "poster": "/assets/recordings/d909343dd65bd5b46889.png",
    "video": "/assets/recordings/32c153b2814eaa07ad76.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 74,
+   "video_seconds": 1.48
   },
   {
    "id": "k3-139",
@@ -5153,7 +5814,10 @@
    "poster": "/assets/recordings/70508661ae386da9d648.png",
    "video": "/assets/recordings/2bbdd068f1f15c65dab8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 84,
+   "video_seconds": 1.68
   },
   {
    "id": "opus-140",
@@ -5176,7 +5840,10 @@
    "poster": "/assets/recordings/6228f76b578ee11c1b27.png",
    "video": "/assets/recordings/c160fe219897f22f6d9c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 186,
+   "video_seconds": 3.72
   },
   {
    "id": "k3-141",
@@ -5199,7 +5866,10 @@
    "poster": "/assets/recordings/1545279def851fe8af08.png",
    "video": "/assets/recordings/bee950efeed0a3a2cbc8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 45,
+   "video_seconds": 0.9
   },
   {
    "id": "opus-142",
@@ -5222,7 +5892,10 @@
    "poster": "/assets/recordings/835177d950e5c652f3e1.png",
    "video": "/assets/recordings/03e5f04e9f0e8a8b8f7a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 20.02
   },
   {
    "id": "k3-143",
@@ -5245,7 +5918,10 @@
    "poster": "/assets/recordings/1048aff91dc3199c3213.png",
    "video": "/assets/recordings/a744d3dcee955d42f86f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 260,
+   "video_seconds": 5.2
   },
   {
    "id": "opus-144",
@@ -5268,7 +5944,10 @@
    "poster": "/assets/recordings/bf7a8ceee8dd9c8da2bd.png",
    "video": "/assets/recordings/49bc7be7460ea55d7ad3.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 8.080645
   },
   {
    "id": "k3-145",
@@ -5291,7 +5970,10 @@
    "poster": "/assets/recordings/45f32b57e2b359063687.png",
    "video": "/assets/recordings/ee2305127ab7de262db1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 8.080645
   },
   {
    "id": "opus-146",
@@ -5314,7 +5996,10 @@
    "poster": "/assets/recordings/c381023f52fa85a29a24.png",
    "video": "/assets/recordings/a294551f8cbe8105207e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016129
   },
   {
    "id": "k3-147",
@@ -5337,7 +6022,10 @@
    "poster": "/assets/recordings/dc4ced0738084bbad679.png",
    "video": "/assets/recordings/53828d1b41db20696d83.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 58,
+   "video_seconds": 0.935484
   },
   {
    "id": "opus-148",
@@ -5360,7 +6048,10 @@
    "poster": "/assets/recordings/53d2b9dda2aa5ea419b0.png",
    "video": "/assets/recordings/37aa6d8212aaf96edbd1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 141,
+   "video_seconds": 3.525
   },
   {
    "id": "k3-149",
@@ -5383,7 +6074,10 @@
    "poster": "/assets/recordings/3e304e97d62d9f73e8e5.png",
    "video": "/assets/recordings/2b4ebe072a817434dbe8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 327,
+   "video_seconds": 8.175
   },
   {
    "id": "opus-150",
@@ -5406,7 +6100,10 @@
    "poster": "/assets/recordings/65c5f6ebea9d58c727b1.png",
    "video": "/assets/recordings/bde3d6980f039cfe1c41.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 31,
+   "video_seconds": 1.24
   },
   {
    "id": "k3-151",
@@ -5429,7 +6126,10 @@
    "poster": "/assets/recordings/9275dc4fb2e43e5c1763.png",
    "video": "/assets/recordings/a850746a54359a2f1c81.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 36,
+   "video_seconds": 1.44
   },
   {
    "id": "opus-152",
@@ -5452,7 +6152,10 @@
    "poster": "/assets/recordings/780216f9de8969d9c0a6.png",
    "video": "/assets/recordings/f16b197aca5b29d62b80.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 49,
+   "video_seconds": 0.98
   },
   {
    "id": "k3-153",
@@ -5475,7 +6178,10 @@
    "poster": "/assets/recordings/c07292a08b9cc5c637a2.png",
    "video": "/assets/recordings/2ce2a75d1c716819f05a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 24,
+   "video_seconds": 0.48
   },
   {
    "id": "opus-154",
@@ -5498,7 +6204,10 @@
    "poster": "/assets/recordings/a1c244d19d5f546817c6.png",
    "video": "/assets/recordings/c8a8d8c4622fc66a1088.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 39,
+   "video_seconds": 0.78
   },
   {
    "id": "k3-155",
@@ -5521,7 +6230,10 @@
    "poster": "/assets/recordings/7435856d38eb61ec36f8.png",
    "video": "/assets/recordings/4a90445634876f5e5b1f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 44,
+   "video_seconds": 0.88
   },
   {
    "id": "opus-156",
@@ -5544,7 +6256,10 @@
    "poster": "/assets/recordings/a2410e10f804ce82f210.png",
    "video": "/assets/recordings/b38103e0bb6b2a0cc6a5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 403,
+   "video_seconds": 8.06
   },
   {
    "id": "k3-157",
@@ -5567,7 +6282,10 @@
    "poster": "/assets/recordings/1c5c893ebf1ed117c8cf.png",
    "video": "/assets/recordings/576e746e3b2d4cf16adc.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 404,
+   "video_seconds": 8.08
   },
   {
    "id": "opus-158",
@@ -5590,7 +6308,10 @@
    "poster": "/assets/recordings/81c5dd69de8d03af8d4b.png",
    "video": "/assets/recordings/c372c02819dc2ac6beaf.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 16.02
   },
   {
    "id": "k3-159",
@@ -5613,7 +6334,10 @@
    "poster": "/assets/recordings/e0b8680dbce061252e13.png",
    "video": "/assets/recordings/67be2e65583a4d77d158.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 47,
+   "video_seconds": 0.94
   },
   {
    "id": "opus-160",
@@ -5636,7 +6360,10 @@
    "poster": "/assets/recordings/5130dbaf6369c5cda21b.png",
    "video": "/assets/recordings/93467485e9def00cd425.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 82,
+   "video_seconds": 0.82
   },
   {
    "id": "k3-161",
@@ -5659,7 +6386,10 @@
    "poster": "/assets/recordings/60cffd5283e6b5ecc80b.png",
    "video": "/assets/recordings/1f6d085c8ef387064793.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 45,
+   "video_seconds": 0.45
   },
   {
    "id": "opus-162",
@@ -5682,7 +6412,10 @@
    "poster": "/assets/recordings/5e04d645186f7c4c5d55.png",
    "video": "/assets/recordings/2e490d56095e54c8a0bc.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2001,
+   "video_seconds": 20.01
   },
   {
    "id": "k3-163",
@@ -5705,7 +6438,10 @@
    "poster": "/assets/recordings/dc6a630736b2d71e8626.png",
    "video": "/assets/recordings/bfad625490c847b66958.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 66,
+   "video_seconds": 0.66
   },
   {
    "id": "opus-164",
@@ -5728,7 +6464,10 @@
    "poster": "/assets/recordings/a4dd78463c2446563422.png",
    "video": "/assets/recordings/a4bf63a55407bf36fde8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 20.02
   },
   {
    "id": "k3-165",
@@ -5751,7 +6490,10 @@
    "poster": "/assets/recordings/ffc68f3d1ac03eb3442f.png",
    "video": "/assets/recordings/94905fcdb7f8897b85a7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 70,
+   "video_seconds": 1.4
   },
   {
    "id": "dpsk-000",
@@ -5774,7 +6516,10 @@
    "poster": "/assets/recordings/449366fecce91857caf0.png",
    "video": "/assets/recordings/a61a070b234ce718e3ff.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 481,
+   "video_seconds": 24.05
   },
   {
    "id": "dpsk-001",
@@ -5797,7 +6542,10 @@
    "poster": "/assets/recordings/ee54e4686ef56afac054.png",
    "video": "/assets/recordings/7ab91a17345ad9e01d7d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 95,
+   "video_seconds": 4.75
   },
   {
    "id": "dpsk-002",
@@ -5820,7 +6568,10 @@
    "poster": "/assets/recordings/3b40047e473c9f1f4328.png",
    "video": "/assets/recordings/e9f44f84b14608edb48d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 59,
+   "video_seconds": 2.95
   },
   {
    "id": "dpsk-003",
@@ -5843,7 +6594,10 @@
    "poster": "/assets/recordings/83a6368fe272e5a2098f.png",
    "video": "/assets/recordings/07724033d9f16a834d2b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 74,
+   "video_seconds": 3.7
   },
   {
    "id": "dpsk-004",
@@ -5866,7 +6620,10 @@
    "poster": "/assets/recordings/0b82d06b4627b100aa29.png",
    "video": "/assets/recordings/7df3e1d8441e433246fe.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 451,
+   "video_seconds": 22.55
   },
   {
    "id": "dpsk-005",
@@ -5889,7 +6646,10 @@
    "poster": "/assets/recordings/de4556438004e9be577c.png",
    "video": "/assets/recordings/d89d6b7524b45087bfb9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 252,
+   "video_seconds": 12.6
   },
   {
    "id": "dpsk-006",
@@ -5912,7 +6672,10 @@
    "poster": "/assets/recordings/deeae383fe6bca4d448b.png",
    "video": "/assets/recordings/84398bb9f996c6fd80b9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1351,
+   "video_seconds": 67.55
   },
   {
    "id": "dpsk-007",
@@ -5935,7 +6698,10 @@
    "poster": "/assets/recordings/8f3b794fd0e93beb7134.png",
    "video": "/assets/recordings/d3dd58578249dd3c274f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 47,
+   "video_seconds": 2.35
   },
   {
    "id": "dpsk-008",
@@ -5958,7 +6724,10 @@
    "poster": "/assets/recordings/b52ec01030632fac2fcd.png",
    "video": "/assets/recordings/fa8d1e6a366205b7caaa.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 111,
+   "video_seconds": 5.55
   },
   {
    "id": "dpsk-009",
@@ -5981,7 +6750,10 @@
    "poster": "/assets/recordings/a244f6f7238beb80a873.png",
    "video": "/assets/recordings/075c55471fa81ca6045e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "dpsk-010",
@@ -6004,7 +6776,10 @@
    "poster": "/assets/recordings/e4a14c32db0252a2a41c.png",
    "video": "/assets/recordings/6f88c0b993ff459beea6.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 742,
+   "video_seconds": 29.68
   },
   {
    "id": "dpsk-011",
@@ -6027,7 +6802,10 @@
    "poster": "/assets/recordings/1da353777dacc4c7c271.png",
    "video": "/assets/recordings/4727be0768825690017f.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 40.04
   },
   {
    "id": "dpsk-012",
@@ -6050,7 +6828,10 @@
    "poster": "/assets/recordings/ab26389e6e190a3dbf36.png",
    "video": "/assets/recordings/934ca595a0209b72f071.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "dpsk-013",
@@ -6073,7 +6854,10 @@
    "poster": "/assets/recordings/c39886aed013068c780e.png",
    "video": "/assets/recordings/b6d1632f5137c1b8ce31.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 744,
+   "video_seconds": 29.76
   },
   {
    "id": "dpsk-014",
@@ -6096,7 +6880,10 @@
    "poster": "/assets/recordings/106ec36d5dc4ba29f812.png",
    "video": "/assets/recordings/124b20f8b5131f35cc2d.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "dpsk-015",
@@ -6119,7 +6906,10 @@
    "poster": "/assets/recordings/268487bd584a064cf268.png",
    "video": "/assets/recordings/ff9e1a3c413e32a45ec5.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "dpsk-016",
@@ -6142,7 +6932,10 @@
    "poster": "/assets/recordings/3035f19b94af0cbafde8.png",
    "video": "/assets/recordings/a8326da98d049b5a673f.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "dpsk-017",
@@ -6165,7 +6958,10 @@
    "poster": "/assets/recordings/6a15405443021b81d4aa.png",
    "video": "/assets/recordings/70e17e43a295829689c3.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "dpsk-018",
@@ -6188,7 +6984,10 @@
    "poster": "/assets/recordings/c1efc4d5465c1adb3df6.png",
    "video": "/assets/recordings/7293b3f50336ab427222.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "dpsk-019",
@@ -6211,7 +7010,10 @@
    "poster": "/assets/recordings/79e731e7bdc41fc78d2d.png",
    "video": "/assets/recordings/6f4e1b2b4f9db84c3bf2.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1101,
+   "video_seconds": 44.04
   },
   {
    "id": "dpsk-020",
@@ -6234,7 +7036,10 @@
    "poster": "/assets/recordings/be67371f022a9909c3fc.png",
    "video": "/assets/recordings/1090b184713d58508853.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "dpsk-021",
@@ -6257,7 +7062,10 @@
    "poster": "/assets/recordings/59bc784224ffce028c88.png",
    "video": "/assets/recordings/d3147d5e10071510c527.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "dpsk-022",
@@ -6280,7 +7088,10 @@
    "poster": "/assets/recordings/4cb9e99c3e469f1b319e.png",
    "video": "/assets/recordings/53a9c214a9481566de3b.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "dpsk-023",
@@ -6303,7 +7114,10 @@
    "poster": "/assets/recordings/a6bf26b386f8828b77f6.png",
    "video": "/assets/recordings/bab1c6fdfef93933a377.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "dpsk-024",
@@ -6326,7 +7140,10 @@
    "poster": "/assets/recordings/a67995ef3042d72a5483.png",
    "video": "/assets/recordings/afa8617bfd196f1ec3e2.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 301,
+   "video_seconds": 12.04
   },
   {
    "id": "dpsk-025",
@@ -6349,7 +7166,10 @@
    "poster": "/assets/recordings/263d3c2d41bcaa4eb398.png",
    "video": "/assets/recordings/7f33ded2422363302d47.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-026",
@@ -6372,7 +7192,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "dpsk-027",
@@ -6395,7 +7216,10 @@
    "poster": "/assets/recordings/b39d9c9eebe324cbb8db.png",
    "video": "/assets/recordings/8ff86bd3748c38163285.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-028",
@@ -6418,7 +7242,10 @@
    "poster": "/assets/recordings/645ec72b14b0c882d3c2.png",
    "video": "/assets/recordings/0f81cda1d1238c916425.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-029",
@@ -6441,7 +7268,10 @@
    "poster": "/assets/recordings/b162cb2e1295dff074fe.png",
    "video": "/assets/recordings/3f10a38f8b9ae7bd5e5b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 420,
+   "video_seconds": 14.0
   },
   {
    "id": "dpsk-030",
@@ -6464,7 +7294,10 @@
    "poster": "/assets/recordings/a8d773ec8d60aa682ff6.png",
    "video": "/assets/recordings/ffa5caabfed446dc498b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-031",
@@ -6487,7 +7320,10 @@
    "poster": "/assets/recordings/eff19a31864fd1e172f8.png",
    "video": "/assets/recordings/8c78f82e089e55f518c1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 960,
+   "video_seconds": 32.0
   },
   {
    "id": "dpsk-032",
@@ -6510,7 +7346,10 @@
    "poster": "/assets/recordings/98a8154fc66035c9730d.png",
    "video": "/assets/recordings/37c4626f26ceb8b173b4.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-033",
@@ -6533,7 +7372,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "dpsk-034",
@@ -6556,7 +7396,10 @@
    "poster": "/assets/recordings/1704440518f2e82647ce.png",
    "video": "/assets/recordings/eaeb982eb2b95dc104ca.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "dpsk-035",
@@ -6579,7 +7422,10 @@
    "poster": "/assets/recordings/4dc88f738abc275c1326.png",
    "video": "/assets/recordings/86c0147187afce28689b.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 59,
+   "video_seconds": 3.933333
   },
   {
    "id": "dpsk-036",
@@ -6602,7 +7448,10 @@
    "poster": "/assets/recordings/a0bc1e355100660e76de.png",
    "video": "/assets/recordings/5c79515fc9ea3a836362.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 139,
+   "video_seconds": 9.266667
   },
   {
    "id": "dpsk-037",
@@ -6625,7 +7474,10 @@
    "poster": "/assets/recordings/d588139858a17b58df18.png",
    "video": "/assets/recordings/16e5676c9eaf6da37a5d.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 12,
+   "video_seconds": 0.8
   },
   {
    "id": "dpsk-038",
@@ -6648,7 +7500,10 @@
    "poster": "/assets/recordings/bacd0be8c8f42b7fd08d.png",
    "video": "/assets/recordings/565e19fbd07ab6aba2d4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 40,
+   "video_seconds": 2.666667
   },
   {
    "id": "dpsk-039",
@@ -6671,7 +7526,10 @@
    "poster": "/assets/recordings/bae9672c8bd0fb9a8ebf.png",
    "video": "/assets/recordings/6549d83eb054656015e6.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2999,
+   "video_seconds": 199.933333
   },
   {
    "id": "dpsk-040",
@@ -6694,7 +7552,10 @@
    "poster": "/assets/recordings/6f1be7e36541ec52ab91.png",
    "video": "/assets/recordings/e38aeec91af18e8689d2.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 25,
+   "video_seconds": 1.666667
   },
   {
    "id": "dpsk-041",
@@ -6717,7 +7578,10 @@
    "poster": "/assets/recordings/a9fbb51e430b882df384.png",
    "video": "/assets/recordings/15c848779395d11f80d4.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1349,
+   "video_seconds": 89.933333
   },
   {
    "id": "dpsk-042",
@@ -6740,7 +7604,10 @@
    "poster": "/assets/recordings/d491aa73d856d0aabc6c.png",
    "video": "/assets/recordings/b7fd9a51b0c37543915e.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1897,
+   "video_seconds": 126.466667
   },
   {
    "id": "dpsk-043",
@@ -6763,7 +7630,10 @@
    "poster": "/assets/recordings/f2c564580f9143f42557.png",
    "video": "/assets/recordings/9412df1889123bb3437c.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 40,
+   "video_seconds": 2.666667
   },
   {
    "id": "dpsk-044",
@@ -6786,7 +7656,10 @@
    "poster": "/assets/recordings/4b67eb823b80a77e2485.png",
    "video": "/assets/recordings/d60a6a0c69018d224434.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 60,
+   "video_seconds": 4.0
   },
   {
    "id": "dpsk-045",
@@ -6809,7 +7682,10 @@
    "poster": "/assets/recordings/4090c82249fea6cd97cc.png",
    "video": "/assets/recordings/14a9a00322d419f12d80.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 300,
+   "video_seconds": 6.0
   },
   {
    "id": "dpsk-046",
@@ -6832,7 +7708,10 @@
    "poster": "/assets/recordings/533d1500af003a77936a.png",
    "video": "/assets/recordings/a47b568b5b82daf903e6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016667
   },
   {
    "id": "dpsk-047",
@@ -6855,7 +7734,10 @@
    "poster": "/assets/recordings/6e6fdab6d8b936b36e12.png",
    "video": "/assets/recordings/6d7f39092e542def52a6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 299,
+   "video_seconds": 4.983333
   },
   {
    "id": "dpsk-048",
@@ -6878,7 +7760,10 @@
    "poster": "/assets/recordings/df139ba3a8278eca0c2a.png",
    "video": "/assets/recordings/79f9ba80faeec5754dfc.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 9,
+   "video_seconds": 0.15
   },
   {
    "id": "dpsk-049",
@@ -6901,7 +7786,10 @@
    "poster": "/assets/recordings/9bcaa567887612b33d47.png",
    "video": "/assets/recordings/6a9e0532296c4a4a1012.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 173,
+   "video_seconds": 3.46
   },
   {
    "id": "dpsk-050",
@@ -6924,7 +7812,10 @@
    "poster": "/assets/recordings/3cd34b089173ed326c87.png",
    "video": "/assets/recordings/41a1598b6efe6ff9a12b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 88,
+   "video_seconds": 1.76
   },
   {
    "id": "dpsk-051",
@@ -6947,7 +7838,10 @@
    "poster": "/assets/recordings/fabc38e668964d41548a.png",
    "video": "/assets/recordings/3da3452910c9af92cc7c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 21,
+   "video_seconds": 2.1
   },
   {
    "id": "dpsk-052",
@@ -6970,7 +7864,10 @@
    "poster": "/assets/recordings/decba4997043ef60058a.png",
    "video": "/assets/recordings/9c68ff0e8100c616d1db.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 21,
+   "video_seconds": 4.2
   },
   {
    "id": "dpsk-053",
@@ -6993,7 +7890,10 @@
    "poster": "/assets/recordings/651c1800194b202bace7.png",
    "video": "/assets/recordings/a01132aeaa89aba05c5e.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 431,
+   "video_seconds": 8.62
   },
   {
    "id": "dpsk-054",
@@ -7016,7 +7916,10 @@
    "poster": "/assets/recordings/555820c589500135381b.png",
    "video": "/assets/recordings/2456ec20a50dbd09c303.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 563,
+   "video_seconds": 11.26
   },
   {
    "id": "dpsk-055",
@@ -7039,7 +7942,10 @@
    "poster": "/assets/recordings/93acd4832dd7c9f7b3fa.png",
    "video": "/assets/recordings/14153fca82abaabe7175.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 901,
+   "video_seconds": 18.02
   },
   {
    "id": "dpsk-056",
@@ -7062,7 +7968,10 @@
    "poster": "/assets/recordings/9b06e3228bc5f5dd45c4.png",
    "video": "/assets/recordings/1a61972406a4a158fd43.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 386,
+   "video_seconds": 7.72
   },
   {
    "id": "dpsk-057",
@@ -7085,7 +7994,10 @@
    "poster": "/assets/recordings/fab487beab98495adf0e.png",
    "video": "/assets/recordings/692a19de3549480d17fd.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 348,
+   "video_seconds": 6.96
   },
   {
    "id": "dpsk-058",
@@ -7108,7 +8020,10 @@
    "poster": "/assets/recordings/a7bf425a55183246310d.png",
    "video": "/assets/recordings/00fb1a6a8b809d70ab61.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 81,
+   "video_seconds": 1.62
   },
   {
    "id": "dpsk-059",
@@ -7131,7 +8046,10 @@
    "poster": "/assets/recordings/8032df18ffc3c3db0848.png",
    "video": "/assets/recordings/95f41a1c897b273b02db.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   },
   {
    "id": "dpsk-060",
@@ -7154,7 +8072,10 @@
    "poster": "/assets/recordings/0b618e493381da32f56a.png",
    "video": "/assets/recordings/5386f698bc36690b5dd7.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 682,
+   "video_seconds": 34.1
   },
   {
    "id": "dpsk-061",
@@ -7177,7 +8098,10 @@
    "poster": "/assets/recordings/431481a586d7a3825150.png",
    "video": "/assets/recordings/30223fe8d6eb0848c8a7.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 987,
+   "video_seconds": 49.35
   },
   {
    "id": "dpsk-062",
@@ -7200,7 +8124,10 @@
    "poster": "/assets/recordings/5d6af177ea51a1a225ea.png",
    "video": "/assets/recordings/34d8d3a720916c3a9972.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1098,
+   "video_seconds": 54.9
   },
   {
    "id": "dpsk-063",
@@ -7223,7 +8150,10 @@
    "poster": "/assets/recordings/ab32f7df6665eacd2af7.png",
    "video": "/assets/recordings/e50adfab54991e104fe3.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "dpsk-064",
@@ -7246,7 +8176,10 @@
    "poster": "/assets/recordings/a51a314004cfdf5f6e85.png",
    "video": "/assets/recordings/976b71d5112b8ff27e5a.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "dpsk-065",
@@ -7269,7 +8202,10 @@
    "poster": "/assets/recordings/fe769a87a31a419632ae.png",
    "video": "/assets/recordings/b28e93fd81bdb43fe52b.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 97,
+   "video_seconds": 4.85
   },
   {
    "id": "dpsk-066",
@@ -7292,7 +8228,10 @@
    "poster": "/assets/recordings/533b5fec78c710018034.png",
    "video": "/assets/recordings/36ce448a55170ea8904c.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "dpsk-067",
@@ -7315,7 +8254,10 @@
    "poster": "/assets/recordings/f66292c17aa13a52a675.png",
    "video": "/assets/recordings/7fa5a69d1255e5aad0e4.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "dpsk-068",
@@ -7338,7 +8280,10 @@
    "poster": "/assets/recordings/0e2918170d2b8ba656e7.png",
    "video": "/assets/recordings/04f2252ee0ed9ae03310.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 21,
+   "video_seconds": 1.05
   },
   {
    "id": "dpsk-069",
@@ -7361,7 +8306,10 @@
    "poster": "/assets/recordings/d23c3508649b1896bf8d.png",
    "video": "/assets/recordings/c4dfe2b3cb7ca853de0b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 91,
+   "video_seconds": 1.82
   },
   {
    "id": "dpsk-070",
@@ -7384,7 +8332,10 @@
    "poster": "/assets/recordings/7b381e4216d260c18446.png",
    "video": "/assets/recordings/6d8a5b2112ed2fca949b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 89,
+   "video_seconds": 1.78
   },
   {
    "id": "dpsk-071",
@@ -7407,7 +8358,10 @@
    "poster": "/assets/recordings/712acfc09108e592b9e2.png",
    "video": "/assets/recordings/b9394e799ff2681e150b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 150,
+   "video_seconds": 3.0
   },
   {
    "id": "dpsk-072",
@@ -7430,7 +8384,10 @@
    "poster": "/assets/recordings/cffc772a81927c55794d.png",
    "video": "/assets/recordings/f01827e85e01303a08f4.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 8.080645
   },
   {
    "id": "dpsk-073",
@@ -7453,7 +8410,10 @@
    "poster": "/assets/recordings/b8d55fca5b9f4c56c7fc.png",
    "video": "/assets/recordings/ebe0b1c3a55467cffbc9.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 15,
+   "video_seconds": 0.241935
   },
   {
    "id": "dpsk-074",
@@ -7476,7 +8436,10 @@
    "poster": "/assets/recordings/bf5abf731f1747c37c20.png",
    "video": "/assets/recordings/aa986f365deb266e27cc.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 317,
+   "video_seconds": 7.925
   },
   {
    "id": "dpsk-075",
@@ -7499,7 +8462,10 @@
    "poster": "/assets/recordings/87930b9fcc08396922b3.png",
    "video": "/assets/recordings/c201fc97c631289c271e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 39,
+   "video_seconds": 1.56
   },
   {
    "id": "dpsk-076",
@@ -7522,7 +8488,10 @@
    "poster": "/assets/recordings/f752752da93a8f1cb903.png",
    "video": "/assets/recordings/a43bdaf0b350ded6a74e.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 51,
+   "video_seconds": 1.02
   },
   {
    "id": "dpsk-077",
@@ -7545,7 +8514,10 @@
    "poster": "/assets/recordings/c0ce0a796a91802454ba.png",
    "video": "/assets/recordings/f0fded39f2359fa65a48.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 44,
+   "video_seconds": 0.88
   },
   {
    "id": "dpsk-078",
@@ -7568,7 +8540,10 @@
    "poster": "/assets/recordings/ae57db0ba184affaa76e.png",
    "video": "/assets/recordings/ba33fea4df68fc81b33d.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 404,
+   "video_seconds": 8.08
   },
   {
    "id": "dpsk-079",
@@ -7591,7 +8566,10 @@
    "poster": "/assets/recordings/23a6373effc040018025.png",
    "video": "/assets/recordings/47237ab46809109928b4.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 46,
+   "video_seconds": 0.92
   },
   {
    "id": "dpsk-080",
@@ -7614,7 +8592,10 @@
    "poster": "/assets/recordings/5c509a546240be2fa360.png",
    "video": "/assets/recordings/4e41b57f37346a35e165.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 42,
+   "video_seconds": 0.42
   },
   {
    "id": "dpsk-081",
@@ -7637,7 +8618,10 @@
    "poster": "/assets/recordings/0d00ebca0f943878300b.png",
    "video": "/assets/recordings/1c4265adb8626542f7c3.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 65,
+   "video_seconds": 0.65
   },
   {
    "id": "dpsk-082",
@@ -7660,7 +8644,10 @@
    "poster": "/assets/recordings/f4a39c7b4ce5d81e12e6.png",
    "video": "/assets/recordings/b318a664fdd31ef89f49.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 55,
+   "video_seconds": 1.1
   },
   {
    "id": "gemini-task-249",
@@ -7683,7 +8670,10 @@
    "poster": "/assets/recordings/270ca6407b5eea26a947.png",
    "video": "/assets/recordings/12a0541bf4fa8b721dd2.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 30.05
   },
   {
    "id": "gemini-task-250",
@@ -7706,7 +8696,10 @@
    "poster": "/assets/recordings/2edcb9b0ff50c551a9a3.png",
    "video": "/assets/recordings/022cfda8cb71f9e93248.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 165,
+   "video_seconds": 8.25
   },
   {
    "id": "gemini-task-251",
@@ -7729,7 +8722,10 @@
    "poster": "/assets/recordings/ca670e24602dac849ebc.png",
    "video": "/assets/recordings/f5f0d81a4e9d6be6ef0a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 103,
+   "video_seconds": 5.15
   },
   {
    "id": "gemini-task-252",
@@ -7752,7 +8748,10 @@
    "poster": "/assets/recordings/ca809440dc568308e016.png",
    "video": "/assets/recordings/ccd13f310b2058c72f65.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 211,
+   "video_seconds": 10.55
   },
   {
    "id": "gemini-task-253",
@@ -7775,7 +8774,10 @@
    "poster": "/assets/recordings/33e9dd48f53af65249b4.png",
    "video": "/assets/recordings/66819c5472df2b82dde6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 348,
+   "video_seconds": 17.4
   },
   {
    "id": "gemini-task-254",
@@ -7798,7 +8800,10 @@
    "poster": "/assets/recordings/8196f34d90d1e0f56fc5.png",
    "video": "/assets/recordings/977e9ac016e99cebe56f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3901,
+   "video_seconds": 195.05
   },
   {
    "id": "gemini-task-255",
@@ -7821,7 +8826,10 @@
    "poster": "/assets/recordings/9b2e18d9ca3075d60ada.png",
    "video": "/assets/recordings/7273e63ae75e7c6a320a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 585,
+   "video_seconds": 29.25
   },
   {
    "id": "gemini-task-256",
@@ -7844,7 +8852,10 @@
    "poster": "/assets/recordings/0c96a1d63f7675e95699.png",
    "video": "/assets/recordings/af099b419bc58f0df2d6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-257",
@@ -7867,7 +8878,10 @@
    "poster": "/assets/recordings/aa2d6461a8061e9392eb.png",
    "video": "/assets/recordings/a77de935a2ce5a53c5b7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 22,
+   "video_seconds": 1.1
   },
   {
    "id": "gemini-task-258",
@@ -7890,7 +8904,10 @@
    "poster": "/assets/recordings/36fa5679f9db0a639994.png",
    "video": "/assets/recordings/47edb9e714449e4072c0.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-259",
@@ -7913,7 +8930,10 @@
    "poster": "/assets/recordings/2e992b237d6d91779034.png",
    "video": "/assets/recordings/5359117c8ae1b688506b.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "gemini-task-260",
@@ -7936,7 +8956,10 @@
    "poster": "/assets/recordings/59a8b3ceba285b018a8c.png",
    "video": "/assets/recordings/03cb26be7fd05f16f577.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1001,
+   "video_seconds": 40.04
   },
   {
    "id": "gemini-task-261",
@@ -7959,7 +8982,10 @@
    "poster": "/assets/recordings/eeff1063a0946d1c1175.png",
    "video": "/assets/recordings/3acb8b1d4c763c38e819.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "gemini-task-262",
@@ -7982,7 +9008,10 @@
    "poster": "/assets/recordings/1258b05310ef62c70433.png",
    "video": "/assets/recordings/abb5e97dd7606bf6f42a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1401,
+   "video_seconds": 56.04
   },
   {
    "id": "gemini-task-263",
@@ -8005,7 +9034,10 @@
    "poster": "/assets/recordings/d7f39383781bf9dcbbcc.png",
    "video": "/assets/recordings/5ebe54b43649835312c1.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "gemini-task-264",
@@ -8028,7 +9060,10 @@
    "poster": "/assets/recordings/b86a2d43cc27dca6378c.png",
    "video": "/assets/recordings/589e6c550c4a9f09141a.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "gemini-task-265",
@@ -8051,7 +9086,10 @@
    "poster": "/assets/recordings/3da0b93dd3d86761b333.png",
    "video": "/assets/recordings/e5b0ad5e1422fc066c21.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 401,
+   "video_seconds": 16.04
   },
   {
    "id": "gemini-task-266",
@@ -8074,7 +9112,10 @@
    "poster": "/assets/recordings/a2b0d1520d520d197dd0.png",
    "video": "/assets/recordings/92987b7949ba0a28f091.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "gemini-task-267",
@@ -8097,7 +9138,10 @@
    "poster": "/assets/recordings/dfe4b416a201019e7bec.png",
    "video": "/assets/recordings/7f1a153cff96b51319bb.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 501,
+   "video_seconds": 20.04
   },
   {
    "id": "gemini-task-268",
@@ -8120,7 +9164,10 @@
    "poster": "/assets/recordings/7bfa5c81d1703dfc7b26.png",
    "video": "/assets/recordings/624536343fd24266f6df.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1101,
+   "video_seconds": 44.04
   },
   {
    "id": "gemini-task-269",
@@ -8143,7 +9190,10 @@
    "poster": "/assets/recordings/62c90fcd746f5a05e23e.png",
    "video": "/assets/recordings/73f619a704228bdd4a72.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 701,
+   "video_seconds": 28.04
   },
   {
    "id": "gemini-task-270",
@@ -8166,7 +9216,10 @@
    "poster": "/assets/recordings/952b6d96fb2a14ab301e.png",
    "video": "/assets/recordings/49ad19dafbd399a239b5.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 601,
+   "video_seconds": 24.04
   },
   {
    "id": "gemini-task-271",
@@ -8189,7 +9242,10 @@
    "poster": "/assets/recordings/b13dbf7d6366d8bee289.png",
    "video": "/assets/recordings/9454dc404a1e228b08de.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 801,
+   "video_seconds": 32.04
   },
   {
    "id": "gemini-task-272",
@@ -8212,7 +9268,10 @@
    "poster": "/assets/recordings/24fee32faaa9a963f89d.png",
    "video": "/assets/recordings/b2ec4087fccf2c840ba3.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 512,
+   "video_seconds": 20.48
   },
   {
    "id": "gemini-task-273",
@@ -8235,7 +9294,10 @@
    "poster": "/assets/recordings/12d8f43cf924fdcfd86d.png",
    "video": "/assets/recordings/4095e28c00c89b5fbefb.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 301,
+   "video_seconds": 12.04
   },
   {
    "id": "gemini-task-274",
@@ -8258,7 +9320,10 @@
    "poster": "/assets/recordings/15f2fad43341b7b0911e.png",
    "video": "/assets/recordings/c582b7cc3a2568ca0864.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 480,
+   "video_seconds": 16.0
   },
   {
    "id": "gemini-task-275",
@@ -8281,7 +9346,10 @@
    "poster": "/assets/recordings/5cd1fcba81acb5703e5d.png",
    "video": "/assets/recordings/83324c45f865fb3d17e8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 120,
+   "video_seconds": 4.0
   },
   {
    "id": "gemini-task-276",
@@ -8304,7 +9372,10 @@
    "poster": "/assets/recordings/1bab012cf403cedb040b.png",
    "video": "/assets/recordings/ec25d21d4b27b89199e6.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 990,
+   "video_seconds": 33.0
   },
   {
    "id": "gemini-task-277",
@@ -8327,7 +9398,10 @@
    "poster": "/assets/recordings/d2e8b8c5c596a84b192f.png",
    "video": "/assets/recordings/66323f2d8a3ed80f16d7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 590,
+   "video_seconds": 19.666667
   },
   {
    "id": "gemini-task-278",
@@ -8350,7 +9424,10 @@
    "poster": "/assets/recordings/4531e79bbcc138a49c11.png",
    "video": "/assets/recordings/25bcc6233efd3903d7e8.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 330,
+   "video_seconds": 11.0
   },
   {
    "id": "gemini-task-279",
@@ -8373,7 +9450,10 @@
    "poster": "/assets/recordings/aee8cae73ff4e1fac477.png",
    "video": "/assets/recordings/95a2adc61f6b9fc4e3f1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 810,
+   "video_seconds": 27.0
   },
   {
    "id": "gemini-task-280",
@@ -8396,7 +9476,10 @@
    "poster": "/assets/recordings/3950ccd4db2deb6e88b2.png",
    "video": "/assets/recordings/7799b5af0fa256834e2b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2000,
+   "video_seconds": 66.666667
   },
   {
    "id": "gemini-task-281",
@@ -8419,7 +9502,10 @@
    "poster": "/assets/recordings/711cf78db7c20f34daf6.png",
    "video": "/assets/recordings/241ff040f7c889b171c5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 270,
+   "video_seconds": 9.0
   },
   {
    "id": "gemini-task-282",
@@ -8442,7 +9528,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-283",
@@ -8465,7 +9552,10 @@
    "poster": "/assets/recordings/5d8c79a8fa233042d11c.png",
    "video": "/assets/recordings/ad5acf98c9f59ada5fd1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 1077,
+   "video_seconds": 35.9
   },
   {
    "id": "gemini-task-284",
@@ -8488,7 +9578,10 @@
    "poster": "/assets/recordings/bfe54490f26527352b29.png",
    "video": "/assets/recordings/685b62815a398c44fa38.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 20,
+   "video_seconds": 1.333333
   },
   {
    "id": "gemini-task-285",
@@ -8511,7 +9604,10 @@
    "poster": "/assets/recordings/1309825fdd6262f6b2d9.png",
    "video": "/assets/recordings/e7ba124d76d6a894651d.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 6,
+   "video_seconds": 0.4
   },
   {
    "id": "gemini-task-286",
@@ -8534,7 +9630,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-287",
@@ -8557,7 +9654,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-288",
@@ -8580,7 +9678,10 @@
    "poster": "/assets/recordings/50f3a0592a6b07304389.png",
    "video": "/assets/recordings/42f7e773a21aa74999c9.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 30,
+   "video_seconds": 2.0
   },
   {
    "id": "gemini-task-289",
@@ -8603,7 +9704,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-290",
@@ -8626,7 +9728,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-291",
@@ -8649,7 +9752,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-292",
@@ -8672,7 +9776,8 @@
    "poster": null,
    "video": null,
    "views": 0,
-   "trace": null
+   "trace": null,
+   "media_status": "missing"
   },
   {
    "id": "gemini-task-293",
@@ -8695,7 +9800,10 @@
    "poster": "/assets/recordings/4f25cd0048ddd5888d7e.png",
    "video": "/assets/recordings/b8326f85039f6f96ff70.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 95,
+   "video_seconds": 6.333333
   },
   {
    "id": "gemini-task-294",
@@ -8718,7 +9826,10 @@
    "poster": "/assets/recordings/2bb56734bbb0dafdb7b3.png",
    "video": "/assets/recordings/c6bb54c2106b7f84a3d1.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 300,
+   "video_seconds": 6.0
   },
   {
    "id": "gemini-task-295",
@@ -8741,7 +9852,10 @@
    "poster": "/assets/recordings/2ab4b9f256d62f66861b.png",
    "video": "/assets/recordings/a8c783cf85bf442d55cb.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016667
   },
   {
    "id": "gemini-task-296",
@@ -8764,7 +9878,10 @@
    "poster": "/assets/recordings/3f30674116245cacfe20.png",
    "video": "/assets/recordings/b57695f4afccd5c8bb33.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016667
   },
   {
    "id": "gemini-task-297",
@@ -8787,7 +9904,10 @@
    "poster": "/assets/recordings/73299fd062ae30ce3b91.png",
    "video": "/assets/recordings/fd9d4d69ad2794bcb539.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2,
+   "video_seconds": 0.033333
   },
   {
    "id": "gemini-task-298",
@@ -8810,7 +9930,10 @@
    "poster": "/assets/recordings/55891178a4672eb64d5b.png",
    "video": "/assets/recordings/e5cc3bb10cc2648c8508.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 81,
+   "video_seconds": 1.62
   },
   {
    "id": "gemini-task-299",
@@ -8833,7 +9956,10 @@
    "poster": "/assets/recordings/0e1371d58693e0ad35b1.png",
    "video": "/assets/recordings/9fa7a1667cf1c0ffe45f.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 92,
+   "video_seconds": 1.84
   },
   {
    "id": "gemini-task-300",
@@ -8856,7 +9982,10 @@
    "poster": "/assets/recordings/e0668cfca9d2d8830aa5.png",
    "video": "/assets/recordings/9b108a4d85cb07ec8207.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 3,
+   "video_seconds": 0.3
   },
   {
    "id": "gemini-task-301",
@@ -8879,7 +10008,10 @@
    "poster": "/assets/recordings/4e47021d41dba6bde227.png",
    "video": "/assets/recordings/3cd63fa108ac000345d5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 37,
+   "video_seconds": 7.4
   },
   {
    "id": "gemini-task-302",
@@ -8902,7 +10034,10 @@
    "poster": "/assets/recordings/8494e9db9c21e1146a29.png",
    "video": "/assets/recordings/7efd9dc1b2c9c0817d22.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 286,
+   "video_seconds": 5.72
   },
   {
    "id": "gemini-task-303",
@@ -8925,7 +10060,10 @@
    "poster": "/assets/recordings/826dea70506fd7ee6a33.png",
    "video": "/assets/recordings/71dd1583c4d3ad0abce1.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 976,
+   "video_seconds": 19.52
   },
   {
    "id": "gemini-task-304",
@@ -8948,7 +10086,10 @@
    "poster": "/assets/recordings/f88636fb9079c0532aa0.png",
    "video": "/assets/recordings/a374b1a3b3b882c388d2.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 895,
+   "video_seconds": 17.9
   },
   {
    "id": "gemini-task-305",
@@ -8971,7 +10112,10 @@
    "poster": "/assets/recordings/f948c5b2338b2eedba39.png",
    "video": "/assets/recordings/8c4f2e972160a162eb9e.mp4",
    "views": 2,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 103,
+   "video_seconds": 2.06
   },
   {
    "id": "gemini-task-306",
@@ -8994,7 +10138,10 @@
    "poster": "/assets/recordings/4e50e09b4b900c1e3d6b.png",
    "video": "/assets/recordings/e30751ecb52d8df1706c.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 26,
+   "video_seconds": 0.52
   },
   {
    "id": "gemini-task-307",
@@ -9017,7 +10164,10 @@
    "poster": "/assets/recordings/480e1c73ad6aed60ac58.png",
    "video": "/assets/recordings/20a61924f0f2d4f8f98f.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   },
   {
    "id": "gemini-task-308",
@@ -9040,7 +10190,10 @@
    "poster": "/assets/recordings/832a33d973e4f13a173d.png",
    "video": "/assets/recordings/8646108284cbd609ed34.mp4",
    "views": 3,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   },
   {
    "id": "gemini-task-309",
@@ -9063,7 +10216,10 @@
    "poster": "/assets/recordings/5a0ee6e8e7908edf1347.png",
    "video": "/assets/recordings/c6107e9cc4d4d2e158e2.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-310",
@@ -9086,7 +10242,10 @@
    "poster": "/assets/recordings/639825d5be7973064642.png",
    "video": "/assets/recordings/ceb927ebf7b64fb7d23b.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 987,
+   "video_seconds": 49.35
   },
   {
    "id": "gemini-task-311",
@@ -9109,7 +10268,10 @@
    "poster": "/assets/recordings/553ba9ffefc8d38be556.png",
    "video": "/assets/recordings/3344de8ff7c3051e92c6.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 353,
+   "video_seconds": 17.65
   },
   {
    "id": "gemini-task-312",
@@ -9132,7 +10294,10 @@
    "poster": "/assets/recordings/80ba5c3e96e0c3a98c01.png",
    "video": "/assets/recordings/b6110d11e8239831d30a.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2,
+   "video_seconds": 0.1
   },
   {
    "id": "gemini-task-313",
@@ -9155,7 +10320,10 @@
    "poster": "/assets/recordings/416086ce932ffcdf5d57.png",
    "video": "/assets/recordings/638d9682017ebb983275.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 102,
+   "video_seconds": 5.1
   },
   {
    "id": "gemini-task-314",
@@ -9178,7 +10346,10 @@
    "poster": "/assets/recordings/2d84bba4d1463dd39109.png",
    "video": "/assets/recordings/58f9fef1c9252b313e27.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 2,
+   "video_seconds": 0.1
   },
   {
    "id": "gemini-task-315",
@@ -9201,7 +10372,10 @@
    "poster": "/assets/recordings/40bc9fe8035bf944b9e9.png",
    "video": "/assets/recordings/025895bd4fef16baf328.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-316",
@@ -9224,7 +10398,10 @@
    "poster": "/assets/recordings/4883394f4a87abde46ef.png",
    "video": "/assets/recordings/1a7b4e6b240785d0a434.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-317",
@@ -9247,7 +10424,10 @@
    "poster": "/assets/recordings/ce5643355353faf811dd.png",
    "video": "/assets/recordings/6f4c66234a15d681aa3c.mp4",
    "views": 5,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.05
   },
   {
    "id": "gemini-task-318",
@@ -9270,7 +10450,10 @@
    "poster": "/assets/recordings/3ae52df391efda48e727.png",
    "video": "/assets/recordings/b17bd5d272dbd44493ba.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   },
   {
    "id": "gemini-task-319",
@@ -9293,7 +10476,10 @@
    "poster": "/assets/recordings/efc6654022c0f57133b8.png",
    "video": "/assets/recordings/a61bea7069446022fd41.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 157,
+   "video_seconds": 3.14
   },
   {
    "id": "gemini-task-320",
@@ -9316,7 +10502,10 @@
    "poster": "/assets/recordings/de237e922c53436d2341.png",
    "video": "/assets/recordings/e7b43951cbfd5e2d9327.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 437,
+   "video_seconds": 8.74
   },
   {
    "id": "gemini-task-321",
@@ -9339,7 +10528,10 @@
    "poster": "/assets/recordings/e48f2d54b9b8f1206505.png",
    "video": "/assets/recordings/a0dc8853027b9dfa65f5.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016129
   },
   {
    "id": "gemini-task-322",
@@ -9362,7 +10554,10 @@
    "poster": "/assets/recordings/66f7201954f7df4c10e3.png",
    "video": "/assets/recordings/02855c4f267dd7644644.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.016129
   },
   {
    "id": "gemini-task-323",
@@ -9385,7 +10580,10 @@
    "poster": "/assets/recordings/5f1e2432619801d6892d.png",
    "video": "/assets/recordings/3a17d742decf574b67e2.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.025
   },
   {
    "id": "gemini-task-324",
@@ -9408,7 +10606,10 @@
    "poster": "/assets/recordings/d966a2ca7c9a21f8121b.png",
    "video": "/assets/recordings/af9efd43abb6da4327c7.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.04
   },
   {
    "id": "gemini-task-325",
@@ -9431,7 +10632,10 @@
    "poster": "/assets/recordings/819006b04a7795a2e4dc.png",
    "video": "/assets/recordings/c760c4c9ee7e6aaa2f97.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 27,
+   "video_seconds": 0.54
   },
   {
    "id": "gemini-task-326",
@@ -9454,7 +10658,10 @@
    "poster": "/assets/recordings/2220a7319006c007be84.png",
    "video": "/assets/recordings/37b25355850146091baf.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 44,
+   "video_seconds": 0.88
   },
   {
    "id": "gemini-task-327",
@@ -9477,7 +10684,10 @@
    "poster": "/assets/recordings/5a52ab2e23790ecc88ad.png",
    "video": "/assets/recordings/582c68ea6f66e0873c53.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 67,
+   "video_seconds": 1.34
   },
   {
    "id": "gemini-task-328",
@@ -9500,7 +10710,10 @@
    "poster": "/assets/recordings/b204e93e1d62a0ac2470.png",
    "video": "/assets/recordings/31e4e90db83350e7d8ad.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   },
   {
    "id": "gemini-task-329",
@@ -9523,7 +10736,10 @@
    "poster": "/assets/recordings/6df4a716b302155feba8.png",
    "video": "/assets/recordings/d6153e9064e6cbb27e2c.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 38,
+   "video_seconds": 0.38
   },
   {
    "id": "gemini-task-330",
@@ -9546,7 +10762,10 @@
    "poster": "/assets/recordings/e79f5b3c8020b10d99f6.png",
    "video": "/assets/recordings/e9d8573e82c281b8a154.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 116,
+   "video_seconds": 1.16
   },
   {
    "id": "gemini-task-331",
@@ -9569,7 +10788,10 @@
    "poster": "/assets/recordings/bf1953b031d1ee525399.png",
    "video": "/assets/recordings/5636f635f4bc0e97fd1b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 75,
+   "video_seconds": 1.5
   },
   {
    "id": "opus-1v1",
@@ -9592,7 +10814,10 @@
    "poster": "/assets/recordings/f506d48395d3c0beee1e.png",
    "video": "/assets/recordings/a715c8eadab56e146e9a.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 499,
+   "video_seconds": 9.98
   },
   {
    "id": "k3-1v1",
@@ -9615,7 +10840,10 @@
    "poster": "/assets/recordings/e12ff8a1126ecd522ce1.png",
    "video": "/assets/recordings/a9d0a3aac4f852170d14.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 94,
+   "video_seconds": 1.88
   },
   {
    "id": "dpsk-1v1",
@@ -9638,7 +10866,10 @@
    "poster": "/assets/recordings/90b12d9134d4f638a754.png",
    "video": "/assets/recordings/bd373bfb3a7a06332f6b.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "video",
+   "video_frames": 242,
+   "video_seconds": 4.84
   },
   {
    "id": "gemini-task-351",
@@ -9661,7 +10892,10 @@
    "poster": "/assets/recordings/d4379ee3fe9b864b91c3.png",
    "video": "/assets/recordings/2ba6134360c39c912673.mp4",
    "views": 1,
-   "trace": null
+   "trace": null,
+   "media_status": "initial",
+   "video_frames": 1,
+   "video_seconds": 0.02
   }
  ]
 }

@@ -34,7 +34,7 @@ blockquote cite{display:block;margin-top:6px;font:normal 12px var(--mono);color:
 .strip .c{aspect-ratio:1;border-radius:2px}
 .strip .one{background:var(--teal)}.strip .zero{border:1px solid var(--muted);opacity:.55}.strip .none{border:1px dashed var(--line)}
 .mval{text-align:right}.mval b{font:600 24px var(--mono);color:var(--ink)}.mval span{font-size:12px;color:var(--muted)}
-.drow{display:grid;grid-template-columns:minmax(150px,1.3fr) repeat(4,1fr);gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+.drow{display:grid;grid-template-columns:minmax(150px,1.3fr) repeat(5,minmax(0,1fr));gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:13px}
 .dhead{border-top:0;font:600 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 .dname{display:flex;align-items:center;gap:8px;color:var(--ink)}.dname i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
 .dcell{display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center}
@@ -66,8 +66,10 @@ blockquote cite{display:block;margin-top:6px;font:normal 12px var(--mono);color:
 @media (max-width:640px){
   .post{padding-top:130px}
   .mrow{grid-template-columns:1fr auto;gap:6px 10px}.mrow .strip{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(28,1fr)}
-  .drow{grid-template-columns:repeat(4,1fr);gap:6px 8px}.drow .dname{grid-column:1/-1}.dhead span:first-child{display:none}
+  .drow{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px 8px}.drow .dname{grid-column:1/-1}.dhead span:first-child{display:none}
   .overlap{grid-template-columns:1fr}
   .grow{grid-template-columns:1fr 70px;gap:4px 10px}.grow .gbar{grid-column:1/-1;grid-row:2}
   .chart{padding:16px}.post p,.post li{font-size:15px}
 }
+
+.clip-media img{width:100%;height:100%;object-fit:contain}.mname,.dhead span{overflow-wrap:anywhere}

@@ -96,7 +96,7 @@ window.RWCharts = (() => {
         el('div', {class: 'rc-vtrack'},
           el('b', {class: 'rc-vval', style: `bottom:${100 * hit / top}%`}, `${(100 * hit / 84).toFixed(1)}%`),
           el('span', {class: 'rc-vbar', style: `height:${100 * hit / top}%`})),
-        el('strong', {}, m), el('small', {}, t(`${hit} solved`, `解出 ${hit} 题`))));
+        el('strong', {}, RWPlayer.fullName(m)), el('small', {}, t(`${hit} solved`, `解出 ${hit} 题`))));
     }
     const S = scored(R), hit = solved(R).length;
     const headline = el('div', {class: 'rc-head'},
@@ -257,7 +257,7 @@ window.RWCharts = (() => {
       });
       const early = rs.filter(r => r.steps / r.limit < 0.5).length;
       box.append(el('div', {class: 'rc-drow'},
-        el('span', {class: 'rc-model'}, el('b', {}, m), el('small', {}, t(`${early} used < 50%`, `${early} 次用了不到一半`))),
+        el('span', {class: 'rc-model'}, el('b', {}, RWPlayer.fullName(m)), el('small', {}, t(`${early} used < 50%`, `${early} 次用了不到一半`))),
         lane));
     }
     box.append(el('div', {class: 'rc-legend rc-dlegend'},
