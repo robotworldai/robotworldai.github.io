@@ -89,7 +89,9 @@ window.RWCharts = (() => {
     const max = Math.max(...MODELS.map(m => solved(of(R, m)).length), 1);
     const top = Math.ceil((max + 1) / 5) * 5;
     const bars = el('div', {class: 'rc-vbars'});
-    for (let g = 0; g <= top; g += 5) bars.append(el('span', {class: 'rc-grid', style: `bottom:${100 * g / top}%`}, `${(100 * g / 84).toFixed(0)}%`));
+    const grid = el('div', {class: 'rc-vgrid', 'aria-hidden': 'true'});
+    bars.append(grid);
+    for (let g = 0; g <= top; g += 5) grid.append(el('span', {class: 'rc-grid', style: `bottom:${100 * g / top}%`}, `${(100 * g / 84).toFixed(0)}%`));
     for (const m of MODELS) {
       const rs = of(R, m), hit = solved(rs).length;
       bars.append(el('div', {class: 'rc-vcol m-' + m.toLowerCase()},
