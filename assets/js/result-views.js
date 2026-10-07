@@ -40,40 +40,57 @@ const svgEl = (tag, attrs = {}, text) => {
 };
 const fmtTok = v => v >= 1e9 ? (v / 1e9).toFixed(1) + 'B' : v >= 1e6 ? Math.round(v / 1e6) + 'M' : v >= 1e3 ? Math.round(v / 1e3) + 'k' : String(v);
 
-// Score vs resource use. Only points no other model beats on both axes are drawn dark (Pareto front).
+// All three resource views share model IDs and the same score scale.
 function pareto(data, usage) {
   const axes = {
     tokens: [T('Total tokens', '总 tokens'), r => usage[r.id] ? usage[r.id].totalTokens : null, fmtTok],
     cost: [T('Cost (USD, list price)', '费用（美元，标价）'), r => usage[r.id] ? usage[r.id].cost : null, v => '$' + (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v.toFixed(0))],
     hours: [T('Wall-clock hours', '运行时长（小时）'), r => r.minutes != null ? r.minutes / 60 : null, v => v.toFixed(0) + 'h'],
   };
-  const head = document.createElement('div');
-  head.className = 'pareto-head';
-  const sel = document.createElement('select');
-  sel.setAttribute('aria-label', T('X axis', '横轴'));
-  for (const [k, [label]] of Object.entries(axes)) sel.append(new Option(label.toUpperCase(), k));
-  head.append(Object.assign(document.createElement('span'), {textContent: T('SCORE VS', '得分 VS')}), sel);
-  const box = document.createElement('div');
-  box.className = 'pareto-box';
+  const legend = document.createElement('ul');
+  legend.className = 'pareto-legend';
+  legend.setAttribute('aria-label', T('Model key', '模型图例'));
+  RV_MODELS.forEach((m, i) => {
+    const item = document.createElement('li');
+    item.append(Object.assign(document.createElement('b'), {textContent: i + 1}), document.createTextNode(RV_FULL[m]));
+    legend.append(item);
+  });
+  const plots = document.createElement('div');
+  plots.className = 'pareto-plots';
   const cap = document.createElement('p');
   cap.className = 'pareto-cap';
-  paretoPanel.append(head, box, cap);
+  cap.textContent = T('Same score scale; lower resource use and higher score are better. Dashed line: Pareto frontier. Resources = valid per-task mean × task count; missing usage is estimated, not zero. Tokens include cached input + output. Cost uses list-price estimates, not invoices. Time includes simulation and API waits, not just model speed.',
+    '三个子图使用相同得分刻度；资源越少、得分越高越好。虚线为 Pareto 前沿。资源用量 = 有效任务均值 × 任务数；缺失用量按均值估算，不计为零。Tokens 含缓存输入与输出；费用为标价估算，非账单；时长含仿真与 API 等待，不代表纯模型速度。');
+  paretoPanel.append(legend, plots, cap);
 
-  function draw() {
-    const [label, get, fmt] = axes[sel.value];
+  const ymax = Math.max(25, ...RV_MODELS.map(m => {
+    const rs = data.runs.filter(r => r.model === m);
+    return rs.length ? Math.ceil(100 * rs.filter(r => r.score === 1).length / rs.length / 5) * 5 + 5 : 25;
+  }));
+  for (const [axis, [label, get, fmt]] of Object.entries(axes)) {
+    const box = document.createElement('section');
+    box.className = 'pareto-box';
+    const heading = document.createElement('h3');
+    heading.id = 'pareto-' + axis;
+    heading.textContent = label;
+    box.setAttribute('aria-labelledby', heading.id);
+    const detail = document.createElement('p');
+    detail.className = 'pareto-detail';
+    detail.setAttribute('aria-live', 'polite');
+    detail.textContent = T('Hover, focus or tap a numbered marker for values.', '悬停、聚焦或点击编号查看数值。');
     const pts = RV_MODELS.map(m => {
       const rs = data.runs.filter(r => r.model === m);
       // Per-task mean over scored runs with a valid value, scaled to all tasks.
-      const ok = rs.filter(r => r.score !== null && get(r) != null && (sel.value === 'hours' || !usage[r.id].zero));
+      const ok = rs.filter(r => r.score !== null && get(r) != null && (axis === 'hours' || !usage[r.id].zero));
       const vals = ok.map(get);
       const partial = ok.length < rs.length;
       return {m, x: ok.length ? vals.reduce((a, b) => a + b, 0) / ok.length * rs.length : null, y: 100 * rs.filter(r => r.score === 1).length / rs.length, partial};
     }).filter(p => p.x !== null);
     for (const p of pts) p.front = !pts.some(q => q !== p && q.x <= p.x && q.y >= p.y && (q.x < p.x || q.y > p.y));
-    const W = 960, H = 440, L = 70, R = 30, TP = 24, B = 60;
-    const xmax = Math.max(...pts.map(p => p.x)) * 1.15, ymax = Math.max(25, Math.ceil(Math.max(...pts.map(p => p.y)) / 5) * 5 + 5);
+    const W = 360, H = 310, L = 44, R = 28, TP = 28, B = 44;
+    const xmax = (Math.max(0, ...pts.map(p => p.x)) || 1) * 1.15;
     const X = v => L + (W - L - R) * v / xmax, Y = v => H - B - (H - TP - B) * v / ymax;
-    const s = svgEl('svg', {viewBox: `0 0 ${W} ${H}`, class: 'pareto-svg', role: 'img', 'aria-label': `${T('Score versus', '得分对比')} ${label}`});
+    const s = svgEl('svg', {viewBox: `0 0 ${W} ${H}`, class: 'pareto-svg', role: 'group', 'aria-label': `${T('Score versus', '得分对比')} ${label}`});
     for (let g = 0; g <= ymax; g += 5) {
       s.append(svgEl('line', {x1: L, x2: W - R, y1: Y(g), y2: Y(g), class: 'pg'}));
       s.append(svgEl('text', {x: L - 10, y: Y(g) + 4, 'text-anchor': 'end', class: 'pt'}, g + '%'));
@@ -83,35 +100,43 @@ function pareto(data, usage) {
       s.append(svgEl('line', {x1: X(v), x2: X(v), y1: TP, y2: H - B, class: 'pg'}));
       s.append(svgEl('text', {x: X(v), y: H - B + 20, 'text-anchor': 'middle', class: 'pt'}, i ? fmt(v) : '0'));
     }
-    s.append(svgEl('text', {x: (L + W - R) / 2, y: H - 12, 'text-anchor': 'middle', class: 'pt pl'}, label));
-    s.append(svgEl('text', {x: 16, y: (TP + H - B) / 2, transform: `rotate(-90 16 ${(TP + H - B) / 2})`, 'text-anchor': 'middle', class: 'pt pl'}, T('Score', '得分')));
-    // Shaded staircase under the front, as on tbench.
+    s.append(svgEl('text', {x: L, y: 14, class: 'pt'}, T('Score ↑', '得分 ↑')));
     const front = pts.filter(p => p.front).sort((a, b) => a.x - b.x);
-    let d = `M ${X(0)} ${Y(0)}`, yprev = 0;
-    for (const p of front) { d += ` L ${X(p.x)} ${Y(yprev)} L ${X(p.x)} ${Y(p.y)}`; yprev = p.y; }
-    d += ` L ${X(xmax)} ${Y(yprev)} L ${X(xmax)} ${Y(0)} Z`;
-    s.append(svgEl('path', {d, class: 'pfront'}));
+    if (front.length) {
+      let d = `M ${X(front[0].x)} ${Y(front[0].y)}`;
+      for (const p of front.slice(1)) d += ` H ${X(p.x)} V ${Y(p.y)}`;
+      s.append(svgEl('path', {d, class: 'pfront'}));
+    }
+    const badges = [];
     for (const p of pts) {
-      const g = svgEl('g', {class: 'pp' + (p.front ? ' on' : '')});
-      g.append(svgEl('rect', {x: X(p.x) - 6, y: Y(p.y) - 6, width: 12, height: 12}));
-      const right = X(p.x) < W - 260;
-      g.append(svgEl('text', {x: X(p.x) + (right ? 14 : -14), y: Y(p.y) + 5, 'text-anchor': right ? 'start' : 'end'},
-        `${RV_FULL[p.m]} · ${p.y.toFixed(1)}%`));
-      g.append(svgEl('title', {}, `${RV_FULL[p.m]} · ${p.y.toFixed(1)}% · ${fmt(p.x)}`));
+      const value = axis === 'tokens' ? Math.round(p.x).toLocaleString(isZh ? 'zh-CN' : 'en-US') : (axis === 'cost' ? '$' : '') + p.x.toFixed(2) + (axis === 'hours' ? 'h' : '');
+      const description = `${RV_FULL[p.m]} · ${p.y.toFixed(1)}% · ${value}` + (p.partial ? T(' (estimated from available runs)', '（按可用任务估算）') : '');
+      const g = svgEl('g', {class: 'pp' + (p.front ? ' on' : ''), tabindex: '0', role: 'button', 'aria-label': description});
+      const x = X(p.x), y = Y(p.y);
+      // Move only the numbered labels; data coordinates remain unchanged.
+      const bx = Math.min(W - R - 12, x + 14);
+      let by = y - 18;
+      while (badges.some(b => Math.abs(b.x - bx) < 28 && Math.abs(b.y - by) < 28)) by -= 28;
+      badges.push({x: bx, y: by});
+      g.append(svgEl('line', {x1: x, y1: y, x2: bx, y2: by, class: 'pleader'}));
+      g.append(svgEl('circle', {cx: x, cy: y, r: 4, class: 'pdot'}));
+      g.append(svgEl('circle', {cx: bx, cy: by, r: 14, class: 'pbadge'}));
+      g.append(svgEl('text', {x: bx, y: by + 4, 'text-anchor': 'middle'}, RV_MODELS.indexOf(p.m) + 1));
+      g.append(svgEl('title', {}, description));
+      const show = () => {
+        detail.textContent = description;
+        for (const point of s.querySelectorAll('.pp')) point.classList.toggle('selected', point === g);
+      };
+      for (const event of ['mouseenter', 'focus', 'click']) g.addEventListener(event, show);
+      g.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); }
+      });
       s.append(g);
     }
-    box.replaceChildren(s);
-    cap.textContent = sel.value === 'cost'
-      ? T('Score against cost (per-task mean × 84) at OpenRouter list prices (2026-10-05), computed per request with cache read/write and long-context tiers. An estimate, not an invoice.',
-          '得分对比费用（每题平均 × 84），按 OpenRouter 官方标价（2026-10-05）逐请求折算，含缓存读写与长上下文档位；为估算，非实际账单。')
-      : sel.value === 'tokens'
-      ? T('Score against tokens (per-task mean × 84; input incl. cache + output).',
-          '得分对比 tokens（每题平均 × 84；输入含缓存 + 输出）。')
-      : T('Score against wall-clock hours (per-task mean × 84); includes simulation and API latency, so it reflects the setup as much as the model.',
-          '得分对比运行时长（每题平均 × 84）；包含仿真与 API 延迟，受部署条件影响，不只反映模型本身。');
+    if (!pts.length) detail.textContent = T('No resource data available.', '暂无资源用量数据。');
+    box.append(heading, s, detail);
+    plots.append(box);
   }
-  sel.addEventListener('change', draw);
-  draw();
 }
 
 // Original waffle: per model, one row of squares per source group.

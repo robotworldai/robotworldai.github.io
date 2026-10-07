@@ -187,15 +187,24 @@ footer{padding:28px;text-align:center;font-size:12px;color:var(--muted);backgrou
 @media (max-width:560px){.cards{grid-template-columns:1fr 1fr;gap:10px}.meta{padding:8px 10px 10px}.meta h4{font-size:13px}.meta .src{font-size:10px}.meta .row{font-size:11px}.domain-bars{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-/* PARETO view (tbench-style score vs resource scatter) */
-.pareto-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--line);border-bottom:0;background:var(--surface,#fff);font:12px var(--mono);letter-spacing:.08em}
-.pareto-head select{font:12px var(--mono);padding:6px 10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
-.pareto-box{border:1px solid var(--line);background:var(--surface,#fff);padding:8px 10px}
+/* Three synchronized score-versus-resource plots. */
+.pareto-legend{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:18px 0;margin:0;font:13px var(--sans)}
+.pareto-legend li{display:flex;align-items:center;gap:8px}
+.pareto-legend b{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--muted);border-radius:50%;font:600 12px var(--mono)}
+.pareto-plots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pareto-box{min-width:0;border:1px solid var(--line);background:var(--surface,#fff);padding:16px 8px 0}
+.pareto-box h3{margin:0 10px 8px;font:600 14px/1.4 var(--mono);min-height:2.8em}
 .pareto-svg{width:100%;height:auto;display:block;font-family:var(--mono)}
 .pareto-svg .pg{stroke:var(--line);stroke-width:1}
-.pareto-svg .pt{fill:var(--muted);font-size:12px}.pareto-svg .pl{font-size:13px;letter-spacing:.04em}
-.pareto-svg .pfront{fill:var(--ink);opacity:.05}
-.pareto-svg .pp rect{fill:var(--muted);opacity:.55}.pareto-svg .pp text{fill:var(--muted);font-size:14px}
-.pareto-svg .pp.on rect{fill:var(--ink);opacity:1}.pareto-svg .pp.on text{fill:var(--ink)}
-.pareto-cap{border:1px solid var(--line);border-top:0;margin:0;padding:12px 18px;font:12px/1.6 var(--mono);color:var(--muted);text-align:center;background:var(--surface,#fff)}
-@media(max-width:560px){.pareto-svg .pp text{font-size:18px}}
+.pareto-svg .pt{fill:var(--muted);font-size:12px}
+.pareto-svg .pfront{fill:none;stroke:var(--teal);stroke-width:1.5;stroke-dasharray:4 4}
+.pareto-svg .pp{cursor:pointer;outline:none}
+.pareto-svg .pleader{stroke:var(--muted);stroke-width:1}
+.pareto-svg .pdot{fill:var(--ink)}
+.pareto-svg .pbadge{fill:var(--surface,#fff);stroke:var(--muted);stroke-width:1}
+.pareto-svg .pp text{fill:var(--ink);font-size:12px;font-weight:600;pointer-events:none}
+.pareto-svg .pp.on .pdot{fill:var(--teal)}
+.pareto-svg .pp:is(:hover,:focus-visible,.selected) .pbadge{stroke:var(--teal);stroke-width:3}
+.pareto-detail{min-height:4.8em;margin:0;padding:12px 10px;border-top:1px solid var(--line);font:12px/1.6 var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.pareto-cap{margin:0;padding:16px 0;font:12px/1.7 var(--sans);color:var(--muted)}
+@media(max-width:900px){.pareto-plots{grid-template-columns:1fr}.pareto-box h3{min-height:0}.pareto-svg{max-width:520px;margin:auto}.pareto-detail{min-height:3.2em}}
