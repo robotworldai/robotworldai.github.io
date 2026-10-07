@@ -104,7 +104,7 @@
     <h2>Evaluation protocol</h2>
     <div class="rules">
       <article><h3>Two kinds of steps</h3><p><b>Control steps</b> are physical simulation steps actually executed, bounded by the task budget. <b>Trace record indices</b> number logged events. The two are different.</p></article>
-      <article><h3>Action budget</h3><p>Native budgets are kept, with the 10 household mobile-manipulation tasks capped at 2000 steps. The 16 redesigned scenes use approved horizons and world-state-v1 judging.</p></article>
+      <article><h3>Action budget</h3><p>Native budgets are kept, with 10 of the mobile-manipulation tasks capped at 2000 steps. The 16 redesigned scenes use approved horizons and world-state-v1 judging.</p></article>
       <article><h3>End reasons</h3><p>Step-budget limit, native termination and world-state termination are labeled separately. The model has no give-up tool; if it ends a reply while the episode is still running, it is asked to continue. Infrastructure interruptions are unscored, not scored as 0.</p></article>
       <article><h3>Non-action budget</h3><p>Current runs stop with score 0 after 15 consecutive interactions without a control step, or after a per-task cumulative limit of 30, 60 or 120. Some earlier runs used other limits or none; each attempt records its own protocol.</p></article>
       <article><h3>Recovery</h3><p>On API stream drops or sporadic image-processing rejections, the same simulation and session are kept and resumed after 10/20/40 s backoff, up to 3 times, without replaying actions.</p></article>
@@ -129,7 +129,7 @@
 <script src="/assets/js/player.js?v=20261007-playback"></script>
 <script src="/assets/js/home.js?v=20261007-labels"></script>
 <script src="/assets/js/result-views.js?v=20261007-labels"></script>
-<script src="/assets/js/protocol-visuals.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js?v=20261006-complete"></script>
+<script src="/assets/js/protocol-visuals.js?v=20261007-domains"></script>
+<script src="/assets/js/charts.js?v=20261007-domains"></script>
 </body>
 </html>

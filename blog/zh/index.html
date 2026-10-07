@@ -24,7 +24,7 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 打完一整场 VolleyBots 1v1 无人机排球赛并获胜（得分 1，498 个控制步后环境原生终止）。</figcaption>
+    <figcaption>Opus 5.5 打完一整场 1v1 无人机排球赛并获胜（得分 1，498 个控制步后环境原生终止）。</figcaption>
   </figure>
 
   <section id="tldr">
@@ -38,11 +38,11 @@
     <h2>实验设置</h2>
     <div class="table-scroll"><table class="board spec">
       <tr><th>项目</th><th>配置</th></tr>
-      <tr><td><b>任务</b></td><td>每个模型 84 题，基于开源仿真环境构建。按机器人形态：双臂与灵巧手 24、移动操作机器人 20、固定底座机械臂 14、轮式车辆 11、双足与人形 4、轮足 4、空中 4、四足 3。按任务领域：桌面与灵巧操作 48、家居移动操作 10、足式与轮足运动 11、车辆驾驶 11、无人机飞行 4。</td></tr>
+      <tr><td><b>任务</b></td><td>每个模型 84 题，基于开源仿真环境构建。按机器人形态：双臂与灵巧手 24、移动操作机器人 20、固定底座机械臂 14、轮式车辆 11、双足与人形 4、轮足 4、空中 4、四足 3。按任务领域：桌面与灵巧操作 38、移动操作 20、足式与轮足运动 11、车辆驾驶 11、无人机飞行 4。</td></tr>
       <tr><td><b>接口</b></td><td>机器人以工具形式提供：观测（图像、关节与任务状态）、动作（各环境专用动作，按控制步执行）和执行回执，允许使用辅助分析工具。</td></tr>
       <tr><td><b>模型</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>设置</b></td><td>推理强度、非动作预算因模型和批次而异，单条任务保留对应设置。</td></tr>
-      <tr><td><b>预算</b></td><td>沿用原题步数预算，10 项家居移动操作任务额外以 2000 步为上限。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
+      <tr><td><b>预算</b></td><td>沿用原题步数预算，其中 10 项移动操作任务以 2000 步为上限。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
       <tr><td><b>结束方式</b></td><td>不向模型提供放弃工具。模型结束回答时如果环境仍在运行，控制循环会提醒它继续。只有环境终止，或步数／非动作预算用完，一次尝试才结束。</td></tr>
       <tr><td><b>评分</b></td><td>原生 benchmark checker；16 个重新设计的场景使用 world-state-v1。部分 Opus 5.5 和 Kimi K3 结果按协议规则裁定为 0 分，不是原生 checker 的读数。</td></tr>
       <tr><td><b>尝试</b></td><td>每个模型每题采用一条结果。基础设施异常后的重跑不重复计分。</td></tr>
@@ -62,7 +62,7 @@
       <figcaption><b>逐题得分</b><span>实心 = 得分 1 · 描边 = 得分 0 · 虚线 = 无结果</span></figcaption>
       <div class="chart-body"></div>
     </figure>
-    <p>按领域看，大部分得分来自操作类任务，驾驶和无人机任务也有少量得分。家居移动操作目前所有模型都是 0。</p>
+    <p>在 20 道移动操作任务中，GPT-6 Astra 完成 4 道，Kimi K3 完成 1 道，其余模型均未成功。下图展示五个领域的结果。</p>
     <figure class="chart" id="chart-domains" aria-label="各领域得分">
       <figcaption><b>各领域得分 1 的题数</b><span>解出数 / 该领域题数</span></figcaption>
       <div class="chart-body"></div>
@@ -102,8 +102,8 @@
     <p>模型可能持续观察和分析，却没有执行控制动作。每条尝试的媒体状态与结束原因可单独查看。</p>
     <div class="clips" data-clips="opus-128,opus-134"></div>
 
-    <h3 id="household">家居任务仍然遥不可及</h3>
-    <p>家居移动操作要求机器人连续完成导航、开关、抓取和放置。各模型在该领域的得分见上方领域图。</p>
+    <h3 id="household">移动操作仍具挑战</h3>
+    <p>移动操作任务可能结合导航、开关、抓取和放置。尽管部分任务已被解决，GPT-6 Astra 和 Opus 5.5 都未完成下方展示的搬运杂货任务。</p>
     <div class="clips" data-clips="astra-39,opus-050"></div>
   </section>
 
@@ -125,7 +125,7 @@
 </main>
 <footer>RobotWorld · 基于真实实验记录的预评测研究笔记 · <a href="/zh/">首页</a></footer>
 <script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js"></script>
+<script src="/assets/js/blog.js?v=20261007-domains"></script>
+<script src="/assets/js/charts.js?v=20261007-domains"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 'use strict';
 const DOMAINS = {
   manipulation: {name: '桌面与灵巧操作', en: 'Manipulation', c: '#0f8b7d'},
-  mobile: {name: '家居移动操作', en: 'Mobile manipulation', c: '#3f6fb5'},
+  mobile: {name: '移动操作', en: 'Mobile manipulation', c: '#3f6fb5'},
   locomotion: {name: '足式与轮足运动', en: 'Locomotion', c: '#e0742b'},
   driving: {name: '车辆驾驶', en: 'Driving', c: '#8c6bb1'},
   aerial: {name: '无人机飞行', en: 'Aerial', c: '#c99a2e'},

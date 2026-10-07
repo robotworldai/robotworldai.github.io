@@ -24,7 +24,7 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 plays a full VolleyBots 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
+    <figcaption>Opus 5.5 plays a full 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
   </figure>
 
   <section id="tldr">
@@ -38,11 +38,11 @@
     <h2>How we tested</h2>
     <div class="table-scroll"><table class="board spec">
       <tr><th>Setup</th><th>Configuration</th></tr>
-      <tr><td><b>Tasks</b></td><td>84 tasks per model, built on open-source simulators. By embodiment: 24 bimanual or dexterous, 20 mobile manipulators, 14 fixed-base arms, 11 wheeled vehicles, 4 bipeds or humanoids, 4 wheel-legged, 4 aerial, 3 quadrupeds. By domain: 48 manipulation, 10 household mobile manipulation, 11 locomotion, 11 driving, 4 aerial.</td></tr>
+      <tr><td><b>Tasks</b></td><td>84 tasks per model, built on open-source simulators. By embodiment: 24 bimanual or dexterous, 20 mobile manipulators, 14 fixed-base arms, 11 wheeled vehicles, 4 bipeds or humanoids, 4 wheel-legged, 4 aerial, 3 quadrupeds. By domain: 38 manipulation, 20 mobile manipulation, 11 locomotion, 11 driving, 4 aerial.</td></tr>
       <tr><td><b>Interface</b></td><td>Each robot is exposed as tools: observe (images, joint and task state), act (environment-specific actions, executed as control steps), and receipts. Auxiliary analysis tools are allowed.</td></tr>
       <tr><td><b>Models</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>Settings</b></td><td>Reasoning effort and non-action budgets vary by model and batch; each selected run retains its settings.</td></tr>
-      <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with the 10 household mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
+      <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with 10 of the mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
       <tr><td><b>Ending</b></td><td>The model has no give-up tool. If it ends a reply while the episode is still running, the control loop asks it to continue. An attempt ends only when the environment terminates or a step / non-action budget runs out.</td></tr>
       <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus 5.5 and Kimi K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
       <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
@@ -62,7 +62,7 @@
       <figcaption><b>Score by task</b><span>Filled = score 1 · outline = score 0 · dashed = no result</span></figcaption>
       <div class="chart-body"></div>
     </figure>
-    <p>By domain, most successes are in manipulation, with a few in driving and drone tasks. Household mobile manipulation is still at zero for every model.</p>
+    <p>In the 20 mobile-manipulation tasks, GPT-6 Astra completes four and Kimi K3 completes one; the other models complete none. The chart below reports results across all five domains.</p>
     <figure class="chart" id="chart-domains" aria-label="Score per domain">
       <figcaption><b>Score 1 by domain</b><span>Number solved / tasks in domain</span></figcaption>
       <div class="chart-body"></div>
@@ -102,8 +102,8 @@
     <p>An agent can keep observing and analysing without executing a control action. Media availability and the stopping reason are shown for each selected attempt.</p>
     <div class="clips" data-clips="opus-128,opus-134"></div>
 
-    <h3 id="household">Household tasks stay out of reach</h3>
-    <p>Household mobile manipulation combines navigation, opening, grasping and placement. The domain chart above reports the current results for each model.</p>
+    <h3 id="household">Mobile manipulation remains challenging</h3>
+    <p>Mobile-manipulation tasks can combine navigation, opening, grasping and placement. Some tasks are solved, but both GPT-6 Astra and Opus 5.5 fail to complete the grocery-carrying task shown below.</p>
     <div class="clips" data-clips="astra-39,opus-050"></div>
   </section>
 
@@ -125,7 +125,7 @@
 </main>
 <footer>RobotWorld · Preliminary research notes grounded in recorded experiments · <a href="/">Home</a></footer>
 <script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js"></script>
+<script src="/assets/js/blog.js?v=20261007-domains"></script>
+<script src="/assets/js/charts.js?v=20261007-domains"></script>
 </body>
 </html>

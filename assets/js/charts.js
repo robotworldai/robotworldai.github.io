@@ -7,7 +7,7 @@ window.RWCharts = (() => {
   const MODEL_SUB = {Astra: 'GPT-6 Astra', Opus: 'Opus 5.5', K3: 'Kimi K3', DPSK: 'DeepSeek V4.1 Flash', Gemini: 'Gemini 3.8 Flash'};
   const DOMAINS = [
     ['manipulation', 'Manipulation', '桌面与灵巧操作'],
-    ['mobile', 'Mobile manipulation', '家居移动操作'],
+    ['mobile', 'Mobile manipulation', '移动操作'],
     ['locomotion', 'Locomotion', '足式与轮足运动'],
     ['driving', 'Driving', '车辆驾驶'],
     ['aerial', 'Aerial', '无人机飞行'],

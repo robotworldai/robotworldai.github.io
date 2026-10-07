@@ -6,7 +6,7 @@
   const MODELS = ['Astra', 'Opus', 'K3', 'DPSK', 'Gemini'];
   const DOMAINS = [
     ['manipulation', 'Manipulation', '桌面与灵巧操作', '#0f8b7d'],
-    ['mobile', 'Mobile manipulation', '家居移动操作', '#3f6fb5'],
+    ['mobile', 'Mobile manipulation', '移动操作', '#3f6fb5'],
     ['locomotion', 'Locomotion', '足式与轮足运动', '#e0742b'],
     ['driving', 'Driving', '车辆驾驶', '#8c6bb1'],
     ['aerial', 'Aerial', '无人机飞行', '#c99a2e'],
