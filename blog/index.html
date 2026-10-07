@@ -44,7 +44,7 @@
       <tr><td><b>Settings</b></td><td>Reasoning effort and non-action budgets vary by model and batch; each selected run retains its settings.</td></tr>
       <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with 10 of the mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
       <tr><td><b>Ending</b></td><td>The model has no give-up tool. If it ends a reply while the episode is still running, the control loop asks it to continue. An attempt ends only when the environment terminates or a step / non-action budget runs out.</td></tr>
-      <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus 5.5 and Kimi K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
+      <tr><td><b>Evaluation</b></td><td>Each task receives a binary score based on predefined success criteria and evaluation budgets.</td></tr>
       <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
     </table></div>
     <p class="note">A <b>control step</b> is one physical simulation step actually executed. It is different from the index of a logged event.</p>
