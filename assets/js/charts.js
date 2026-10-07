@@ -127,12 +127,12 @@ window.RWCharts = (() => {
   // Embodiment distribution: one bar per robot type, sized by number of tasks.
   function embodiments(box, R) {
     const runs = of(R, 'Astra');
-    const max = Math.max(...EMBODIMENTS.map(([k]) => runs.filter(r => embodiment(r) === k).length));
-    for (const [k, en, cn, ex, exCn] of EMBODIMENTS) {
-      const n = runs.filter(r => embodiment(r) === k).length;
+    const max = Math.max(...DOMAINS.map(([k]) => runs.filter(r => r.domain === k).length));
+    for (const [k, en, cn] of DOMAINS) {
+      const n = runs.filter(r => r.domain === k).length;
       box.append(el('div', {class: 'rc-erow'},
-        el('span', {class: 'rc-ename'}, el('i', {class: 'emb-' + k}), el('b', {}, t(en, cn)), el('small', {}, t(ex, exCn))),
-        el('span', {class: 'rc-ebar'}, el('i', {class: 'emb-' + k, style: `width:${100 * n / max}%`})),
+        el('span', {class: 'rc-ename'}, el('i', {class: 'dom-' + k}), el('b', {}, t(en, cn))),
+        el('span', {class: 'rc-ebar'}, el('i', {class: 'dom-' + k, style: `width:${100 * n / max}%`})),
         el('b', {class: 'rc-en'}, n)));
     }
   }

@@ -50,20 +50,7 @@ function stats(data, astra) {
 }
 
 function coverage(data, astra) {
-  const section = el('section', {class: 'domain-summary', 'aria-label': '五类任务领域'},
-    el('h3', {}, '五类任务领域'),
-    el('p', {}, '操作与移动操作分别统计；每道任务只属于一个领域。'));
-  const cards = el('div', {class: 'domain-summary-grid'});
-  for (const [key, domain] of Object.entries(DOMAINS)) {
-    const count = astra.filter(r => r.domain === key).length;
-    const link = el('a', {class: 'domain-summary-card', href: '#gallery'},
-      el('b', {}, domain.name), el('span', {}, `${count} 题`));
-    link.addEventListener('click', () => document.querySelector(`#f-domain [data-v="${key}"]`)?.click());
-    cards.append(link);
-  }
-  section.append(cards);
-  document.getElementById('domains').before(section);
-  document.getElementById('coverage-intro').textContent = '机器人形态采用论文中的暂定分组，每题归入一类。条形长度表示题数。';
+  document.getElementById('coverage-intro').textContent = '五类任务领域，操作与移动操作分别统计。每道任务只属于一个领域，条形长度表示题目数量。';
   document.getElementById('benches').remove();
 }
 
