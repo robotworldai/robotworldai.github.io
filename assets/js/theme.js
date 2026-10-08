@@ -87,7 +87,7 @@
     close.textContent = '×';
     close.setAttribute('aria-label', zh ? '关闭' : 'Close');
     const imageLink = document.createElement('a');
-    imageLink.href = '/assets/images/wechat-community.png';
+    imageLink.href = zh ? '/assets/images/wechat-community.png' : '/assets/images/wechat-community-en.png';
     imageLink.target = '_blank';
     imageLink.rel = 'noopener';
     imageLink.setAttribute('aria-label', zh ? '放大微信群二维码' : 'Open full-size WeChat QR code');
