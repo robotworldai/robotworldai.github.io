@@ -47,6 +47,11 @@ body,.dark,.light,.alt,.band,footer{background:var(--paper);color:var(--ink);bac
 .community-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .community-actions button{font:inherit;cursor:pointer}
 .community-actions button:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+.wechat-hero-join{font:inherit;cursor:pointer}
+.wechat-video-note{font-size:14px;line-height:1.7;color:var(--muted);margin:12px 0 0}
+.wechat-video-note button{display:inline;padding:0;border:0;background:none;color:var(--teal);font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.wechat-hero-join:focus-visible,.wechat-video-note button:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+.wechat-dialog p{font-size:14px;line-height:1.7;color:var(--muted)}
 .wechat-dialog{box-sizing:border-box;width:min(420px,calc(100vw - 32px));max-height:90vh;max-height:90dvh;margin:auto;padding:36px 22px 18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 24px 80px #0004;overflow:auto}
 .wechat-dialog::backdrop{background:rgb(0 0 0 / 55%)}
 .wechat-dialog h2{font:600 21px/1.4 var(--sans,sans-serif);text-align:center;margin:0 0 14px}

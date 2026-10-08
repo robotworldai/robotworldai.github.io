@@ -79,33 +79,69 @@
     dialog.setAttribute('aria-labelledby', 'wechat-title');
     const heading = document.createElement('h2');
     heading.id = 'wechat-title';
-    heading.lang = zh ? 'zh-CN' : 'en';
-    heading.textContent = zh ? '欢迎加入 RobotWorld 社区' : 'Join the RobotWorld WeChat Group';
+    heading.lang = 'en';
+    heading.textContent = 'Join the RobotWorld WeChat Group';
+    const description = document.createElement('p');
+    description.id = 'wechat-description';
+    description.lang = 'zh-CN';
+    description.textContent = '交流 Robot Use、具身智能体、评测复现与任务扩展。欢迎通过反馈、新任务或代码贡献，成为 RobotWorld 下一版本的贡献者。';
+    dialog.setAttribute('aria-describedby', description.id);
     const close = document.createElement('button');
     close.type = 'button';
     close.className = 'wechat-close';
     close.textContent = '×';
     close.setAttribute('aria-label', zh ? '关闭' : 'Close');
     const imageLink = document.createElement('a');
-    imageLink.href = zh ? '/assets/images/wechat-community.png' : '/assets/images/wechat-community-en.png';
+    imageLink.href = '/assets/images/wechat-community.png?v=20261008-community';
     imageLink.target = '_blank';
     imageLink.rel = 'noopener';
     imageLink.setAttribute('aria-label', zh ? '放大微信群二维码' : 'Open full-size WeChat QR code');
     const qr = document.createElement('img');
     qr.src = imageLink.href;
     qr.alt = zh ? 'RobotWorld 微信群二维码' : 'RobotWorld WeChat group QR code';
-    qr.width = 1080;
-    qr.height = 1596;
     imageLink.append(qr);
-    dialog.append(close, heading, imageLink);
+    const expiry = document.createElement('p');
+    expiry.lang = 'zh-CN';
+    expiry.textContent = '二维码有效期至 2026 年 10 月 15 日。点击图片查看原图。';
+    dialog.append(close, heading, description, imageLink, expiry);
     document.body.append(dialog);
-    join.addEventListener('click', () => dialog.showModal());
+    let opener = join;
+    const connectJoin = trigger => {
+      trigger.setAttribute('aria-haspopup', 'dialog');
+      trigger.setAttribute('aria-controls', dialog.id);
+      trigger.addEventListener('click', () => {
+        opener = trigger;
+        dialog.showModal();
+      });
+    };
+    connectJoin(join);
+    const heroActions = document.querySelector('.hero .cta');
+    if (heroActions) {
+      const heroJoin = document.createElement('button');
+      heroJoin.type = 'button';
+      heroJoin.className = 'btn solid wechat-hero-join';
+      heroJoin.textContent = '💬 WeChat Group';
+      connectJoin(heroJoin);
+      heroActions.append(heroJoin);
+    }
+    const showreel = document.querySelector('#showreel');
+    if (showreel) {
+      const note = document.createElement('p');
+      note.className = 'wechat-video-note';
+      note.lang = 'zh-CN';
+      const noteJoin = document.createElement('button');
+      noteJoin.type = 'button';
+      noteJoin.textContent = '加入微信交流群';
+      connectJoin(noteJoin);
+      note.append('欢迎', noteJoin, '，交流评测、提出新任务，一起参与下一版 RobotWorld。');
+      showreel.after(note);
+    }
     close.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => {
       const box = dialog.getBoundingClientRect();
       if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
     });
-    dialog.addEventListener('close', () => join.focus());
+    dialog.addEventListener('close', () => opener.focus());
     actions.append(action, join);
     content.append(kicker, title, intro, list, actions);
     section.append(content);
