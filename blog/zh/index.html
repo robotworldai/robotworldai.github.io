@@ -7,8 +7,8 @@
 <title>一个 agent，84 道机器人任务 · RobotWorld Blog</title>
 <link rel="stylesheet" href="/assets/css/home.css">
 <link rel="stylesheet" href="/assets/css/theme.css">
-<link rel="stylesheet" href="/assets/css/blog.css">
-<link rel="stylesheet" href="/assets/css/charts.css">
+<link rel="stylesheet" href="/assets/css/blog.css?v=20261007-findings">
+<link rel="stylesheet" href="/assets/css/charts.css?v=20261007-bar-layout2">
 <script src="/assets/js/theme.js"></script>
 </head>
 <body class="blog-page">
@@ -24,47 +24,57 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 打完一整场 VolleyBots 1v1 无人机排球赛并获胜（得分 1，498 个控制步后环境原生终止）。</figcaption>
+    <figcaption>Opus 5.5 打完一整场 1v1 无人机排球赛并获胜（498 个控制步后环境原生终止）。</figcaption>
   </figure>
 
   <section id="tldr">
     <h2>要点</h2>
     <p>每道任务按 0 或 1 分计分。下列统计与主页使用同一份结果数据。</p><ul class="tldr" data-summary="tldr"></ul>
     <p>RobotWorld 想回答一个简单的问题：把机器人当成一组工具交给通用多模态 agent，它能不能把活干完？agent 看到相机画面和机器人状态，发出动作，收到执行回执；最后由一个它看不到的私有评分器判分。</p>
-    <p>这是一份早期快照，不是排行榜。各模型在不同批次、不同推理强度和不同非动作协议下运行。我们如实记录发生了什么，附上录像，并标出哪些数字不能直接比较。</p>
+    <p>模型在不同批次中运行，采用了不同推理档位。最终分数按各任务规定的预算计算。我们同时报告实验设置、结果和录像，为模型间的比较提供必要背景。</p>
   </section>
 
   <section id="setup">
     <h2>实验设置</h2>
     <div class="table-scroll"><table class="board spec">
       <tr><th>项目</th><th>配置</th></tr>
-      <tr><td><b>任务</b></td><td>每个模型 84 题，基于开源仿真环境构建。按机器人形态：双臂与灵巧手 24、移动操作机器人 20、固定底座机械臂 14、轮式车辆 11、双足与人形 4、轮足 4、空中 4、四足 3。按任务领域：桌面与灵巧操作 48、家居移动操作 10、足式与轮足运动 11、车辆驾驶 11、无人机飞行 4。</td></tr>
+      <tr><td><b>任务</b></td><td>每个模型 84 题，基于开源仿真环境构建。按机器人形态：双臂与灵巧手 24、移动操作机器人 20、固定底座机械臂 14、轮式车辆 11、双足与人形 4、轮足 4、空中 4、四足 3。按任务领域：桌面与灵巧操作 38、移动操作 20、足式与轮足运动 11、车辆驾驶 11、无人机飞行 4。</td></tr>
       <tr><td><b>接口</b></td><td>机器人以工具形式提供：观测（图像、关节与任务状态）、动作（各环境专用动作，按控制步执行）和执行回执，允许使用辅助分析工具。</td></tr>
       <tr><td><b>模型</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>设置</b></td><td>推理强度、非动作预算因模型和批次而异，单条任务保留对应设置。</td></tr>
-      <tr><td><b>预算</b></td><td>沿用原题步数预算，10 项家居移动操作任务额外以 2000 步为上限。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
+      <tr><td><b>预算</b></td><td>沿用原题步数预算，其中 10 项移动操作任务以 2000 步为上限。非动作上限会终止一直观察、却不让机器人动起来的尝试。</td></tr>
       <tr><td><b>结束方式</b></td><td>不向模型提供放弃工具。模型结束回答时如果环境仍在运行，控制循环会提醒它继续。只有环境终止，或步数／非动作预算用完，一次尝试才结束。</td></tr>
-      <tr><td><b>评分</b></td><td>原生 benchmark checker；16 个重新设计的场景使用 world-state-v1。部分 Opus 5.5 和 Kimi K3 结果按协议规则裁定为 0 分，不是原生 checker 的读数。</td></tr>
+      <tr><td><b>评分</b></td><td>每道任务根据预先定义的成功条件和评测预算，按 0 或 1 分计分。</td></tr>
       <tr><td><b>尝试</b></td><td>每个模型每题采用一条结果。基础设施异常后的重跑不重复计分。</td></tr>
     </table></div>
     <p class="note"><b>控制步</b>指仿真中实际执行的一步物理控制，和日志事件的记录序号不是一回事。</p>
+  </section>
+
+  <section id="findings" aria-labelledby="findings-title">
+    <h2 id="findings-title">核心发现</h2>
+    <p>成功率之外，轨迹还揭示了什么？</p>
+    <ol class="finding-list">
+      <li><span class="finding-number" aria-hidden="true">01</span><div><h3>模型会自行搭建感知与控制工作流。</h3><p>轨迹中出现了颜色分割、相机标定、空间估计和动力学计算。模型开始将视觉推理与代码结合，转化为可以执行的机器人指令。</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">02</span><div><h3>执行了动作，不代表完成了任务。</h3><p>失败可能来自对当前状态的误判、收到反馈后未调整策略，或目标尚未满足就宣称完成。可靠的 robot use 需要持续检查：刚才的动作究竟实现了什么。</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">03</span><div><h3>不同模型采用不同的感知与控制策略。</h3><p>在叠方块案例中，Astra 先通过连续视觉估计抓起第一块方块，之后才拟合相机几何；Opus 则先编写分割程序、拟合相机参数。在无人机颠球中，两者都计算了动力学，但 Opus 更好地维持了连续击球。差异在于如何组织估计、计算与反馈。</p></div></li>
+    </ol>
   </section>
 
   <section id="results">
     <h2>结果</h2>
     <p data-summary="scores"></p>
     <figure class="rc-fig" aria-label="结果总览">
-      <figcaption><b>RobotWorld 一图看懂</b><span>柱高 = 得分 · 右侧为全部有录像的尝试，点击方块播放</span></figcaption>
+      <figcaption><b>RobotWorld 一图看懂</b><span>柱高 = 成功率 · 下方为全部有录像的尝试，点击方块播放</span></figcaption>
       <div data-rc="slide"></div>
     </figure>
     <p>下图每个小方块是一道题。按结果排序后可以看到，解出的题很少，Kimi K3 和 DeepSeek V4.1 Flash 解出的题更少。</p>
-    <figure class="chart" id="chart-models" aria-label="各模型得分">
-      <figcaption><b>逐题得分</b><span>实心 = 得分 1 · 描边 = 得分 0 · 虚线 = 无结果</span></figcaption>
+    <figure class="chart" id="chart-models" aria-label="各模型任务结果">
+      <figcaption><b>逐题结果</b><span>实心 = 成功 · 描边 = 失败 · 虚线 = 无结果</span></figcaption>
       <div class="chart-body"></div>
     </figure>
-    <p>按领域看，大部分得分来自操作类任务，驾驶和无人机任务也有少量得分。家居移动操作目前所有模型都是 0。</p>
-    <figure class="chart" id="chart-domains" aria-label="各领域得分">
-      <figcaption><b>各领域得分 1 的题数</b><span>解出数 / 该领域题数</span></figcaption>
+    <p>在 20 道移动操作任务中，GPT-6 Astra 完成 4 道，Kimi K3 完成 1 道，其余模型均未成功。下图展示五个领域的结果。</p>
+    <figure class="chart" id="chart-domains" aria-label="各领域成功情况">
+      <figcaption><b>各领域成功任务数</b><span>解出数 / 该领域题数</span></figcaption>
       <div class="chart-body"></div>
     </figure>
   </section>
@@ -79,13 +89,36 @@
   </section>
 
   <section id="success">
-    <h2>成功的样子</h2>
-    <p>成功的尝试里既有长流程的厨房任务，也有快速的闭环控制。GPT-6 Astra 在 1,800 步预算内用 949 步装好了洗碗机，还跑完了发卡弯赛道。Opus 5.5 用 30 步接住了球，并让一台受推扰的四足机器人走满了 1,000 步。</p>
-    <div class="clips" data-clips="astra-53,astra-70,opus-150,opus-142"></div>
+    <h2>能力如何转化为机器人行动</h2>
+    <p>论文追踪了观测、计算与反馈如何转化为实际控制。下面的案例解释单条轨迹中的机制；录像展示动作过程，文字分析则结合了交互日志。</p>
+    <h3>反馈带来下一步动作的改变</h3>
+    <p>Kimi K3 发现末端位移减小后，缩短连续推抽屉的动作段，再撤开检查；环境在撤开时确认成功。Astra 在插充电器时遇到腕部相机旋转被拒，随后降低并调整空闲机械臂的位置，再次尝试后旋转成功执行，整条轨迹最终完成插入。反馈的作用体现在：它改变了接下来的动作。</p>
+    <div class="clips" data-clips="k3-007,astra-30"></div>
+    <h3 id="visual-estimation">把视觉估计转化为抓取</h3>
+    <p>叠方块时，Astra 在外部图像处理或相机拟合之前就抓起了第一块蓝方块；Opus 5.5 则先编写颜色分割程序，再通过机械臂移动采样、拟合相机参数。两者在接近的物理步数完成首次放置与撤回（270 对 268）。此后 Astra 完成整座堆叠，Opus 在未完成时耗尽辅助调用预算。这里比较的是到达初步进展的不同路径，并非两条成功轨迹。</p>
+    <div class="clips" data-clips="astra-62,opus-082"></div>
+    <h3 id="sustained-control">第一次接触之后，能否维持连续控制</h3>
+    <p>无人机颠球中，Astra 和 Opus 5.5 都进行了离线动力学计算。Opus 协调调平、击球前加速、接触后降低推力和重新移至球下方，在 800 步内完成 15 次有效击球；Astra 完成 3 次后，在第 188 步终止。两者每次动作实际步数的中位数都是 3：建立模型、采用短动作段，本身不足以保证持续控制。</p>
+    <div class="clips" data-clips="astra-82,opus-158"></div>
   </section>
 
   <section id="failures">
-    <h2>失败模式</h2>
+    <h2>机器人闭环在哪里失效</h2>
+    <p>失败结果说明目标没有实现，交互日志则帮助解释进展为何停滞：所需物体状态丢失、一直停留在准备阶段，或把未完成的任务误判为完成。</p>
+    <h3>机械臂还在动，物体状态却没有恢复</h3>
+    <p>Kimi K3 在接近时撞倒了瓶子，随后多次左臂尝试未能抓牢，到第 240 步才切换右臂。后续接近动作耗尽剩余预算，第 400 步时倒液任务仍未完成。机械臂到达新的位置，并没有恢复任务所需的抓持状态。</p>
+    <div class="clips" data-clips="k3-025"></div>
+    <h3>准备阶段没有推进到下一个子目标</h3>
+    <p>切菜任务中，Kimi K3 的全部 69 次正步数动作调用都用于观察周围、导航或绕开家具；最后一条指令仍在尝试进入厨房。直到 2,000 步用完，都没有发出切菜指令。这条轨迹的瓶颈是到达操作区域，不能据此判断尚未尝试的切菜能力。</p>
+    <div class="clips" data-clips="k3-055"></div>
+    <h3>动作仍在执行，纠错却已经停止</h3>
+    <p>Kimi K3 在第 861 步宣称扫方块完成，之后 69 次调用只改变空闲机械臂的高度，走完最后 139 步。DeepSeek 在导航到灶台时认为无需再移动，最后 105 步都发出零底盘速度指令。两题最终都未成功。继续调用工具，并不代表继续纠正未完成的目标。</p>
+    <div class="clips" data-clips="k3-023,dpsk-004"></div>
+  </section>
+
+  <section id="interaction">
+    <h2>交互与预算</h2>
+    <p>下面的图统计每次尝试如何结束、使用了多少控制步预算。这些是执行统计；终止条件本身并不能解释背后的失败机制。</p>
     <p data-summary="failures"></p>
     <figure class="rc-fig" aria-label="尝试如何结束">
       <figcaption><b>每次尝试是怎么结束的</b><span>圆心 = 解出题数</span></figcaption>
@@ -96,15 +129,7 @@
       <figcaption><b>每次尝试用了多少步数预算</b><span>每个点是一次尝试 · 实际执行控制步 / 该题预算 · 点击播放</span></figcaption>
       <div data-rc="steps"></div>
     </figure>
-    <p>下面是两种反复出现的情况，附上录像。</p>
-
-    <h3 id="never-moved">一直在看，却不动手</h3>
-    <p>模型可能持续观察和分析，却没有执行控制动作。每条尝试的媒体状态与结束原因可单独查看。</p>
-    <div class="clips" data-clips="opus-128,opus-134"></div>
-
-    <h3 id="household">家居任务仍然遥不可及</h3>
-    <p>家居移动操作要求机器人连续完成导航、开关、抓取和放置。各模型在该领域的得分见上方领域图。</p>
-    <div class="clips" data-clips="astra-39,opus-050"></div>
+    <p class="note">较少的控制步可能来自提前成功、环境终止或非动作预算耗尽，需要结合任务结果和结束原因解读。</p>
   </section>
 
   <section id="time">
@@ -124,8 +149,8 @@
   </section>
 </main>
 <footer>RobotWorld · 基于真实实验记录的预评测研究笔记 · <a href="/zh/">首页</a></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/blog.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>

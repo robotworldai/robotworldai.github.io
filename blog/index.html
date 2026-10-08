@@ -7,8 +7,8 @@
 <title>One agent, 84 robot tasks · RobotWorld Blog</title>
 <link rel="stylesheet" href="/assets/css/home.css">
 <link rel="stylesheet" href="/assets/css/theme.css">
-<link rel="stylesheet" href="/assets/css/blog.css">
-<link rel="stylesheet" href="/assets/css/charts.css">
+<link rel="stylesheet" href="/assets/css/blog.css?v=20261007-findings">
+<link rel="stylesheet" href="/assets/css/charts.css?v=20261007-bar-layout2">
 <script src="/assets/js/theme.js"></script>
 </head>
 <body class="blog-page">
@@ -24,47 +24,57 @@
 
   <figure class="post-video">
     <video controls playsinline muted preload="metadata" poster="/assets/recordings/a7de4555cd2ad3f4865b.png" src="/assets/recordings/fb2653a3c5bcad1532cd.mp4"></video>
-    <figcaption>Opus 5.5 plays a full VolleyBots 1v1 drone volleyball match and wins (score 1, native termination after 498 control steps).</figcaption>
+    <figcaption>Opus 5.5 plays a full 1v1 drone volleyball match and wins (native termination after 498 control steps).</figcaption>
   </figure>
 
   <section id="tldr">
     <h2>TL;DR</h2>
     <p>Each task scores 0 or 1. These statistics use the same result data as the homepage.</p><ul class="tldr" data-summary="tldr"></ul>
     <p>RobotWorld asks a simple question: if you give a general multimodal agent a robot as a set of tools, can it get the job done? The agent sees camera images and robot state, sends actions, and gets back execution receipts. A hidden evaluator, which the agent never sees, decides the score.</p>
-    <p>This is an early snapshot, not a leaderboard. Models ran in different batches with different reasoning-effort settings and non-action protocols. We report what happened, show recordings, and flag where the numbers are not comparable.</p>
+    <p>Models were run in different batches and with different reasoning-effort settings. Final scores follow the prescribed task budgets. We report these settings alongside the results and recordings so that comparisons can be interpreted in context.</p>
   </section>
 
   <section id="setup">
     <h2>How we tested</h2>
     <div class="table-scroll"><table class="board spec">
       <tr><th>Setup</th><th>Configuration</th></tr>
-      <tr><td><b>Tasks</b></td><td>84 tasks per model, built on open-source simulators. By embodiment: 24 bimanual or dexterous, 20 mobile manipulators, 14 fixed-base arms, 11 wheeled vehicles, 4 bipeds or humanoids, 4 wheel-legged, 4 aerial, 3 quadrupeds. By domain: 48 manipulation, 10 household mobile manipulation, 11 locomotion, 11 driving, 4 aerial.</td></tr>
+      <tr><td><b>Tasks</b></td><td>84 tasks per model, built on open-source simulators. By embodiment: 24 bimanual or dexterous, 20 mobile manipulators, 14 fixed-base arms, 11 wheeled vehicles, 4 bipeds or humanoids, 4 wheel-legged, 4 aerial, 3 quadrupeds. By domain: 38 manipulation, 20 mobile manipulation, 11 locomotion, 11 driving, 4 aerial.</td></tr>
       <tr><td><b>Interface</b></td><td>Each robot is exposed as tools: observe (images, joint and task state), act (environment-specific actions, executed as control steps), and receipts. Auxiliary analysis tools are allowed.</td></tr>
       <tr><td><b>Models</b></td><td>GPT-6 Astra, Opus 5.5, Kimi K3, DeepSeek V4.1 Flash, Gemini 3.8 Flash.</td></tr>
       <tr><td><b>Settings</b></td><td>Reasoning effort and non-action budgets vary by model and batch; each selected run retains its settings.</td></tr>
-      <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with the 10 household mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
+      <tr><td><b>Budgets</b></td><td>Native step budgets are kept, with 10 of the mobile-manipulation tasks capped at 2000 steps. Non-action limits stop an attempt that keeps looking without moving the robot.</td></tr>
       <tr><td><b>Ending</b></td><td>The model has no give-up tool. If it ends a reply while the episode is still running, the control loop asks it to continue. An attempt ends only when the environment terminates or a step / non-action budget runs out.</td></tr>
-      <tr><td><b>Evaluation</b></td><td>Native benchmark checkers, or world-state-v1 for 16 redesigned scenes. Some Opus 5.5 and Kimi K3 results are scored 0 by protocol-rule adjudication rather than read from a native checker.</td></tr>
+      <tr><td><b>Evaluation</b></td><td>Each task receives a binary score based on predefined success criteria and evaluation budgets.</td></tr>
       <tr><td><b>Attempts</b></td><td>One selected result per model and task. Infrastructure retries are not additional scored tasks.</td></tr>
     </table></div>
     <p class="note">A <b>control step</b> is one physical simulation step actually executed. It is different from the index of a logged event.</p>
+  </section>
+
+  <section id="findings" aria-labelledby="findings-title">
+    <h2 id="findings-title">Key findings</h2>
+    <p>What the trajectories reveal beyond success rates.</p>
+    <ol class="finding-list">
+      <li><span class="finding-number" aria-hidden="true">01</span><div><h3>Agents build their own perception and control workflows.</h3><p>The trajectories include colour segmentation, camera calibration, spatial estimation and dynamics calculations. Agents turn visual reasoning and code into executable robot commands.</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">02</span><div><h3>Executing an action is not the same as completing a task.</h3><p>Failures arise when agents misread the current state, fail to change strategy after feedback, or declare completion before the goal is satisfied. Reliable robot use requires checking what each action actually achieved.</p></div></li>
+      <li><span class="finding-number" aria-hidden="true">03</span><div><h3>Models take different routes from observation to action.</h3><p>In the stacking case, Astra grasps the first block through successive visual estimates before fitting camera geometry; Opus first writes segmentation code and fits camera parameters. In drone juggling, both compute dynamics, but Opus sustains the contact cycle more effectively. The difference lies in how estimation, computation and feedback are combined.</p></div></li>
+    </ol>
   </section>
 
   <section id="results">
     <h2>Results</h2>
     <p data-summary="scores"></p>
     <figure class="rc-fig" aria-label="Results overview">
-      <figcaption><b>RobotWorld at a glance</b><span>Bar = score · right: every recorded attempt, click a tile to play it</span></figcaption>
+      <figcaption><b>RobotWorld at a glance</b><span>Bar height = success rate · recordings below; click a tile to play</span></figcaption>
       <div data-rc="slide"></div>
     </figure>
     <p>Each square below is one task. Sorting by result shows how few tasks are solved and how few of Kimi K3's and DeepSeek V4.1 Flash's tasks are solved.</p>
-    <figure class="chart" id="chart-models" aria-label="Score per model">
-      <figcaption><b>Score by task</b><span>Filled = score 1 · outline = score 0 · dashed = no result</span></figcaption>
+    <figure class="chart" id="chart-models" aria-label="Task outcomes by model">
+      <figcaption><b>Task outcomes</b><span>Filled = success · outline = failure · dashed = no result</span></figcaption>
       <div class="chart-body"></div>
     </figure>
-    <p>By domain, most successes are in manipulation, with a few in driving and drone tasks. Household mobile manipulation is still at zero for every model.</p>
-    <figure class="chart" id="chart-domains" aria-label="Score per domain">
-      <figcaption><b>Score 1 by domain</b><span>Number solved / tasks in domain</span></figcaption>
+    <p>In the 20 mobile-manipulation tasks, GPT-6 Astra completes four and Kimi K3 completes one; the other models complete none. The chart below reports results across all five domains.</p>
+    <figure class="chart" id="chart-domains" aria-label="Successes by domain">
+      <figcaption><b>Successful tasks by domain</b><span>Number solved / tasks in domain</span></figcaption>
       <div class="chart-body"></div>
     </figure>
   </section>
@@ -79,13 +89,36 @@
   </section>
 
   <section id="success">
-    <h2>Success modes</h2>
-    <p>Successful runs include long-horizon kitchen work and fast closed-loop control. GPT-6 Astra loaded a dishwasher in 949 of 1,800 allowed steps and drove a hairpin course. Opus 5.5 caught a ball in a cup in 30 steps and kept a quadruped walking under pushes for its full 1,000-step episode.</p>
-    <div class="clips" data-clips="astra-53,astra-70,opus-150,opus-142"></div>
+    <h2>From capability to robot action</h2>
+    <p>The paper traces how observations, computation and feedback become executable control. These cases illustrate mechanisms within individual episodes; the recordings show the motion, while the accompanying analysis draws on the interaction logs.</p>
+    <h3>Changing the command after feedback</h3>
+    <p>Kimi K3 shortened successive drawer pushes as end-effector displacement decreased, then withdrew to check closure; the environment registered success during withdrawal. In charger insertion, Astra responded to a rejected wrist-camera rotation by lowering and repositioning the idle arm before retrying. The rotation then executed, and the episode later completed the insertion. Feedback was useful because it changed the next action.</p>
+    <div class="clips" data-clips="k3-007,astra-30"></div>
+    <h3 id="visual-estimation">Turning visual estimates into grasping</h3>
+    <p>In stacking, Astra lifted the first blue block before running external image processing or fitting camera geometry. Opus 5.5 instead wrote colour-segmentation code before moving, then sampled arm motions to fit camera parameters. Both reached first placement and retraction at similar physical steps (270 versus 268). Astra subsequently completed the stack; Opus reached its auxiliary-call budget without completion. This comparison shows different routes to initial progress, not two successful episodes.</p>
+    <div class="clips" data-clips="astra-62,opus-082"></div>
+    <h3 id="sustained-control">Sustaining control after the first contact</h3>
+    <p>Both Astra and Opus 5.5 performed offline dynamics calculations for drone juggling. Opus coordinated levelling, pre-contact acceleration, post-contact thrust reduction and repositioning beneath the ball, reaching 15 valid hits over 800 steps. Astra recorded three hits before termination at step 188. Both used a median of three executed steps per action: building a model and choosing short segments did not by themselves ensure sustained control.</p>
+    <div class="clips" data-clips="astra-82,opus-158"></div>
   </section>
 
   <section id="failures">
-    <h2>Failure modes</h2>
+    <h2>Where the control loop breaks down</h2>
+    <p>A failure tells us that the goal was not reached. The interaction logs help explain what stopped progress: losing the required object state, remaining in preparation, or treating an unfinished task as complete.</p>
+    <h3>Arm motion without recovery of the object state</h3>
+    <p>Kimi K3 knocked the bottle onto its side during approach. Repeated left-arm attempts failed to secure it; at step 240, it switched to the right arm. Further approach motions used the remaining budget, and pouring remained unfinished at step 400. Reaching new arm poses did not restore the grasp needed for the task.</p>
+    <div class="clips" data-clips="k3-025"></div>
+    <h3>Preparation never advances to the next subgoal</h3>
+    <p>In vegetable chopping, all 69 positive-step calls by Kimi K3 concerned surveying, navigation or clearance around furniture. The final command still attempted kitchen entry. No cutting command appeared before the 2,000-step limit: the bottleneck was reaching the workspace, so this episode does not test the unattempted cutting skill.</p>
+    <div class="clips" data-clips="k3-055"></div>
+    <h3>Execution continues after corrective search stops</h3>
+    <p>Kimi K3 declared block sweeping complete at step 861, then issued 69 commands changing only the empty arm’s height over the final 139 steps. DeepSeek judged further motion unnecessary in stove navigation and spent the final 105 steps issuing zero base-velocity commands. Both tasks remained unsuccessful. Continued tool use did not mean continued correction of the unfinished goal.</p>
+    <div class="clips" data-clips="k3-023,dpsk-004"></div>
+  </section>
+
+  <section id="interaction">
+    <h2>Interaction and budgets</h2>
+    <p>The following charts describe how attempts ended and how much of their control-step budgets they used. These are execution statistics; the stopping condition alone does not explain the underlying failure mechanism.</p>
     <p data-summary="failures"></p>
     <figure class="rc-fig" aria-label="How attempts ended">
       <figcaption><b>How each attempt ended</b><span>Centre = number of tasks solved</span></figcaption>
@@ -96,15 +129,7 @@
       <figcaption><b>How much of the step budget each attempt used</b><span>One dot per attempt · executed control steps / task budget · click a dot to play</span></figcaption>
       <div data-rc="steps"></div>
     </figure>
-    <p>Below are two recurring patterns, each with recordings.</p>
-
-    <h3 id="never-moved">Looking without moving</h3>
-    <p>An agent can keep observing and analysing without executing a control action. Media availability and the stopping reason are shown for each selected attempt.</p>
-    <div class="clips" data-clips="opus-128,opus-134"></div>
-
-    <h3 id="household">Household tasks stay out of reach</h3>
-    <p>Household mobile manipulation combines navigation, opening, grasping and placement. The domain chart above reports the current results for each model.</p>
-    <div class="clips" data-clips="astra-39,opus-050"></div>
+    <p class="note">Low step usage can reflect early success, environment termination or exhaustion of the non-action budget. Read it together with the outcome and stopping reason.</p>
   </section>
 
   <section id="time">
@@ -124,8 +149,8 @@
   </section>
 </main>
 <footer>RobotWorld · Preliminary research notes grounded in recorded experiments · <a href="/">Home</a></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/blog.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/blog.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>

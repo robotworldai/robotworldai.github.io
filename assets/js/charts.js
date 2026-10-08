@@ -7,7 +7,7 @@ window.RWCharts = (() => {
   const MODEL_SUB = {Astra: 'GPT-6 Astra', Opus: 'Opus 5.5', K3: 'Kimi K3', DPSK: 'DeepSeek V4.1 Flash', Gemini: 'Gemini 3.8 Flash'};
   const DOMAINS = [
     ['manipulation', 'Manipulation', '桌面与灵巧操作'],
-    ['mobile', 'Mobile manipulation', '家居移动操作'],
+    ['mobile', 'Mobile manipulation', '移动操作'],
     ['locomotion', 'Locomotion', '足式与轮足运动'],
     ['driving', 'Driving', '车辆驾驶'],
     ['aerial', 'Aerial', '无人机飞行'],
@@ -26,11 +26,11 @@ window.RWCharts = (() => {
   const EMB_OF = Object.fromEntries(EMBODIMENTS.flatMap(([k, , , , , bs]) => bs.map(b => [b, k])));
   const embodiment = r => EMB_OF[r.bench] || 'other';
   const ENDINGS = [
-    ['solved', 'Score 1', '得分 1'],
-    ['env', 'Environment ended, score 0', '环境结束，得分 0'],
+    ['solved', 'Success', '成功'],
+    ['env', 'Environment ended, failure', '环境结束，失败'],
     ['budget', 'Step budget used up', '步数用完'],
     ['nonaction', 'Non-action limit', '非动作上限'],
-    ['adjudicated', 'Rule-adjudicated 0', '按规则裁定 0 分'],
+    ['adjudicated', 'Failure under evaluation rules', '按评测规则判定失败'],
     ['other', 'Earlier rules / not recorded', '早期规则或未记录'],
   ];
   const el = (tag, attrs = {}, ...kids) => {
@@ -63,7 +63,7 @@ window.RWCharts = (() => {
     const max = Math.max(...MODELS.map(m => solved(of(R, m)).length), 1);
     const legend = el('div', {class: 'rc-legend'}, DOMAINS.map(([k, en, cn]) => el('span', {}, el('i', {class: 'dom-' + k}), t(en, cn))));
     const head = el('div', {class: 'rc-srow rc-shead'}, el('span', {}, '#'), el('span', {}, t('Model', '模型')),
-      el('span', {}, t('Score', '得分')), legend);
+      el('span', {}, t('Success rate', '成功率')), legend);
     box.append(head);
     [...MODELS].sort((a, b) => solved(of(R, b)).length - solved(of(R, a)).length).forEach((m, i) => {
       const rs = of(R, m), hit = solved(rs);
@@ -89,7 +89,9 @@ window.RWCharts = (() => {
     const max = Math.max(...MODELS.map(m => solved(of(R, m)).length), 1);
     const top = Math.ceil((max + 1) / 5) * 5;
     const bars = el('div', {class: 'rc-vbars'});
-    for (let g = 0; g <= top; g += 5) bars.append(el('span', {class: 'rc-grid', style: `bottom:${100 * g / top}%`}, `${(100 * g / 84).toFixed(0)}%`));
+    const grid = el('div', {class: 'rc-vgrid', 'aria-hidden': 'true'});
+    bars.append(grid);
+    for (let g = 0; g <= top; g += 5) grid.append(el('span', {class: 'rc-grid', style: `bottom:${100 * g / top}%`}, `${(100 * g / 84).toFixed(0)}%`));
     for (const m of MODELS) {
       const rs = of(R, m), hit = solved(rs).length;
       bars.append(el('div', {class: 'rc-vcol m-' + m.toLowerCase()},
@@ -101,12 +103,12 @@ window.RWCharts = (() => {
     const S = scored(R), hit = solved(R).length;
     const headline = el('div', {class: 'rc-head'},
       el('b', {}, `${(100 * hit / S.length).toFixed(1)}%`),
-      el('strong', {}, t('pooled score-1 rate', '整体得分 1 比例')),
+      el('strong', {}, t('overall success rate', '整体成功率')),
       el('span', {}, t(`${hit} of ${S.length} attempts`, `${S.length} 次尝试中 ${hit} 次`)),
       el('span', {}, t('one attempt per task', '每题 1 次尝试')));
     const left = el('div', {class: 'rc-slide-left'},
       el('p', {class: 'rc-kicker'}, t('84 tasks · 8 embodiment types · 5 task domains', '84 题 · 8 类机器人形态 · 5 个任务领域')),
-      el('p', {class: 'rc-sub'}, t('SCORE', '得分')), bars);
+      el('p', {class: 'rc-sub'}, t('SUCCESS RATE', '成功率')), bars);
     const slideBox = el('div', {class: 'rc-slide'}, left, headline);
     box.append(slideBox);
     fetch('/data/wall-tiles.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null)
@@ -201,7 +203,7 @@ window.RWCharts = (() => {
       const r = byId[id];
       if (!r) return;
       const x = i % mosaic.cols, y = Math.floor(i / mosaic.cols);
-      const cell = el('span', {class: 'rc-tile' + (r.score === 1 ? ' one' : ''), title: `${r.model} · ${name(r)} · ${r.score === 1 ? t('Score 1', '得分 1') : r.score === 0 ? t('Score 0', '得分 0') : t('Unscored', '未计分')}`,
+      const cell = el('span', {class: 'rc-tile' + (r.score === 1 ? ' one' : ''), title: `${r.model} · ${name(r)} · ${r.score === 1 ? t('Success', '成功') : r.score === 0 ? t('Failure', '失败') : t('Unscored', '未评分')}`,
         style: `background-position:${100 * x / (mosaic.cols - 1)}% ${rows > 1 ? 100 * y / (rows - 1) : 0}%;background-size:${mosaic.cols * 100}% ${rows * 100}%`});
       if (liveIdx[id] != null) {
         // Live tile: painted from the shared sprite video; the static poster stays underneath.
@@ -213,7 +215,7 @@ window.RWCharts = (() => {
       w.append(bind(cell, r));
     });
     const wb = el('div', {class: 'rc-wallbox' + (live ? ' rc-livewall' : '')}, w,
-      el('p', {class: 'rc-wallnote'}, t(`${mosaic.ids.length} recordings · highlighted = score 1 · click to play`, `${mosaic.ids.length} 段录像 · 高亮 = 得分 1 · 点击播放`)));
+      el('p', {class: 'rc-wallnote'}, t(`${mosaic.ids.length} recordings · highlighted = success · click to play`, `${mosaic.ids.length} 段录像 · 高亮 = 成功 · 点击播放`)));
     if (live && canvases.length) animate(wb, canvases, live);
     return wb;
   }
@@ -261,9 +263,9 @@ window.RWCharts = (() => {
         lane));
     }
     box.append(el('div', {class: 'rc-legend rc-dlegend'},
-      el('span', {}, el('i', {class: 'dot one'}), t('Score 1', '得分 1')),
-      el('span', {}, el('i', {class: 'dot zero'}), t('Score 0', '得分 0')),
-      el('span', {}, el('i', {class: 'dot na'}), t('Score 0, non-action limit', '得分 0，触发非动作上限'))));
+      el('span', {}, el('i', {class: 'dot one'}), t('Success', '成功')),
+      el('span', {}, el('i', {class: 'dot zero'}), t('Failure', '失败')),
+      el('span', {}, el('i', {class: 'dot na'}), t('Failure, non-action limit', '失败，触发非动作上限'))));
   }
 
   function mount(R, mosaic) {

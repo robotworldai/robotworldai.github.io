@@ -5,10 +5,10 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
 <title>RobotWorld · Benchmarking Multimodal Agents for Robot Use</title>
-<link rel="stylesheet" href="/assets/css/home.css?v=20261007-pareto">
+<link rel="stylesheet" href="/assets/css/home.css?v=20261007-home-findings">
 <link rel="stylesheet" href="/assets/css/theme.css">
 <link rel="stylesheet" href="/assets/css/protocol-visuals.css">
-<link rel="stylesheet" href="/assets/css/charts.css">
+<link rel="stylesheet" href="/assets/css/charts.css?v=20261007-bar-layout2">
 <script src="/assets/js/theme.js"></script>
 </head>
 <body>
@@ -70,17 +70,30 @@
   <div class="wrap">
     <p class="num">03 / Results</p>
     <h2>结果</h2>
-    <figure class="rc-fig" aria-label="按模型和领域的得分">
-      <figcaption><b>各题得分，按领域拆分</b><span>色段长度 = 该领域得分 1 的题数 · 点击色段播放其中一题</span></figcaption>
+    <figure class="rc-fig" aria-label="按模型和领域的成功率">
+      <figcaption><b>成功任务，按领域拆分</b><span>色段长度 = 该领域成功任务数 · 点击色段播放其中一题</span></figcaption>
       <div data-rc="stacked"></div>
     </figure>
     <div class="table-scroll"><table class="board" id="board"></table></div>
   </div>
 </section>
 
+<section id="key-findings" class="light alt" aria-labelledby="key-findings-title">
+  <div class="wrap">
+    <p class="num">04 / Key findings</p>
+    <h2 id="key-findings-title">核心发现</h2>
+    <p class="intro">分数之外，我们发现了什么？</p>
+    <div class="home-findings">
+      <article class="home-finding"><span class="home-finding-number">01</span><h3>自主构建感知与控制工作流</h3><p>模型将视觉推理与分割、相机标定、动力学计算结合，转化为机器人动作。</p><a href="/blog/zh/#visual-estimation">查看感知与控制案例 <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">02</span><h3>动作执行与任务完成之间的缺口</h3><p>机器人仍在运动，任务却可能不再推进。案例揭示了物体状态丢失、子目标停滞和完成度误判。</p><a href="/blog/zh/#failures">查看闭环失败机制 <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">03</span><h3>不同模型的控制策略</h3><p>叠方块与无人机颠球案例展示了 Astra 和 Opus 如何以不同方式组织直接估计、辅助计算与反馈。</p><a href="/blog/zh/#sustained-control">对比模型控制策略 <span aria-hidden="true">→</span></a></article>
+    </div>
+  </div>
+</section>
+
 <section id="gallery" class="dark band">
   <div class="wrap">
-    <p class="num">04 / 任务与录像</p>
+    <p class="num">05 / 任务与录像</p>
     <h2>任务画廊</h2>
     <p class="intro">悬停预览录像，点击放大观看。</p>
     <div class="filters" id="filters">
@@ -91,7 +104,7 @@
     <p class="count" id="gallery-count"></p>
     <div class="cards" id="cards"></div>
     <section class="task-results" id="task-results" aria-labelledby="task-results-title">
-      <h3 id="task-results-title">逐题情况 · 模型得分对照</h3>
+      <h3 id="task-results-title">逐题情况 · 模型结果对照</h3>
       <p class="muted" id="paired-note"></p>
       <div class="table-scroll paired-window" tabindex="0" aria-label="可滚动的逐题结果"><table class="board paired" id="paired"></table></div>
     </section>
@@ -100,22 +113,22 @@
 
 <section id="protocol" class="light">
   <div class="wrap">
-    <p class="num">05 / Protocol</p>
+    <p class="num">06 / Protocol</p>
     <h2>评测口径</h2>
     <div class="rules">
       <article><h3>两种步数</h3><p><b>仿真控制步</b>是环境实际执行的物理控制步，受每题预算限制；<b>轨迹记录序号</b>是日志中的事件编号，二者不同。</p></article>
-      <article><h3>动作预算</h3><p>沿用原题预算，10 项家居移动操作任务额外以 2000 步为上限；16 项重新设计的场景使用已批准时长与 world-state-v1 判定。</p></article>
+      <article><h3>动作预算</h3><p>沿用原题预算，其中 10 项移动操作任务以 2000 步为上限；16 项重新设计的场景使用已批准时长与 world-state-v1 判定。</p></article>
       <article><h3>结束原因</h3><p>达到控制步上限、环境原生终止、world-state 终止分别标注。不向模型提供放弃工具；模型结束回答但环境仍在运行时，会提醒它继续。基础设施中断不计分，不算 0 分。</p></article>
-      <article><h3>非动作预算</h3><p>现行规则：连续 15 次交互没有执行控制步，或累计达到每题上限 30／60／120 次，即停止并记 0 分。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。</p></article>
+      <article><h3>非动作预算</h3><p>现行规则：连续 15 次交互没有执行控制步，或累计达到每题上限 30／60／120 次，即停止并判定失败。部分早期结果使用其他上限或没有上限，以每次尝试记录的协议为准。</p></article>
       <article><h3>恢复</h3><p>API 断流与偶发图片处理拒绝，保留同一仿真与会话，退避 10/20/40 秒原地恢复，最多 3 次，不重放已完成动作。</p></article>
-      <article><h3>覆盖</h3><p>每模型 84 题，覆盖五大领域。各题展示实际结果、录像与协议；未完成记录仍为未计分。</p></article>
+      <article><h3>覆盖</h3><p>每模型 84 题，覆盖五大领域。各题展示实际结果、录像与协议；未完成记录仍为未评分。</p></article>
     </div>
   </div>
 </section>
 
 <section id="cite" class="light alt">
   <div class="wrap">
-    <p class="num">06 / Citation</p>
+    <p class="num">07 / Citation</p>
     <pre class="bib">@misc{yang2026robotworld,
   title         = {{RobotWorld}: Benchmarking Multimodal Agents for Robot Use
                    Across Diverse Tasks and Embodiments},
@@ -138,10 +151,10 @@
 </section>
 </main>
 <footer><span id="foot"></span></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/home-zh.js?v=20261007-labels"></script>
-<script src="/assets/js/result-views.js?v=20261007-labels"></script>
-<script src="/assets/js/protocol-visuals.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js?v=20261006-complete"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/home-zh.js?v=20261007-outcomes"></script>
+<script src="/assets/js/result-views.js?v=20261007-outcomes"></script>
+<script src="/assets/js/protocol-visuals.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>

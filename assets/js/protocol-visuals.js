@@ -54,15 +54,15 @@
   const endings = figure(2, t('Two ways an attempt can stop', '一次尝试停下来的两种情况'));
   story(endings, [
     [t('Task ends normally (goal reached or steps used up)', '任务正常结束（达成目标或步数用完）'), t('→ check the scene → 1 or 0', '→ 检查现场 → 记 1 分或 0 分'), 'ok'],
-    [t('Our servers or network break mid-run', '中途我们的服务器或网络出故障'), t('→ not the model\'s fault → unscored (not 0)', '→ 不怪模型 → 不计分（不是 0 分）'), 'warn'],
+    [t('Our servers or network break mid-run', '中途我们的服务器或网络出故障'), t('→ not the model\'s fault → unscored (not a failure)', '→ 不怪模型 → 未评分（不算失败）'), 'warn'],
   ]);
-  takeaway(endings, t('Unscored attempts are left out of totals instead of being counted as failures.', '未计分的题不算进总分，也不当作失败。'));
+  takeaway(endings, t('Unscored attempts are left out of totals instead of being counted as failures.', '未评分的题不算进总分，也不当作失败。'));
 
   const nonaction = figure(3, t('Example: the model keeps looking but never moves', '例子：模型一直在看，却迟迟不动手'));
   story(nonaction, [
     [t('Look, look, look...', '看图、看图、看图……'), t('"no-move" count 1, 2, 3...', '“没动”计数 1、2、3……')],
     [t('Model finally moves the robot', '模型终于让机器人动了一下'), t('streak resets to 0; running total keeps counting', '连续计数清零；累计计数继续累加'), 'ok'],
-    [t('15 no-moves in a row, or the task\'s total limit (30 / 60 / 120)', '连续 15 次没动，或累计达到该题上限（30／60／120 次）'), t('→ stop, score 0', '→ 停止，记 0 分'), 'warn'],
+    [t('15 no-moves in a row, or the task\'s total limit (30 / 60 / 120)', '连续 15 次没动，或累计达到该题上限（30／60／120 次）'), t('→ stop, mark as failure', '→ 停止，判定失败'), 'warn'],
   ]);
   takeaway(nonaction, t('Whichever limit is hit first ends the attempt. Earlier runs may use other limits.', '两个上限哪个先到就停。早期结果可能用其他上限，以每次尝试的记录为准。'));
   cards[3].querySelector('p:not(.pv-take)').textContent = t(
@@ -82,7 +82,7 @@
   const coverage = figure(5, t('Tasks by domain', '各领域题目数'));
   const DOMAINS = [
     ['manipulation', 'Manipulation', '桌面与灵巧操作', '#0f8b7d'],
-    ['mobile', 'Mobile manipulation', '家居移动操作', '#3f6fb5'],
+    ['mobile', 'Mobile manipulation', '移动操作', '#3f6fb5'],
     ['locomotion', 'Locomotion', '足式与轮足运动', '#e0742b'],
     ['driving', 'Driving', '车辆驾驶', '#8c6bb1'],
     ['aerial', 'Aerial', '无人机飞行', '#c99a2e'],

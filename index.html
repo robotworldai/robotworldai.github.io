@@ -5,10 +5,10 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'">
 <title>RobotWorld · Benchmarking Multimodal Agents for Robot Use</title>
-<link rel="stylesheet" href="/assets/css/home.css?v=20261007-pareto">
+<link rel="stylesheet" href="/assets/css/home.css?v=20261007-home-findings">
 <link rel="stylesheet" href="/assets/css/theme.css">
 <link rel="stylesheet" href="/assets/css/protocol-visuals.css">
-<link rel="stylesheet" href="/assets/css/charts.css">
+<link rel="stylesheet" href="/assets/css/charts.css?v=20261007-bar-layout2">
 <script src="/assets/js/theme.js"></script>
 </head>
 <body>
@@ -70,17 +70,30 @@
   <div class="wrap">
     <p class="num">03 / Results</p>
     <h2>Results</h2>
-    <figure class="rc-fig" aria-label="Score by model and domain">
-      <figcaption><b>Score over tasks, split by domain</b><span>Segment length = score-1 tasks in that domain · click a segment to play one of them</span></figcaption>
+    <figure class="rc-fig" aria-label="Success rate by model and domain">
+      <figcaption><b>Successful tasks by domain</b><span>Segment length = successful tasks in that domain · click a segment to play one of them</span></figcaption>
       <div data-rc="stacked"></div>
     </figure>
     <div class="table-scroll"><table class="board" id="board"></table></div>
   </div>
 </section>
 
+<section id="key-findings" class="light alt" aria-labelledby="key-findings-title">
+  <div class="wrap">
+    <p class="num">04 / Key findings</p>
+    <h2 id="key-findings-title">Key findings</h2>
+    <p class="intro">What robot use reveals beyond the score.</p>
+    <div class="home-findings">
+      <article class="home-finding"><span class="home-finding-number">01</span><h3>Perception and control workflows</h3><p>Agents combine visual reasoning with segmentation, camera calibration and dynamics calculations to produce robot actions.</p><a href="/blog/#visual-estimation">Explore the workflows <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">02</span><h3>Where the loop breaks</h3><p>Motion can continue while task progress stops. Cases expose lost object state, stalled subgoals and mistaken completion judgements.</p><a href="/blog/#failures">See the failure mechanisms <span aria-hidden="true">→</span></a></article>
+      <article class="home-finding"><span class="home-finding-number">03</span><h3>Different strategies, different outcomes</h3><p>Astra and Opus organise direct estimation, auxiliary computation and feedback differently in stacking and drone juggling.</p><a href="/blog/#sustained-control">Compare control strategies <span aria-hidden="true">→</span></a></article>
+    </div>
+  </div>
+</section>
+
 <section id="gallery" class="dark band">
   <div class="wrap">
-    <p class="num">04 / Tasks &amp; Recordings</p>
+    <p class="num">05 / Tasks &amp; Recordings</p>
     <h2>Task gallery</h2>
     <p class="intro">Hover to preview a recording; click to watch it full size.</p>
     <div class="filters" id="filters">
@@ -100,13 +113,13 @@
 
 <section id="protocol" class="light">
   <div class="wrap">
-    <p class="num">05 / Protocol</p>
+    <p class="num">06 / Protocol</p>
     <h2>Evaluation protocol</h2>
     <div class="rules">
       <article><h3>Two kinds of steps</h3><p><b>Control steps</b> are physical simulation steps actually executed, bounded by the task budget. <b>Trace record indices</b> number logged events. The two are different.</p></article>
-      <article><h3>Action budget</h3><p>Native budgets are kept, with the 10 household mobile-manipulation tasks capped at 2000 steps. The 16 redesigned scenes use approved horizons and world-state-v1 judging.</p></article>
-      <article><h3>End reasons</h3><p>Step-budget limit, native termination and world-state termination are labeled separately. The model has no give-up tool; if it ends a reply while the episode is still running, it is asked to continue. Infrastructure interruptions are unscored, not scored as 0.</p></article>
-      <article><h3>Non-action budget</h3><p>Current runs stop with score 0 after 15 consecutive interactions without a control step, or after a per-task cumulative limit of 30, 60 or 120. Some earlier runs used other limits or none; each attempt records its own protocol.</p></article>
+      <article><h3>Action budget</h3><p>Native budgets are kept, with 10 of the mobile-manipulation tasks capped at 2000 steps. The 16 redesigned scenes use approved horizons and world-state-v1 judging.</p></article>
+      <article><h3>End reasons</h3><p>Step-budget limit, native termination and world-state termination are labeled separately. The model has no give-up tool; if it ends a reply while the episode is still running, it is asked to continue. Infrastructure interruptions are unscored, not counted as failures.</p></article>
+      <article><h3>Non-action budget</h3><p>Current runs are marked as failures after 15 consecutive interactions without a control step, or after a per-task cumulative limit of 30, 60 or 120. Some earlier runs used other limits or none; each attempt records its own protocol.</p></article>
       <article><h3>Recovery</h3><p>On API stream drops or sporadic image-processing rejections, the same simulation and session are kept and resumed after 10/20/40 s backoff, up to 3 times, without replaying actions.</p></article>
       <article><h3>Coverage</h3><p>84 tasks per model across five domains. Available results, recordings and protocols are linked per task; unfinished runs remain unscored.</p></article>
     </div>
@@ -115,7 +128,7 @@
 
 <section id="cite" class="light alt">
   <div class="wrap">
-    <p class="num">06 / Citation</p>
+    <p class="num">07 / Citation</p>
     <pre class="bib">@misc{yang2026robotworld,
   title         = {{RobotWorld}: Benchmarking Multimodal Agents for Robot Use
                    Across Diverse Tasks and Embodiments},
@@ -138,10 +151,10 @@
 </section>
 </main>
 <footer><span id="foot"></span></footer>
-<script src="/assets/js/player.js?v=20261007-playback"></script>
-<script src="/assets/js/home.js?v=20261007-labels"></script>
-<script src="/assets/js/result-views.js?v=20261007-labels"></script>
-<script src="/assets/js/protocol-visuals.js?v=20261007-labels"></script>
-<script src="/assets/js/charts.js?v=20261006-complete"></script>
+<script src="/assets/js/player.js?v=20261007-outcomes"></script>
+<script src="/assets/js/home.js?v=20261007-outcomes"></script>
+<script src="/assets/js/result-views.js?v=20261007-outcomes"></script>
+<script src="/assets/js/protocol-visuals.js?v=20261007-outcomes"></script>
+<script src="/assets/js/charts.js?v=20261007-outcomes"></script>
 </body>
 </html>
