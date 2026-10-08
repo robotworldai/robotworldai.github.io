@@ -35,11 +35,11 @@
       const dims = robot.configurations.map(r => r.dim), min = Math.min(...dims), max = Math.max(...dims);
       return min === max ? `${min}D` : `${min}–${max}D`;
     };
-    const button = (robot, photo) => `<button type="button" class="${photo ? "ea-robot " : ""}ea-scope-${robot.domain}" data-robot="${robot.id}" aria-pressed="false" aria-controls="ea-unified ea-detail" aria-label="${esc(robot.name)}, ${dimensionLabel(robot)}, ${esc(domainName(robot.domain))}, ${tasksFor(robot).length} ${text("tasks", "个任务")}">
-      ${photo ? `<span class="ea-robot-dim" aria-hidden="true">${dimensionLabel(robot)}</span><img src="/assets/images/embodiments/${robot.image}" alt="${esc(robot.imageCaption ? robot.imageCaption[lang] : robot.name)}" loading="lazy" decoding="async" width="160" height="144"><span class="ea-robot-name">${esc(robot.name)}${robot.configurations.length > 1 ? `<small>${robot.configurations.length} ${text("control profiles", "种控制配置")}</small>` : robot.imageCaption ? `<small>${esc(robot.imageCaption[lang])}</small>` : ""}</span><span class="ea-robot-domain" aria-hidden="true"></span>` : `${esc(robot.name)} <span aria-hidden="true">↗</span>`}
+    const button = robot => `<button type="button" class="ea-robot ea-scope-${robot.domain}" data-robot="${robot.id}" aria-pressed="false" aria-controls="ea-unified ea-detail" aria-label="${esc(robot.name)}, ${dimensionLabel(robot)}, ${esc(domainName(robot.domain))}, ${tasksFor(robot).length} ${text("tasks", "个任务")}">
+      <span class="ea-robot-dim" aria-hidden="true">${dimensionLabel(robot)}</span><img src="/assets/images/embodiments/${robot.image}" alt="${esc(robot.imageCaption ? robot.imageCaption[lang] : robot.name)}" loading="lazy" decoding="async" width="160" height="144"><span class="ea-robot-name">${esc(robot.name)}${robot.configurations.length > 1 ? `<small>${robot.configurations.length} ${text("control profiles", "种控制配置")}</small>` : robot.imageCaption ? `<small>${esc(robot.imageCaption[lang])}</small>` : ""}</span><span class="ea-robot-domain" aria-hidden="true"></span>
     </button>`;
     root.innerHTML = `<div class="ea-domainbar" role="group" aria-label="${text("Filter embodiments by task domain", "按任务领域筛选本体")}">${domains.map(([id,en,cn]) => `<button type="button" class="ea-domain ea-scope-${id}" data-domain="${id}" aria-pressed="false"><span>${zh ? cn : en}</span><small>${runs.filter(r => r.domain === id).length} ${text("tasks", "任务")} · ${robots.filter(r => r.domain === id).length} ${text("embodiments", "本体")}</small></button>`).join("")}</div>
-      <div class="ea-toolbar"><button type="button" class="ea-all" aria-pressed="true">${text("All embodiments", "全部本体")} ↗</button><span>${text("Hover, focus or tap a domain or robot", "悬停 / 点击任务分类或机器人 · 支持键盘")}</span></div>
+      <div class="ea-toolbar"><span>${text("Hover, focus or tap a domain or robot", "悬停 / 点击任务分类或机器人 · 支持键盘")}</span></div>
           <section class="ea-unified" id="ea-unified" aria-labelledby="ea-unified-title" aria-describedby="ea-space-note">
             <div class="ea-space-heading"><div><h3 id="ea-unified-title">Unified Action Space</h3><p class="ea-space-selection" id="ea-space-title"></p></div><div class="ea-space-actions"><button type="button" class="ea-jump" hidden></button><button type="button" class="ea-reset">${text("Show overview", "查看总览")}</button></div></div>
             <dl class="ea-space-components">${components.map(c => `<div class="ea-space-component ea-component-${c.id}" data-component="${c.id}" title="${esc(c.description[lang])}"><dt>${esc(c.label[lang])}</dt><dd><span class="ea-space-value"></span><small class="ea-space-unit"></small></dd></div>`).join("")}</dl>
@@ -47,12 +47,10 @@
           </section>
       <div class="ea-board">
           <div class="ea-collection">
-          <div class="ea-gallery" role="group" aria-label="${text("Robot product and project images", "机器人产品及项目图片")}">${robots.filter(r => r.image).map(r => button(r,true)).join("")}</div>
-          <div class="ea-research"><p>${text("Research configurations · hardware photos pending", "研究构型 · 对应真机图片待补充")}</p><div class="ea-research-list">${robots.filter(r => !r.image).map(r => button(r,false)).join("")}</div></div>
+          <div class="ea-gallery" role="group" aria-label="${text("Robot product and project images", "机器人产品及项目图片")}">${robots.filter(r => r.image).map(button).join("")}</div>
           </div>
         <aside class="ea-detail" id="ea-detail" aria-label="${text("Selected robot: action space and tasks", "选定机器人的动作空间与任务")}"></aside>
       </div>
-      <p class="ea-footnote">${text("D counts controller input scalars, not hardware DOF. 18 embodiments and 20 evaluated control profiles cover 84 published tasks. Panda appears once, with three selectable profiles; G1 is shared across two integrations. Images identify hardware platforms; task attachments may differ. All evaluations run in simulation.", "D 表示控制器输入标量数，并非硬件自由度。18 个本体、20 个评测控制配置覆盖 84 个已发布任务。Panda 仅展示一次，可切换三种配置；G1 合并两个集成。配图用于识别平台，任务附件可能不同；所有评测均在仿真中进行。")} <a href="/data/embodiment-sources.json">${text("Image credits & provenance", "图片来源与说明")} ↗</a></p>
       <span class="sr-only" id="ea-announcement" role="status" aria-live="polite"></span>`;
     const detail = root.querySelector("#ea-detail");
     let selected = null;
@@ -144,7 +142,7 @@
           <ul class="ea-tasks">${tasks.map((t,i) => `<li><button type="button" class="ea-task" data-task="${i}" ${window.RWPlayer?.canPlay(t) ? "" : "disabled"}><span>${esc(zh ? t.title : t.title_en || t.title)}</span><span aria-hidden="true">↗</span></button></li>`).join("")}</ul>
         </div><div class="ea-detail-notes">
         <p class="ea-note">${esc(robot.note[lang])}</p>
-        <div class="ea-detail-links">${robot.contract.map((url,i) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(robot.benches[i])} ↗</a>`).join("")}${robot.imageSource ? `<a href="${esc(robot.imageSource)}" target="_blank" rel="noopener noreferrer">${text("Photo source", "图片来源")} ↗</a>` : ""}</div></div>`;
+        <div class="ea-detail-links">${robot.contract.map((url,i) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(robot.benches[i])} ↗</a>`).join("")}</div></div>`;
       detail.querySelectorAll("[data-size]").forEach(segment => segment.style.setProperty("--ea-size", segment.dataset.size));
       if (focusedProfile) detail.querySelector(`[data-profile="${focusedProfile}"]`)?.focus({preventScroll:true});
       detail.querySelectorAll("[data-task]").forEach(b => b.addEventListener("click", () => window.RWPlayer?.open(tasks[Number(b.dataset.task)])));
@@ -204,14 +202,12 @@
       activeDomain = domain;
       domainMode = domain ? mode : null;
       root.querySelectorAll("[data-domain]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.domain === domain)));
-      root.querySelector(".ea-all").setAttribute("aria-pressed",String(!domain));
       root.querySelectorAll("[data-robot]").forEach(b => {
         const outside = Boolean(domain && robots.find(r => r.id === b.dataset.robot).domain !== domain);
         // Hover highlights in place; tap/focus may narrow the gallery explicitly.
         b.hidden = outside && mode !== "hover";
         b.classList.toggle("is-outside-domain", outside && mode === "hover");
       });
-      root.querySelector(".ea-research").hidden = !robots.some(r => !r.image && (mode === "hover" || !domain || r.domain === domain));
       overview(announce);
     }
     root.querySelectorAll("[data-domain]").forEach(b => {
@@ -231,7 +227,6 @@
         filter(toggleOff ? null : b.dataset.domain, mode, true);
       });
     });
-    root.querySelector(".ea-all").addEventListener("click", () => filter(null, null, true));
     root.querySelector(".ea-reset").addEventListener("click", () => filter(null, null, true));
     root.querySelector(".ea-jump").addEventListener("click", () => detail.scrollIntoView({block:"start", behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"}));
     detail.addEventListener("click", e => {
