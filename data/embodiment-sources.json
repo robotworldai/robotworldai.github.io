@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-08",
+  "scope": "Images identify hardware families or explicitly labelled components; benchmark evaluations themselves run in simulation. No simulator screenshot is used as gallery art.",
+  "rights": "Third-party image rights remain with their respective owners. Public availability and source attribution do not grant a redistribution license. Review image permissions before public deployment.",
+  "processing": "Native transparent product images are used where available. Other selected images were background-extracted with the built-in imagegen tool; those are AI-edited derivatives, not untouched source photographs. Model identity was checked against each reference.",
+  "images": [
+    {
+      "robot": "panda",
+      "file": "assets/images/embodiments/panda.webp",
+      "page": "https://technology.robbyant.com/lingbot-vla-v2",
+      "original": "https://mdn.alipayobjects.com/huamei_h1snpr/afts/img/MaqLRbs4XaMAAAAAQyAAAAgADriIAQJr/fmt.webp",
+      "credit": "Franka / LingBot-VLA project page",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "ur5-wuji",
+      "file": "assets/images/embodiments/wuji.png",
+      "page": "https://wuji.tech/en/hand",
+      "original": "https://wuji.tech/assets/images/hand/C_1_2.webp",
+      "credit": "Wuji Technology; hand component only",
+      "processing": "imagegen background extraction",
+      "prompt": "Create a faithful transparent-background cutout from the provided Wuji Hand product image. This is an image editing/extraction task, not robot design. Preserve the exact hand silhouette, finger count, joint geometry, silver metal finish, black palm, blue joint highlights and pose of the reference. Remove only the empty surrounding canvas. Center the complete hand on a tightly framed portrait canvas with 4% transparent margin, no cropping of fingertips or wrist. True transparent alpha, no background, no floor, no labels, no added parts or simulated scene. Do not invent a robot arm."
+    },
+    {
+      "robot": "arx",
+      "file": "assets/images/embodiments/arx.png",
+      "page": "https://www.arx-x.com/",
+      "original": "https://www.arx-x.com/assets/poster/x5.jpg",
+      "credit": "ARX Robotics",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Asset type: official robot image for a research project page. Edit target: supplied official image. Extract the two white ARX X5 robot arms, grippers and their black shared supporting mount. Remove background and floor/table around the base. Keep exact geometry, pose, wiring, materials and manufacturer marks. Output tightly framed actual transparent PNG, retaining original photographic/product-image content and proportions. No added text, no checkerboard."
+    },
+    {
+      "robot": "droid",
+      "file": "assets/images/embodiments/droid.png",
+      "page": "https://droid-dataset.github.io/",
+      "original": "https://droid-dataset.github.io/figures/droid_setup.png",
+      "credit": "DROID project",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Asset type: transparent product-photo cutout for RobotWorld project page. Edit target: the supplied official photograph. Extract only the white Franka Panda arm and its black Robotiq 2F-85 gripper, preserving exact pose, joints, wiring and geometry. Remove all annotation arrows, red circles, text, desk, laptop, external camera mounts and background. Keep wrist-mounted camera. Do not redraw or redesign the robot. Output a tightly framed PNG with genuine alpha transparency, no checkerboard, no floor, no shadow, no added text. Keep original photographic identity and proportions. Only extract the described subject."
+    },
+    {
+      "robot": "panda-cup",
+      "file": "assets/images/embodiments/panda.webp",
+      "page": "https://technology.robbyant.com/lingbot-vla-v2",
+      "original": "https://mdn.alipayobjects.com/huamei_h1snpr/afts/img/MaqLRbs4XaMAAAAAQyAAAAgADriIAQJr/fmt.webp",
+      "credit": "Franka / LingBot-VLA project page; cup attachment not pictured",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "r1pro",
+      "file": "assets/images/embodiments/r1pro.png",
+      "page": "https://technology.robbyant.com/lingbot-vla-v2",
+      "original": "https://mdn.alipayobjects.com/huamei_h1snpr/afts/img/_jd0R6Upds0AAAAAQeAAAAgADriIAQJr/fmt.webp",
+      "credit": "Galaxea / LingBot-VLA project page",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Asset type: official robot image for a research project page. Edit target: supplied official image. Remove the white background and any floor shadow around the robot. Preserve the entire Galaxea R1 Pro and both two-finger grippers exactly. Do not add hands or redesign it. Output tightly framed actual transparent PNG, retaining original photographic/product-image content and proportions. No added text, no checkerboard."
+    },
+    {
+      "robot": "panda-omron",
+      "file": "assets/images/embodiments/panda-omron.png",
+      "page": "https://github.com/qcr/frankie_docs",
+      "original": "https://raw.githubusercontent.com/qcr/frankie_docs/master/images/Frankie.jpg",
+      "credit": "QUT Centre for Robotics; Frankie hardware example, different torso/mount",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: user-approved real robot photograph. Extract the complete real Panda + Omron mobile robot, including the entire white mobile base, arm, gripper, camera, control box and wiring. Remove sofa, carpet and background. Preserve original pose, geometry, colors and branding exactly. Tightly framed actual alpha-transparent PNG with a little padding, no checkerboard, no added objects or text. Do not redesign."
+    },
+    {
+      "robot": "g1",
+      "file": "assets/images/embodiments/g1.webp",
+      "page": "https://technology.robbyant.com/lingbot-vla-v2",
+      "original": "https://mdn.alipayobjects.com/huamei_h1snpr/afts/img/AhsWTadO1NoAAAAAQpAAAAgADriIAQJr/fmt.webp",
+      "credit": "Unitree / LingBot-VLA project page",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "digit",
+      "file": "assets/images/embodiments/digit-v4.png",
+      "page": "https://www.agilityrobotics.com/content/digits-next-steps",
+      "original": "https://cdn.prod.website-files.com/6980c63561bbbeb67b4b7ab5/698e3705dd8e5fdc8073c968_698e0485df3a91085bfe56c1_68ca0133b866bfc54927d3f1_nav-cover.jpeg",
+      "credit": "Agility Robotics; left-hand real hardware photograph only",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: user-approved real robot photograph. Extract ONLY the real teal-and-white Digit robot on the LEFT HALF of the image. The right half is a simulation and must be removed entirely. Remove warehouse, conveyor, blue bin, floor, railings and all background. Preserve all visible robot parts, exact pose, reverse-knee legs and foot linkages, torso, head with 21, arms and grippers. Do not use the simulated right-hand robot to redraw any parts. Keep the original real photographic robot. Tightly framed actual alpha-transparent PNG with a little padding, no checkerboard, no added objects or text. Do not redesign."
+    },
+    {
+      "robot": "t1",
+      "file": "assets/images/embodiments/t1.webp",
+      "page": "https://www.booster.tech/booster-t1/",
+      "original": "https://www.booster.tech/_astro/specification-t1.CmWYO9Pz_zox76.webp",
+      "credit": "Booster Robotics",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "go2",
+      "file": "assets/images/embodiments/go2.png",
+      "page": "https://shop.unitree.com/products/unitree-go2",
+      "original": "https://shop.unitree.com/cdn/shop/files/df9f333424ff6cc6164ce421b019fb94_a6f832b0-479e-4294-ac75-6516208b91f4_1024x1024.png?v=1718274082",
+      "credit": "Unitree",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "a1",
+      "file": "assets/images/embodiments/a1.png",
+      "page": "https://www.unitree.com/a1",
+      "original": "https://oss-global-cdn.unitree.com/static/2674fb4031bd41f6ba43a556d71ef358_1094x1042.png",
+      "credit": "Unitree",
+      "processing": "native transparent product image",
+      "prompt": null
+    },
+    {
+      "robot": "anymal",
+      "file": "assets/images/embodiments/anymal.png",
+      "page": "https://newatlas.com/robotics/anymal-c-quadruped-robot/",
+      "original": "https://newatlas-brightspot.s3.amazonaws.com/2c/10/077d1919477692deac9b5f8a43f3/anymal-c-legged-robot-with-inspection-payload-1920x1920.jpg",
+      "credit": "ANYbotics, published by New Atlas; ANYmal C family image",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: provided official product photograph. Keep only the entire red ANYmal C robot with all legs and sensors; remove the dark studio background and floor shadow. Preserve exact identity and proportions, do not invent, redraw or add anything. Tightly frame with small padding. Deliver actual transparent PNG with alpha, no checkerboard and no text added."
+    },
+    {
+      "robot": "mushr",
+      "file": "assets/images/embodiments/mushr.png",
+      "page": "https://mushr.io/",
+      "original": "https://mushr.io/imgs/multi-cars-wheels.jpg",
+      "credit": "University of Washington MuSHR project",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Asset type: transparent product-photo cutout for RobotWorld project page. Edit target: the supplied official photograph. Keep only the frontmost black MuSHR car with number 23. Remove the four other cars and studio background. Preserve every visible sensor, wheel, wire, color, marking and exact geometry of the frontmost car. Do not invent parts. Output a tightly framed PNG with genuine alpha transparency, no checkerboard, no floor, no shadow, no added text. Keep original photographic identity and proportions. Only extract the described subject."
+    },
+    {
+      "robot": "f1tenth",
+      "file": "assets/images/embodiments/f1tenth.png",
+      "page": "https://github.com/f1tenth/f1tenth_doc",
+      "original": "https://github.com/f1tenth/f1tenth_doc/blob/main/img/overview2.png",
+      "credit": "F1TENTH documentation; central real hardware photograph",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: supplied official/project product image. Extract only the central complete F1TENTH car photograph. Preserve exact visible vehicle, four wheels, sensors, antenna, wires and geometry. Remove every surrounding diagram, text, border, white backdrop and shadow. No other objects. Deliver tightly-framed genuine transparent PNG with alpha, small padding, no checkerboard. No redesign or addition."
+    },
+    {
+      "robot": "hummingbird",
+      "file": "assets/images/embodiments/hummingbird.png",
+      "page": "https://robotics.caltech.edu/~ndutoit/wiki/images/7/70/AscTec_AutoPilot_manual_v1.0_small.pdf",
+      "original": "https://robotics.caltech.edu/~ndutoit/wiki/images/7/70/AscTec_AutoPilot_manual_v1.0_small.pdf",
+      "credit": "Ascending Technologies, AutoPilot manual cover, hosted by Caltech",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: supplied official/project product image. Extract only the AscTec Hummingbird quadcopter from the manual cover, preserving the exact four propellers, frame, electronics, orange arm and antenna. Remove white page and ALL text/logos/page lines. Keep robot geometry unchanged. Deliver tightly-framed genuine transparent PNG with alpha, small padding, no checkerboard. No redesign or addition."
+    },
+    {
+      "robot": "iris",
+      "file": "assets/images/embodiments/iris.png",
+      "page": "https://www.adafruit.com/product/1546",
+      "original": "https://cdn-shop.adafruit.com/970x728/1546-03.jpg",
+      "credit": "3D Robotics / Adafruit",
+      "processing": "imagegen background extraction",
+      "prompt": "Use case: background-extraction. Edit target: supplied official/project product image. Remove white studio background around the entire blue-and-black 3DR Iris quadcopter. Preserve exact geometry, visible propellers, lettering, legs, antenna and photographic detail. Do not invent parts outside the original frame. Deliver tightly-framed genuine transparent PNG with alpha, small padding, no checkerboard. No redesign or addition."
+    }
+  ],
+  "unpictured": [
+    {
+      "robot": "flamingo",
+      "name": "Flamingo",
+      "reason": "No verified photograph of the corresponding research hardware was selected; no similar commercial model substituted.",
+      "contracts": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/flamingo.md"
+      ]
+    },
+    {
+      "robot": "wheel-legged",
+      "name": "Wheel-Legged-Lab",
+      "reason": "No verified photograph of the corresponding research hardware was selected; no similar commercial model substituted.",
+      "contracts": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheel_legged.md"
+      ]
+    },
+    {
+      "robot": "wheeled-quadruped",
+      "name": "Wheeled Quadruped",
+      "reason": "No verified photograph of the corresponding research hardware was selected; no similar commercial model substituted.",
+      "contracts": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheeled_quadruped.md"
+      ]
+    }
+  ]
+}

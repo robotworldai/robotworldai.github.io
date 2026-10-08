@@ -9,11 +9,12 @@
 <link rel="stylesheet" href="/assets/css/theme.css">
 <link rel="stylesheet" href="/assets/css/protocol-visuals.css">
 <link rel="stylesheet" href="/assets/css/charts.css?v=20261007-bar-layout2">
+<link rel="stylesheet" href="/assets/css/embodiments.css?v=20261008-domains-v5">
 <script src="/assets/js/theme.js"></script>
 </head>
 <body>
 <nav class="topnav"><a class="brand" href="#top">RobotWorld</a>
-  <div class="page-tabs"><a href="/zh/" aria-current="page">Home</a><a href="/blog/zh/">Blog</a></div><div><a href="/">EN</a><a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#leaderboard">Results</a><a href="#gallery">Tasks</a><a href="#protocol">Protocol</a></div></nav>
+  <div class="page-tabs"><a href="/zh/" aria-current="page">Home</a><a href="/blog/zh/">Blog</a></div><div><a href="/">EN</a><a href="#overview">Overview</a><a href="#embodiments">Embodiments</a><a href="#benchmark">Benchmark</a><a href="#leaderboard">Results</a><a href="#gallery">Tasks</a><a href="#protocol">Protocol</a></div></nav>
 
 <header id="top" class="hero dark">
   <div class="hero-grid" id="hero-videos" aria-hidden="true"></div>
@@ -48,9 +49,22 @@
   </div>
 </section>
 
+<section id="embodiments" class="light" aria-labelledby="embodiments-title">
+  <div class="wrap">
+    <p class="num">02 / Embodiments</p>
+    <div class="ea-heading">
+      <div><h2 id="embodiments-title">Diverse Embodiment. One RobotWorld.</h2>
+      <p class="intro">从灵巧操作到全身运动，从地面驾驶到空中控制：用统一的控制语义，连接 18 个机器人本体、20 个控制配置与全部 84 个任务。</p></div>
+      <dl class="ea-summary"><div><dt>控制分量</dt><dd>12</dd></div><div><dt>机器人本体</dt><dd>18</dd></div></dl>
+    </div>
+    <div id="embodiment-atlas"><p class="muted">正在加载机器人本体图谱…</p></div>
+    <noscript><p>本交互图谱需要 JavaScript。 <a href="/data/embodiments.json">查看完整本体与动作维度目录</a>.</p></noscript>
+  </div>
+</section>
+
 <section id="benchmark" class="light alt">
   <div class="wrap">
-    <p class="num">02 / Benchmark</p>
+    <p class="num">03 / Benchmark</p>
     <h2>任务覆盖</h2>
     <p class="intro" id="coverage-intro"></p>
     <div class="rc-fig" id="domains" data-rc="embodiments"></div>
@@ -68,7 +82,7 @@
 
 <section id="leaderboard" class="light">
   <div class="wrap">
-    <p class="num">03 / Results</p>
+    <p class="num">04 / Results</p>
     <h2>结果</h2>
     <figure class="rc-fig" aria-label="按模型和领域的成功率">
       <figcaption><b>成功任务，按领域拆分</b><span>色段长度 = 该领域成功任务数 · 点击色段播放其中一题</span></figcaption>
@@ -80,7 +94,7 @@
 
 <section id="key-findings" class="light alt" aria-labelledby="key-findings-title">
   <div class="wrap">
-    <p class="num">04 / Key findings</p>
+    <p class="num">05 / Key findings</p>
     <h2 id="key-findings-title">核心发现</h2>
     <p class="intro">分数之外，我们发现了什么？</p>
     <div class="home-findings">
@@ -93,7 +107,7 @@
 
 <section id="gallery" class="dark band">
   <div class="wrap">
-    <p class="num">05 / 任务与录像</p>
+    <p class="num">06 / 任务与录像</p>
     <h2>任务画廊</h2>
     <p class="intro">悬停预览录像，点击放大观看。</p>
     <div class="filters" id="filters">
@@ -113,7 +127,7 @@
 
 <section id="protocol" class="light">
   <div class="wrap">
-    <p class="num">06 / Protocol</p>
+    <p class="num">07 / Protocol</p>
     <h2>评测口径</h2>
     <div class="rules">
       <article><h3>两种步数</h3><p><b>仿真控制步</b>是环境实际执行的物理控制步，受每题预算限制；<b>轨迹记录序号</b>是日志中的事件编号，二者不同。</p></article>
@@ -128,7 +142,7 @@
 
 <section id="cite" class="light alt">
   <div class="wrap">
-    <p class="num">07 / Citation</p>
+    <p class="num">08 / Citation</p>
     <pre class="bib">@misc{yang2026robotworld,
   title         = {{RobotWorld}: Benchmarking Multimodal Agents for Robot Use
                    Across Diverse Tasks and Embodiments},
@@ -156,5 +170,6 @@
 <script src="/assets/js/result-views.js?v=20261007-outcomes"></script>
 <script src="/assets/js/protocol-visuals.js?v=20261007-outcomes"></script>
 <script src="/assets/js/charts.js?v=20261007-outcomes"></script>
+<script src="/assets/js/embodiments.js?v=20261008-domains-v5"></script>
 </body>
 </html>

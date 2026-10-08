@@ -1,0 +1,1137 @@
+{
+  "version": 2,
+  "scope": "84 published tasks, 18 embodiments, 20 evaluated control profiles. The legacy robots array stores control profiles; embodiments groups them for display. Panda appears once with three profiles. G1 is shared across two integrations. D counts native controller input scalars, not hardware DOF. Unified Action Space is a semantic union, not a shared fixed-length backend vector.",
+  "robots": [
+    {
+      "id": "panda",
+      "name": "Franka Panda",
+      "domain": "manipulation",
+      "benches": [
+        "ai_cps"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 7
+        }
+      ],
+      "dim": 7,
+      "image": "panda.webp",
+      "control": {
+        "en": "Joint increments",
+        "zh": "关节增量"
+      },
+      "note": {
+        "en": "Seven arm joints; the fingers are managed by the task, not an extra action channel.",
+        "zh": "7 个手臂关节；手指由任务逻辑控制，不额外计入 action。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/ai_cps.md"
+      ],
+      "imageSource": "https://technology.robbyant.com/lingbot-vla-v2",
+      "profileLabel": {
+        "en": "Joint increments · 7D",
+        "zh": "关节增量 · 7D"
+      }
+    },
+    {
+      "id": "ur5-wuji",
+      "name": "Dual UR5 + Wuji",
+      "domain": "manipulation",
+      "benches": [
+        "bench2dex"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 12
+        },
+        {
+          "key": "hand",
+          "label": {
+            "en": "Dexterous hands",
+            "zh": "灵巧手"
+          },
+          "n": 40
+        }
+      ],
+      "dim": 52,
+      "image": "wuji.png",
+      "control": {
+        "en": "Joint positions",
+        "zh": "关节位置"
+      },
+      "note": {
+        "en": "Two 6-joint UR5 arms and two 20-joint Wuji hands. This is the evaluated configuration, not all robots supported upstream. Image shows a Wuji hand component, not the complete dual-arm assembly.",
+        "zh": "双 UR5 各 6 维，双 Wuji 灵巧手各 20 维；此处统计评测所用构型，而非上游支持的全部机器人。 配图仅展示 Wuji 手部，不是完整双臂装配。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/bench2dex.md"
+      ],
+      "imageSource": "https://wuji.tech/en/hand",
+      "imageCaption": {
+        "en": "Wuji hand detail",
+        "zh": "Wuji 灵巧手局部"
+      }
+    },
+    {
+      "id": "arx",
+      "name": "Dual ARX X5",
+      "domain": "manipulation",
+      "benches": [
+        "robodojo"
+      ],
+      "parts": [
+        {
+          "key": "eef",
+          "label": {
+            "en": "EEF pose",
+            "zh": "末端位姿"
+          },
+          "n": 12
+        },
+        {
+          "key": "gripper",
+          "label": {
+            "en": "Gripper",
+            "zh": "夹爪"
+          },
+          "n": 2
+        }
+      ],
+      "dim": 14,
+      "image": "arx.png",
+      "control": {
+        "en": "End-effector pose + grippers",
+        "zh": "末端位姿 + 夹爪"
+      },
+      "note": {
+        "en": "Each arm receives a 6D end-effector command and one gripper command. Photo: the manufacturer's dual-arm setup.",
+        "zh": "每只手臂接收 6 维末端指令及 1 维夹爪指令。配图为厂商双臂构型。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/robodojo.md"
+      ],
+      "imageSource": "https://www.arx-x.com/"
+    },
+    {
+      "id": "droid",
+      "name": "Franka · DROID",
+      "domain": "manipulation",
+      "benches": [
+        "robolab"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 7
+        },
+        {
+          "key": "gripper",
+          "label": {
+            "en": "Gripper",
+            "zh": "夹爪"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 8,
+      "image": "droid.png",
+      "control": {
+        "en": "Joint control (default)",
+        "zh": "关节控制（默认）"
+      },
+      "note": {
+        "en": "Franka Panda with Robotiq 2F-85. Alternative IK interfaces: 8 scalars (position + quaternion + gripper) or 7 (relative pose + gripper).",
+        "zh": "Franka Panda + Robotiq 2F-85。其他 IK 模式为 8 维（位置 + 四元数 + 夹爪）或 7 维（相对位姿 + 夹爪）。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/robolab.md"
+      ],
+      "imageSource": "https://droid-dataset.github.io/",
+      "profileLabel": {
+        "en": "DROID · 8D",
+        "zh": "DROID · 8D"
+      }
+    },
+    {
+      "id": "panda-cup",
+      "name": "Franka · cup catcher",
+      "domain": "manipulation",
+      "benches": [
+        "reflexbench"
+      ],
+      "parts": [
+        {
+          "key": "eef",
+          "label": {
+            "en": "EEF pose",
+            "zh": "末端位姿"
+          },
+          "n": 7
+        },
+        {
+          "key": "gripper",
+          "label": {
+            "en": "Gripper",
+            "zh": "夹爪"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 8,
+      "image": "panda.webp",
+      "control": {
+        "en": "Position + quaternion + gripper",
+        "zh": "位置 + 四元数 + 夹爪"
+      },
+      "note": {
+        "en": "3 position + 4 quaternion parameters + 1 gripper command. Seven pose parameters are not seven independent spatial degrees of freedom. Photo shows the base arm, without the task cup.",
+        "zh": "3 维位置 + 4 维四元数 + 1 维夹爪；7 个位姿参数并非 7 个独立空间自由度。图片仅展示手臂平台，不含任务杯具。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/reflexbench.md"
+      ],
+      "imageSource": "https://technology.robbyant.com/lingbot-vla-v2",
+      "profileLabel": {
+        "en": "Cup catcher · 8D",
+        "zh": "接球配置 · 8D"
+      }
+    },
+    {
+      "id": "r1pro",
+      "name": "Galaxea R1 Pro",
+      "domain": "mobile",
+      "benches": [
+        "behavior_1k"
+      ],
+      "parts": [
+        {
+          "key": "eef",
+          "label": {
+            "en": "EEF pose",
+            "zh": "末端位姿"
+          },
+          "n": 12
+        },
+        {
+          "key": "gripper",
+          "label": {
+            "en": "Gripper",
+            "zh": "夹爪"
+          },
+          "n": 2
+        },
+        {
+          "key": "base",
+          "label": {
+            "en": "Base",
+            "zh": "底盘"
+          },
+          "n": 3
+        },
+        {
+          "key": "torso",
+          "label": {
+            "en": "Torso",
+            "zh": "躯干"
+          },
+          "n": 4
+        }
+      ],
+      "dim": 21,
+      "image": "r1pro.png",
+      "control": {
+        "en": "Native IK controller",
+        "zh": "原生 IK 控制器"
+      },
+      "note": {
+        "en": "Two 6D arm IK commands, two grippers, a planar base and four trunk joints. Tool quaternions are converted to the native 21-scalar action; hardware DOF is a different count.",
+        "zh": "双臂 IK 各 6 维、夹爪共 2 维、平面底盘 3 维、躯干 4 维。工具中的四元数会转换为原生 21 维 action，不能直接用硬件自由度替代。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/behavior_1k.md"
+      ],
+      "imageSource": "https://technology.robbyant.com/lingbot-vla-v2"
+    },
+    {
+      "id": "panda-omron",
+      "name": "Panda + Omron",
+      "domain": "mobile",
+      "benches": [
+        "robocasa"
+      ],
+      "parts": [
+        {
+          "key": "eef",
+          "label": {
+            "en": "EEF pose",
+            "zh": "末端位姿"
+          },
+          "n": 6
+        },
+        {
+          "key": "gripper",
+          "label": {
+            "en": "Gripper",
+            "zh": "夹爪"
+          },
+          "n": 1
+        },
+        {
+          "key": "base",
+          "label": {
+            "en": "Base",
+            "zh": "底盘"
+          },
+          "n": 3
+        },
+        {
+          "key": "torso",
+          "label": {
+            "en": "Torso",
+            "zh": "躯干"
+          },
+          "n": 1
+        },
+        {
+          "key": "mode",
+          "label": {
+            "en": "Mode",
+            "zh": "模式"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 12,
+      "image": "panda-omron.png",
+      "control": {
+        "en": "Hybrid mobile manipulation",
+        "zh": "移动操作混合控制"
+      },
+      "note": {
+        "en": "12 inputs = 11 motion/gripper channels + 1 mode selector. Photo: QUT Frankie, a real Panda + Omron LD-60 assembly. Its fixed mounting differs from RoboCasa's torso/lift configuration.",
+        "zh": "12 维输入 = 11 维运动/夹爪 + 1 维模式选择。配图是 QUT Frankie 真机（Panda + Omron LD-60），其固定安装座与 RoboCasa 的躯干/升降构型不同。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/robocasa.md"
+      ],
+      "imageSource": "https://github.com/qcr/frankie_docs"
+    },
+    {
+      "id": "g1",
+      "name": "Unitree G1",
+      "domain": "locomotion",
+      "benches": [
+        "humanoid_soccer",
+        "steadytray"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 14
+        },
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        },
+        {
+          "key": "torso",
+          "label": {
+            "en": "Torso",
+            "zh": "躯干"
+          },
+          "n": 3
+        }
+      ],
+      "dim": 29,
+      "image": "g1.webp",
+      "control": {
+        "en": "Whole-body joint targets",
+        "zh": "全身关节目标"
+      },
+      "note": {
+        "en": "The same G1 platform is shared by soccer and tray-balancing tasks. The 29-channel controller does not actuate the fingers shown in the product image.",
+        "zh": "同一 G1 平台覆盖足球及托盘平衡任务。29 维控制不包含产品图所示手指。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/humanoid_soccer.md",
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/steadytray.md"
+      ],
+      "imageSource": "https://technology.robbyant.com/lingbot-vla-v2"
+    },
+    {
+      "id": "digit",
+      "name": "Agility Digit",
+      "domain": "locomotion",
+      "benches": [
+        "digit"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 14
+        },
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        }
+      ],
+      "dim": 26,
+      "image": "digit-v4.png",
+      "control": {
+        "en": "Whole-body joint targets",
+        "zh": "全身关节目标"
+      },
+      "note": {
+        "en": "Digit v4 exposes 26 joint-position channels. The photo is real Digit hardware from Agility's real/sim comparison. The evaluated task tracks hand targets while walking, with no held object.",
+        "zh": "Digit v4 暴露 26 维关节位置。配图取自 Agility 真机/仿真对照中的真机照片。评测任务为行走时跟踪手部目标，不搬运物体。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/digit.md"
+      ],
+      "imageSource": "https://www.agilityrobotics.com/content/digits-next-steps"
+    },
+    {
+      "id": "t1",
+      "name": "Booster T1",
+      "domain": "locomotion",
+      "benches": [
+        "ttrl"
+      ],
+      "parts": [
+        {
+          "key": "arm",
+          "label": {
+            "en": "Arm",
+            "zh": "手臂"
+          },
+          "n": 8
+        },
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        },
+        {
+          "key": "torso",
+          "label": {
+            "en": "Torso",
+            "zh": "躯干"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 21,
+      "image": "t1.webp",
+      "control": {
+        "en": "Whole-body joint targets",
+        "zh": "全身关节目标"
+      },
+      "note": {
+        "en": "21 controlled joints for table-tennis return. The product's two head joints are not part of this action vector.",
+        "zh": "乒乓球回球任务控制 21 个关节；产品本身的 2 个头部关节不在此 action 中。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/ttrl.md"
+      ],
+      "imageSource": "https://www.booster.tech/booster-t1/"
+    },
+    {
+      "id": "go2",
+      "name": "Unitree Go2",
+      "domain": "locomotion",
+      "benches": [
+        "go2_push"
+      ],
+      "parts": [
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        }
+      ],
+      "dim": 12,
+      "image": "go2.png",
+      "control": {
+        "en": "Joint-position targets",
+        "zh": "关节位置目标"
+      },
+      "note": {
+        "en": "Three joint commands per leg, across four legs, for push recovery.",
+        "zh": "四条腿各 3 维关节指令，用于抗推恢复。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/go2_push.md"
+      ],
+      "imageSource": "https://shop.unitree.com/products/unitree-go2"
+    },
+    {
+      "id": "a1",
+      "name": "Unitree A1",
+      "domain": "locomotion",
+      "benches": [
+        "robot_lab"
+      ],
+      "parts": [
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        }
+      ],
+      "dim": 12,
+      "image": "a1.png",
+      "control": {
+        "en": "Joint-position targets",
+        "zh": "关节位置目标"
+      },
+      "note": {
+        "en": "Twelve leg-joint commands for a front-leg handstand.",
+        "zh": "12 维腿部关节指令，用于前腿倒立。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/robot_lab.md"
+      ],
+      "imageSource": "https://www.unitree.com/a1"
+    },
+    {
+      "id": "anymal",
+      "name": "ANYmal",
+      "domain": "locomotion",
+      "benches": [
+        "omniisaacgymenvs"
+      ],
+      "parts": [
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 12
+        }
+      ],
+      "dim": 12,
+      "image": "anymal.png",
+      "control": {
+        "en": "Joint-position targets",
+        "zh": "关节位置目标"
+      },
+      "note": {
+        "en": "Three joint commands per leg for rough-terrain locomotion. Product photo: ANYmal C; the action description follows the benchmark controller.",
+        "zh": "四条腿各 3 维关节指令，用于崎岖地形行走。产品图为 ANYmal C；维度以 benchmark 控制器为准。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/omniisaacgymenvs.md"
+      ],
+      "imageSource": "https://newatlas.com/robotics/anymal-c-quadruped-robot/"
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "domain": "locomotion",
+      "benches": [
+        "flamingo"
+      ],
+      "parts": [
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 6
+        },
+        {
+          "key": "wheels",
+          "label": {
+            "en": "Wheels",
+            "zh": "轮子"
+          },
+          "n": 2
+        }
+      ],
+      "dim": 8,
+      "image": null,
+      "control": {
+        "en": "Joint positions + wheel speeds",
+        "zh": "关节位置 + 轮速"
+      },
+      "note": {
+        "en": "Research platform rev01_5_2. Six hip/shoulder/leg position channels and two wheel speeds. No verified hardware photograph is substituted.",
+        "zh": "研究平台 rev01_5_2：6 维髋/肩/腿位置通道及 2 维轮速。未用其他型号产品图代替。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/flamingo.md"
+      ]
+    },
+    {
+      "id": "wheel-legged",
+      "name": "Wheel-Legged-Lab",
+      "domain": "locomotion",
+      "benches": [
+        "wheel_legged"
+      ],
+      "parts": [
+        {
+          "key": "vmc",
+          "label": {
+            "en": "Virtual legs",
+            "zh": "虚拟腿"
+          },
+          "n": 4
+        },
+        {
+          "key": "wheels",
+          "label": {
+            "en": "Wheels",
+            "zh": "轮子"
+          },
+          "n": 2
+        }
+      ],
+      "dim": 6,
+      "image": null,
+      "control": {
+        "en": "Virtual model control",
+        "zh": "虚拟模型控制"
+      },
+      "note": {
+        "en": "Two virtual-leg angles, two virtual-leg lengths and two wheel-speed references. The upstream project describes a simulation research platform, not a commercial product.",
+        "zh": "双侧虚拟腿角度、长度各 2 维，加 2 维轮速参考。上游为仿真研究平台，而非商业产品。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheel_legged.md"
+      ]
+    },
+    {
+      "id": "wheeled-quadruped",
+      "name": "Wheeled Quadruped",
+      "domain": "locomotion",
+      "benches": [
+        "wheeled_quadruped"
+      ],
+      "parts": [
+        {
+          "key": "legs",
+          "label": {
+            "en": "Legs",
+            "zh": "腿部"
+          },
+          "n": 2
+        },
+        {
+          "key": "wheels",
+          "label": {
+            "en": "Wheels",
+            "zh": "轮子"
+          },
+          "n": 2
+        }
+      ],
+      "dim": 4,
+      "image": null,
+      "control": {
+        "en": "Front thighs + rear wheels",
+        "zh": "前腿髋部 + 后轮"
+      },
+      "note": {
+        "en": "The balance controller exposes two front-thigh positions and two rear-wheel speeds, not all joints in the robot model. Custom research design; no verified hardware photograph.",
+        "zh": "平衡控制器仅暴露 2 维前腿位置及 2 维后轮速度，并非模型全部关节。定制研究构型，未找到可核实的产品照片。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheeled_quadruped.md"
+      ]
+    },
+    {
+      "id": "mushr",
+      "name": "MuSHR",
+      "domain": "driving",
+      "benches": [
+        "wheeledlab"
+      ],
+      "parts": [
+        {
+          "key": "drive",
+          "label": {
+            "en": "Speed",
+            "zh": "速度"
+          },
+          "n": 1
+        },
+        {
+          "key": "steer",
+          "label": {
+            "en": "Steering",
+            "zh": "转向"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 2,
+      "image": "mushr.png",
+      "control": {
+        "en": "Ackermann driving",
+        "zh": "阿克曼车辆控制"
+      },
+      "note": {
+        "en": "Longitudinal speed and steering angle. The platform is shared by ten published driving tasks.",
+        "zh": "纵向速度和转向角，共覆盖 10 个已发布驾驶任务。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheeledlab.md"
+      ],
+      "imageSource": "https://mushr.io/"
+    },
+    {
+      "id": "f1tenth",
+      "name": "F1TENTH",
+      "domain": "driving",
+      "benches": [
+        "wheeledlab"
+      ],
+      "parts": [
+        {
+          "key": "drive",
+          "label": {
+            "en": "Speed",
+            "zh": "速度"
+          },
+          "n": 1
+        },
+        {
+          "key": "steer",
+          "label": {
+            "en": "Steering",
+            "zh": "转向"
+          },
+          "n": 1
+        }
+      ],
+      "dim": 2,
+      "image": "f1tenth.png",
+      "control": {
+        "en": "Ackermann driving",
+        "zh": "阿克曼车辆控制"
+      },
+      "note": {
+        "en": "Longitudinal speed and steering angle for the F1TENTH drift task.",
+        "zh": "F1TENTH 漂移任务使用纵向速度及转向角。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/wheeledlab.md"
+      ],
+      "imageSource": "https://github.com/f1tenth/f1tenth_doc"
+    },
+    {
+      "id": "hummingbird",
+      "name": "AscTec Hummingbird",
+      "domain": "aerial",
+      "benches": [
+        "omnidrones"
+      ],
+      "parts": [
+        {
+          "key": "rotor",
+          "label": {
+            "en": "Rotors",
+            "zh": "旋翼"
+          },
+          "n": 4
+        }
+      ],
+      "dim": 4,
+      "image": "hummingbird.png",
+      "control": {
+        "en": "Rotor control",
+        "zh": "旋翼控制"
+      },
+      "note": {
+        "en": "Four rotor commands. Payload and inverted-pendulum attachments belong to the tasks, not extra robot action dimensions.",
+        "zh": "4 维旋翼控制；负载和倒立摆属于任务附件，不额外计入机器人 action。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/omnidrones.md"
+      ],
+      "imageSource": "https://robotics.caltech.edu/~ndutoit/wiki/images/7/70/AscTec_AutoPilot_manual_v1.0_small.pdf"
+    },
+    {
+      "id": "iris",
+      "name": "3DR Iris",
+      "domain": "aerial",
+      "benches": [
+        "volleybots"
+      ],
+      "parts": [
+        {
+          "key": "rotor",
+          "label": {
+            "en": "Rotors",
+            "zh": "旋翼"
+          },
+          "n": 4
+        }
+      ],
+      "dim": 4,
+      "image": "iris.png",
+      "control": {
+        "en": "Rotor control",
+        "zh": "旋翼控制"
+      },
+      "note": {
+        "en": "Four rotor commands per controlled drone. The opponent in the duel is a separate agent, not four additional action channels.",
+        "zh": "每架受控无人机 4 维旋翼指令；对抗任务中的另一架无人机不计入当前 agent 的 action。"
+      },
+      "contract": [
+        "https://github.com/robotworldai/robotworld/blob/main/docs/action-contracts/volleybots.md"
+      ],
+      "imageSource": "https://www.adafruit.com/product/1546"
+    }
+  ],
+  "unifiedActionSpace": {
+    "kind": "semantic-union",
+    "description": {
+      "en": "A shared vocabulary for the evaluated native controllers, not a fixed-length action vector. Component maxima are taken independently across configurations and must not be added as a benchmark action dimension.",
+      "zh": "评测原生控制器的统一语义分类，而非固定长度动作向量。各分量最大维度独立取自不同构型，不能相加作为 benchmark 的动作维度。"
+    },
+    "components": [
+      {
+        "id": "arm",
+        "label": {
+          "en": "Arm joints",
+          "zh": "手臂关节"
+        },
+        "description": {
+          "en": "Joint targets / increments",
+          "zh": "关节目标 / 增量"
+        },
+        "keys": [
+          "arm"
+        ]
+      },
+      {
+        "id": "eef",
+        "label": {
+          "en": "EEF pose",
+          "zh": "末端位姿"
+        },
+        "description": {
+          "en": "Cartesian position + orientation",
+          "zh": "笛卡尔位置 + 姿态"
+        },
+        "keys": [
+          "eef"
+        ]
+      },
+      {
+        "id": "gripper",
+        "label": {
+          "en": "Gripper",
+          "zh": "夹爪"
+        },
+        "description": {
+          "en": "Opening / closing commands",
+          "zh": "开合控制"
+        },
+        "keys": [
+          "gripper"
+        ]
+      },
+      {
+        "id": "hand",
+        "label": {
+          "en": "Dexterous hand",
+          "zh": "灵巧手"
+        },
+        "description": {
+          "en": "Independently controlled finger joints",
+          "zh": "独立控制的手指关节"
+        },
+        "keys": [
+          "hand"
+        ]
+      },
+      {
+        "id": "torso",
+        "label": {
+          "en": "Torso",
+          "zh": "躯干"
+        },
+        "description": {
+          "en": "Waist / trunk / lift",
+          "zh": "腰部 / 躯干 / 升降"
+        },
+        "keys": [
+          "torso"
+        ]
+      },
+      {
+        "id": "legs",
+        "label": {
+          "en": "Leg joints",
+          "zh": "腿部关节"
+        },
+        "description": {
+          "en": "Biped / quadruped joints",
+          "zh": "双足 / 四足关节"
+        },
+        "keys": [
+          "legs"
+        ]
+      },
+      {
+        "id": "vmc",
+        "label": {
+          "en": "Leg VMC",
+          "zh": "虚拟腿控制"
+        },
+        "description": {
+          "en": "Virtual leg angle + length",
+          "zh": "虚拟腿角度 + 长度"
+        },
+        "keys": [
+          "vmc"
+        ]
+      },
+      {
+        "id": "base",
+        "label": {
+          "en": "Mobile base",
+          "zh": "移动底盘"
+        },
+        "description": {
+          "en": "Planar translation + yaw",
+          "zh": "平面移动 + 偏航"
+        },
+        "keys": [
+          "base"
+        ]
+      },
+      {
+        "id": "wheels",
+        "label": {
+          "en": "Wheel speed",
+          "zh": "轮速"
+        },
+        "description": {
+          "en": "Left / right wheel speeds",
+          "zh": "左右轮速度"
+        },
+        "keys": [
+          "wheels"
+        ]
+      },
+      {
+        "id": "driving",
+        "label": {
+          "en": "Drive & steer",
+          "zh": "驱动与转向"
+        },
+        "description": {
+          "en": "Vehicle speed + steering",
+          "zh": "车速 + 转向"
+        },
+        "keys": [
+          "drive",
+          "steer"
+        ]
+      },
+      {
+        "id": "rotor",
+        "label": {
+          "en": "Rotors",
+          "zh": "旋翼"
+        },
+        "description": {
+          "en": "Per-rotor commands",
+          "zh": "逐旋翼控制"
+        },
+        "keys": [
+          "rotor"
+        ]
+      },
+      {
+        "id": "mode",
+        "label": {
+          "en": "Control mode",
+          "zh": "控制模式"
+        },
+        "description": {
+          "en": "Discrete controller selector",
+          "zh": "离散控制器选择"
+        },
+        "keys": [
+          "mode"
+        ]
+      }
+    ]
+  },
+  "embodiments": [
+    {
+      "id": "panda",
+      "name": "Franka Panda",
+      "configurationIds": [
+        "panda",
+        "droid",
+        "panda-cup"
+      ]
+    },
+    {
+      "id": "ur5-wuji",
+      "name": "Dual UR5 + Wuji",
+      "configurationIds": [
+        "ur5-wuji"
+      ]
+    },
+    {
+      "id": "arx",
+      "name": "Dual ARX X5",
+      "configurationIds": [
+        "arx"
+      ]
+    },
+    {
+      "id": "r1pro",
+      "name": "Galaxea R1 Pro",
+      "configurationIds": [
+        "r1pro"
+      ]
+    },
+    {
+      "id": "panda-omron",
+      "name": "Panda + Omron",
+      "configurationIds": [
+        "panda-omron"
+      ]
+    },
+    {
+      "id": "g1",
+      "name": "Unitree G1",
+      "configurationIds": [
+        "g1"
+      ]
+    },
+    {
+      "id": "digit",
+      "name": "Agility Digit",
+      "configurationIds": [
+        "digit"
+      ]
+    },
+    {
+      "id": "t1",
+      "name": "Booster T1",
+      "configurationIds": [
+        "t1"
+      ]
+    },
+    {
+      "id": "go2",
+      "name": "Unitree Go2",
+      "configurationIds": [
+        "go2"
+      ]
+    },
+    {
+      "id": "a1",
+      "name": "Unitree A1",
+      "configurationIds": [
+        "a1"
+      ]
+    },
+    {
+      "id": "anymal",
+      "name": "ANYmal",
+      "configurationIds": [
+        "anymal"
+      ]
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "configurationIds": [
+        "flamingo"
+      ]
+    },
+    {
+      "id": "wheel-legged",
+      "name": "Wheel-Legged-Lab",
+      "configurationIds": [
+        "wheel-legged"
+      ]
+    },
+    {
+      "id": "wheeled-quadruped",
+      "name": "Wheeled Quadruped",
+      "configurationIds": [
+        "wheeled-quadruped"
+      ]
+    },
+    {
+      "id": "mushr",
+      "name": "MuSHR",
+      "configurationIds": [
+        "mushr"
+      ]
+    },
+    {
+      "id": "f1tenth",
+      "name": "F1TENTH",
+      "configurationIds": [
+        "f1tenth"
+      ]
+    },
+    {
+      "id": "hummingbird",
+      "name": "AscTec Hummingbird",
+      "configurationIds": [
+        "hummingbird"
+      ]
+    },
+    {
+      "id": "iris",
+      "name": "3DR Iris",
+      "configurationIds": [
+        "iris"
+      ]
+    }
+  ]
+}
