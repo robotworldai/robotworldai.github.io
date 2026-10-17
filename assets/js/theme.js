@@ -92,7 +92,7 @@
     close.textContent = '×';
     close.setAttribute('aria-label', zh ? '关闭' : 'Close');
     const imageLink = document.createElement('a');
-    imageLink.href = '/assets/images/wechat-community.png?v=20261008-community';
+    imageLink.href = '/assets/images/wechat-community.png?v=20261017-community';
     imageLink.target = '_blank';
     imageLink.rel = 'noopener';
     imageLink.setAttribute('aria-label', zh ? '放大微信群二维码' : 'Open full-size WeChat QR code');
@@ -102,7 +102,7 @@
     imageLink.append(qr);
     const expiry = document.createElement('p');
     expiry.lang = 'zh-CN';
-    expiry.textContent = '二维码有效期至 2026 年 10 月 15 日。点击图片查看原图。';
+    expiry.textContent = '二维码有效期至 2026 年 10 月 24 日。点击图片查看原图。';
     dialog.append(close, heading, description, imageLink, expiry);
     document.body.append(dialog);
     let opener = join;
